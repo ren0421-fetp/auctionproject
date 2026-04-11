@@ -29,7 +29,7 @@ public class SellerDashController {
         User specificUser = userDao.selectByUsername(username); 
         
         // 3. Pass the specific user to the JSP
-        model.addAttribute("currentUser", specificUser);
+        model.addAttribute("loggedInUser", specificUser);
         
         return "sellerMainDash"; 
     }

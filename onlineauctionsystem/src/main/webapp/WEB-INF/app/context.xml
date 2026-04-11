@@ -58,6 +58,15 @@
     <bean id="adminMainDash" class="org.springframework.web.servlet.view.JstlView">
         <property name="url" value="/WEB-INF/app/views/admin/amainDash.jsp" />
     </bean>
+    
+    <bean id="sellerProductFormView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/seller/product_form.jsp" />
+</bean>
+
+<bean id="sellerProductListView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/seller/product_list.jsp" />
+</bean>
+    
      
      <!-- Error pages -->
      <bean id="errIllegalArgView" class="org.springframework.web.servlet.view.JstlView">
@@ -85,6 +94,9 @@
           location="classpath:/image/" />
     <mvc:resources mapping="/profile/**" 
                location="file:C:/auction_uploads/profile/" />
+    <mvc:resources mapping="/product/**"
+        location="file:C:/auction_uploads/product/" />
+    
    
 </beans>
 

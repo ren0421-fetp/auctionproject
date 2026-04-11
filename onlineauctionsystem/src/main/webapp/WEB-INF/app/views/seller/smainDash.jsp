@@ -14,5 +14,13 @@
          alt="Profile Image" 
          style="width:100px; height:100px; border-radius: 50%;" />
 </div>
+
+ <div style="margin-top:20px;">
+        <a href="${pageContext.request.contextPath}/app/seller/product/add">Add Product</a>
+        |
+        <a href="${pageContext.request.contextPath}/app/seller/product/list">My Products</a>
+        |
+        <a href="${pageContext.request.contextPath}/app/seller/home">Refresh Dashboard</a>
+    </div>
 </body>
 </html>
