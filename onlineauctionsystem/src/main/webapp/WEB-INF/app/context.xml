@@ -41,6 +41,14 @@
          <property name="url" value="/WEB-INF/app/views/registration/registration_success.jsp" />
      </bean>
      
+     <bean id="loginView" class="org.springframework.web.servlet.view.JstlView">
+        <property name="url" value="/WEB-INF/app/views/login/login.jsp" />
+    </bean>
+
+    <bean id="loginSuccess" class="org.springframework.web.servlet.view.JstlView">
+        <property name="url" value="/WEB-INF/app/views/login/login_success.jsp" />
+    </bean>
+     
      <!-- Error pages -->
      <bean id="errIllegalArgView" class="org.springframework.web.servlet.view.JstlView">
          <property name="url" value="/WEB-INF/app/views/errors/illegal_argument_err.jsp" />

@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.fujitsu.training.codes.model.data.User;
 
 public interface UserDao {
@@ -60,4 +61,27 @@ public interface UserDao {
         )
     """)
     boolean insertUser(User user);
+    
+    @Update("""
+            update user_master
+            set failed_login_attempts = #{failedLoginAttempts}
+            where username = #{username}
+        """)
+        int updateFailedLoginAttempts(@Param("username") String username,
+                @Param("failedLoginAttempts") int failedLoginAttempts);
+
+        @Update("""
+            update user_master
+            set is_locked = true,
+                failed_login_attempts = 3
+            where username = #{username}
+        """)
+        int lockUser(@Param("username") String username);
+
+        @Update("""
+            update user_master
+            set failed_login_attempts = 0
+            where username = #{username}
+        """)
+        int resetFailedLoginAttempts(@Param("username") String username);
 }
