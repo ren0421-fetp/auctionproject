@@ -234,3 +234,235 @@ Starting registration process for username: testuser9956
 Successfully registered user: testuser9956
 Starting registration process for username: newbidder99
 Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Manual session login attempt for username: admin
+Login failed. Username not found: admin
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Manual session login attempt for username: admin1
+Invalid password for: admin1. Attempts: 1
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Manual session login attempt for username: admin
+Login failed. Username not found: admin
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Manual session login attempt for username: bidder1
+Invalid password for: bidder1. Attempts: 1
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Login form validation failed for user: 
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Starting registration process for username: testuser9956
+Successfully registered user: testuser9956
+Manual session login attempt for username: bidder1
+Invalid password for: bidder1. Attempts: 1
+Manual session login attempt for username: admin
+Login failed. Username not found: admin
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 2 ms
+Login form validation failed for user: 
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Starting registration process for username: testuser9956
+Successfully registered user: testuser9956
+Manual session login attempt for username: admin
+Login failed. Username not found: admin
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 2 ms
+Login form validation failed for user: 
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Starting registration process for username: testuser9956
+Successfully registered user: testuser9956
+Manual session login attempt for username: admin
+Login failed. Username not found: admin
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Login form validation failed for user: 
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Starting registration process for username: testuser9956
+Successfully registered user: testuser9956
+Manual session login attempt for username: admin
+Login failed. Username not found: admin
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Login form validation failed for user: 
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Starting registration process for username: testuser9956
+Successfully registered user: testuser9956
+Manual session login attempt for username: admin
+Login failed. Username not found: admin
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Login form validation failed for user: 
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Starting registration process for username: testuser9956
+Successfully registered user: testuser9956
+Manual session login attempt for username: admin
+Login failed. Username not found: admin
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Login form validation failed for user: 
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Starting registration process for username: testuser9956
+Successfully registered user: testuser9956
+Manual session login attempt for username: admin
+Login failed. Username not found: admin
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Login form validation failed for user: 
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Starting registration process for username: testuser9956
+Successfully registered user: testuser9956
+Manual session login attempt for username: admin
+Login failed. Username not found: admin
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Login form validation failed for user: 
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Starting registration process for username: testuser9956
+Successfully registered user: testuser9956
+Manual session login attempt for username: admin
+Login failed. Username not found: admin
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Login form validation failed for user: 
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Starting registration process for username: testuser9956
+Successfully registered user: testuser9956
+Manual session login attempt for username: admin
+Login failed. Username not found: admin
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Manual session login attempt for username: maria
+Login successful for username: maria

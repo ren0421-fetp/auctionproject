@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.fujitsu.training.codes.dao.impl.RegistrationDaoImpl;
 import org.fujitsu.training.codes.exceptions.DuplicateUsernameException;
-//import org.fujitsu.training.codes.exceptions.DuplicateUsernameException;
 import org.fujitsu.training.codes.model.form.RegistrationForm;
 import org.fujitsu.training.codes.validator.RegistrationFormValidator;
 import org.springframework.stereotype.Controller;
@@ -17,6 +16,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/registration")
@@ -46,7 +47,8 @@ public class RegistrationController {
     public String submitForm(
             Model model,
             @Validated @ModelAttribute("registrationForm") RegistrationForm form,
-            BindingResult result) {
+            BindingResult result,
+            HttpServletRequest request) {
 
         if (result.hasErrors()) {
             populateReferenceData(model);
@@ -54,6 +56,28 @@ public class RegistrationController {
         }
 
         try {
+            if (form.getPhotoFile() != null && !form.getPhotoFile().isEmpty()) {
+                // 1. Get the real path of the folder
+                String realPath = request.getServletContext().getRealPath("/WEB-INF/app/images/profile/");
+                java.io.File dir = new java.io.File(realPath);
+                
+                // 2. Guarantee the folder exists
+                if (!dir.exists()) {
+                    dir.mkdirs(); 
+                }
+                
+                // 3. SECURE CONCATENATION: Use the (Parent, Child) constructor
+                String fileName = form.getUsername() + "_" + form.getPhotoFile().getOriginalFilename();
+                java.io.File destination = new java.io.File(dir, fileName); 
+                
+                // Physical save to the hard drive
+                form.getPhotoFile().transferTo(destination);
+                
+                // 4. Set the relative path for the database (used for JSP <img> tags)
+                form.setPhotoPath("/images/profile/" + fileName); 
+            }
+
+            // 2. Now the form has a photoPath value for the DAO to use
             String username = registrationService.registerUser(form);
             model.addAttribute("registeredUsername", username);
             return "registerSuccess";

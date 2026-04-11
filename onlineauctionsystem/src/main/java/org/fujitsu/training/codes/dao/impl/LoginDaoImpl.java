@@ -4,9 +4,10 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.HexFormat;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.fujitsu.training.codes.dao.UserDao;
 import org.fujitsu.training.codes.exceptions.AccountLockedException;
 import org.fujitsu.training.codes.exceptions.InvalidCredentialsException;
 import org.fujitsu.training.codes.model.data.User;
@@ -18,75 +19,78 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class LoginDaoImpl {
     private static final Logger logger = LogManager.getLogger(LoginDaoImpl.class);
+    private final SqlSessionFactory ssf;
 
-    private final UserDao userDao;
-
-    public LoginDaoImpl(UserDao userDao) {
-        this.userDao = userDao;
+    public LoginDaoImpl(SqlSessionFactory ssf) {
+        this.ssf = ssf;
     }
 
-    public User login(LoginForm form) {
+    public User login(LoginForm form) throws Exception {
         String username = form.getUsername() == null ? "" : form.getUsername().trim();
-        logger.info("Login attempt for username: {}", username);
+        logger.info("Manual session login attempt for username: {}", username);
 
-        User user = userDao.selectByUsername(username);
-        if (user == null) {
-            logger.warn("Login failed. Username not found: {}", username);
-            throw new InvalidCredentialsException("Invalid username or password.");
-        }
+        SqlSession sess = ssf.openSession();
+        try {
+            // 1. Fetch User using the same mapper ID as registration
+            User user = sess.selectOne("org.fujitsu.training.codes.dao.UserDao.selectByUsername", username);
+            
+            if (user == null) {
+                logger.warn("Login failed. Username not found: {}", username);
+                throw new InvalidCredentialsException("Invalid username or password.");
+            }
 
-        if (Boolean.TRUE.equals(user.getIsLocked())) {
-            logger.warn("Login blocked. Account is locked: {}", username);
-            throw new AccountLockedException("Your account is locked. Please contact the administrator.");
-        }
+            // 2. Check Lockout Status
+            if (Boolean.TRUE.equals(user.getIsLocked())) {
+                logger.warn("Login blocked. Account is locked: {}", username);
+                throw new AccountLockedException("Your account is locked. Please contact the administrator.");
+            }
 
-        String incomingPasswordHash = hashPassword(form.getPassword());
-        if (!incomingPasswordHash.equals(user.getPasswordHash())) {
-            int currentAttempts = user.getFailedLoginAttempts() == null ? 0 : user.getFailedLoginAttempts();
-            int nextAttempts = currentAttempts + 1;
+            // 3. Verify Password
+            String incomingHash = hashPassword(form.getPassword());
+            if (!incomingHash.equals(user.getPasswordHash())) {
+                int nextAttempts = (user.getFailedLoginAttempts() == null ? 0 : user.getFailedLoginAttempts()) + 1;
 
-            if (nextAttempts >= 3) {
-                int updated = userDao.lockUser(username);
-                if (updated != 1) {
-                    logger.error("Failed to lock account for username: {}", username);
-                    throw new IllegalStateException("Unable to update login state.");
+                if (nextAttempts >= 3) {
+                    sess.update("org.fujitsu.training.codes.dao.UserDao.lockUser", username);
+                    sess.commit();
+                    logger.warn("Account locked after 3 failed attempts: {}", username);
+                    throw new AccountLockedException("Your account has been locked after 3 failed attempts.");
                 }
 
-                logger.warn("Account locked after 3 failed attempts: {}", username);
-                throw new AccountLockedException("Your account has been locked after 3 failed attempts.");
+                sess.update("org.fujitsu.training.codes.dao.UserDao.updateFailedLoginAttempts", 
+                            new java.util.HashMap<String, Object>() {{
+                                put("username", username);
+                                put("failedLoginAttempts", nextAttempts);
+                            }});
+                sess.commit();
+                logger.warn("Invalid password for: {}. Attempts: {}", username, nextAttempts);
+                throw new InvalidCredentialsException("Invalid username or password.");
             }
 
-            int updated = userDao.updateFailedLoginAttempts(username, nextAttempts);
-            if (updated != 1) {
-                logger.error("Failed to update failed login attempts for username: {}", username);
-                throw new IllegalStateException("Unable to update login state.");
+            // 4. Success - Reset Attempts
+            if (user.getFailedLoginAttempts() != null && user.getFailedLoginAttempts() > 0) {
+                sess.update("org.fujitsu.training.codes.dao.UserDao.resetFailedLoginAttempts", username);
+                sess.commit();
             }
 
-            logger.warn("Invalid password for username: {}. Failed attempts: {}", username, nextAttempts);
-            throw new InvalidCredentialsException("Invalid username or password.");
+            logger.info("Login successful for username: {}", username);
+            return user;
+
+        } catch (InvalidCredentialsException | AccountLockedException e) {
+            sess.rollback();
+            throw e;
+        } catch (Exception e) {
+            logger.error("Database error during login for {}: {}", username, e.getMessage());
+            sess.rollback();
+            throw e;
+        } finally {
+            sess.close();
         }
-
-        if (user.getFailedLoginAttempts() != null && user.getFailedLoginAttempts() > 0) {
-            int updated = userDao.resetFailedLoginAttempts(username);
-            if (updated != 1) {
-                logger.error("Failed to reset failed login attempts for username: {}", username);
-                throw new IllegalStateException("Unable to reset login state.");
-            }
-        }
-
-        user.setFailedLoginAttempts(0);
-        logger.info("Login successful for username: {}", username);
-        return user;
     }
 
-    private String hashPassword(String rawPassword) {
-        try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] hash = digest.digest(rawPassword.getBytes(StandardCharsets.UTF_8));
-            return HexFormat.of().formatHex(hash);
-        } catch (Exception ex) {
-            logger.error("Password hashing failed during login.", ex);
-            throw new IllegalStateException("Unable to process login request.", ex);
-        }
+    private String hashPassword(String rawPassword) throws Exception {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] hash = digest.digest(rawPassword.getBytes(StandardCharsets.UTF_8));
+        return HexFormat.of().formatHex(hash);
     }
 }

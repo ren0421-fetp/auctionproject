@@ -52,6 +52,7 @@ public class LoginController {
             HttpSession session) {
 
         if (result.hasErrors()) {
+            logger.warn("Login form validation failed for user: {}", form.getUsername());
             return "loginView";
         }
 
@@ -59,16 +60,16 @@ public class LoginController {
             User loggedInUser = loginService.login(form);
             session.setAttribute("loggedInUsername", loggedInUser.getUsername());
             session.setAttribute("loggedInUserType", loggedInUser.getUserType());
-            model.addAttribute("loggedInUser", loggedInUser);
-            return "loginSuccess";
+            
+            logger.info("User {} logged in successfully. Redirecting...", loggedInUser.getUsername());
+            return "loginSuccess"; 
+            
         } catch (InvalidCredentialsException ex) {
-            logger.warn("Invalid login attempt for username: {}", form.getUsername());
             result.reject("loginError", ex.getMessage());
         } catch (AccountLockedException ex) {
-            logger.warn("Locked account login attempt for username: {}", form.getUsername());
             result.reject("loginError", ex.getMessage());
         } catch (Exception ex) {
-            logger.error("Unexpected login error for username: {}", form.getUsername(), ex);
+            logger.error("Unexpected error during login: {}", ex.getMessage());
             result.reject("loginError", "Login failed due to an unexpected system error.");
         }
 
