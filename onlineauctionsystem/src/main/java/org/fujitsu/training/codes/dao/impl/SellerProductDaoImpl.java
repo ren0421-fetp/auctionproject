@@ -8,7 +8,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.fujitsu.training.codes.dao.BidDao;
 import org.fujitsu.training.codes.dao.CategoryDao;
+import org.fujitsu.training.codes.model.data.Bid;
 import org.fujitsu.training.codes.model.data.Category;
 import org.fujitsu.training.codes.model.data.Product;
 import org.fujitsu.training.codes.model.form.ProductForm;
@@ -20,11 +22,13 @@ public class SellerProductDaoImpl {
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
 
     private final CategoryDao categoryDao;
+    private final BidDao bidDao;
     private final SqlSessionFactory ssf;
 
-    public SellerProductDaoImpl(CategoryDao categoryDao, SqlSessionFactory ssf) {
+    public SellerProductDaoImpl(CategoryDao categoryDao, SqlSessionFactory ssf, BidDao bidDao) {
         this.categoryDao = categoryDao;
         this.ssf = ssf;
+        this.bidDao = bidDao;
     }
 
     public List<Category> getCategories() {
@@ -111,4 +115,46 @@ public class SellerProductDaoImpl {
         product.setEndDate(LocalDateTime.parse(form.getEndDate(), FORMATTER));
         return product;
     }
+    
+    public void deleteSellerProduct(Integer productId, String sellerUsername) throws Exception {
+        logger.info("Deleting product {} for seller {}", productId, sellerUsername);
+
+        SqlSession sess = ssf.openSession();
+        try {
+            java.util.Map<String, Object> params = new java.util.HashMap<>();
+            params.put("productId", productId);
+            params.put("sellerUsername", sellerUsername);
+
+            Product product = sess.selectOne("org.fujitsu.training.codes.dao.ProductDao.selectProductByIdAndSeller", params);
+            if (product == null) {
+                throw new IllegalArgumentException("Product not found or does not belong to the seller.");
+            }
+
+            Integer bidCount = sess.selectOne("org.fujitsu.training.codes.dao.BidDao.countBidsByProductId", productId);
+            if (bidCount != null && bidCount > 0) {
+                throw new IllegalArgumentException("Product cannot be deleted because it already has bids.");
+            }
+
+            Integer deleted = sess.delete("org.fujitsu.training.codes.dao.ProductDao.deleteProductByIdAndSeller", params);
+            if (deleted == null || deleted != 1) {
+                throw new IllegalStateException("Failed to delete product.");
+            }
+
+            sess.commit();
+            logger.info("Product {} deleted successfully for seller {}", productId, sellerUsername);
+        } catch (Exception ex) {
+            sess.rollback();
+            logger.error("Failed to delete product {} for seller {}: {}", productId, sellerUsername, ex.getMessage(), ex);
+            throw ex;
+        } finally {
+            sess.close();
+        }
+    }
+
+    public List<Bid> getSellerBids(String sellerUsername) {
+        try (SqlSession sess = ssf.openSession()) {
+            return sess.selectList("org.fujitsu.training.codes.dao.BidDao.selectBidsBySeller", sellerUsername);
+        }
+    }
+
 }

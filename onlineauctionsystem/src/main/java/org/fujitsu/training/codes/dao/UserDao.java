@@ -84,4 +84,31 @@ public interface UserDao {
             where username = #{username}
         """)
         int resetFailedLoginAttempts(@Param("username") String username);
+        
+        @Update("""
+                update user_master
+                set first_name = #{firstName},
+                    last_name = #{lastName},
+                    gender = #{gender},
+                    address = #{address},
+                    country_id = #{countryId},
+                    state_id = #{stateId},
+                    city_id = #{cityId},
+                    email = #{email},
+                    contact_no = #{contactNo},
+                    photo_path = #{photoPath}
+                where username = #{username}
+                  and user_type = 'seller'
+            """)
+            int updateSellerProfile(User user);
+
+            @Update("""
+                update user_master
+                set password_hash = #{passwordHash}
+                where username = #{username}
+                  and user_type = 'seller'
+            """)
+            int updateSellerPassword(@Param("username") String username,
+                    @Param("passwordHash") String passwordHash);
+
 }

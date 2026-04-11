@@ -66,6 +66,16 @@
 <bean id="sellerProductListView" class="org.springframework.web.servlet.view.JstlView">
     <property name="url" value="/WEB-INF/app/views/seller/product_list.jsp" />
 </bean>
+
+<bean id="sellerProfileView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/seller/profile.jsp" />
+</bean>
+
+<bean id="sellerBidListView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/seller/bid_list.jsp" />
+</bean>
+
+
     
      
      <!-- Error pages -->

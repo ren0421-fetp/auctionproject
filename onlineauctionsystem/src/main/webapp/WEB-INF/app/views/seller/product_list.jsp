@@ -12,6 +12,8 @@
     <p>
         <a href="${pageContext.request.contextPath}/app/seller/home">Seller Dashboard</a> |
         <a href="${pageContext.request.contextPath}/app/seller/product/add">Add Product</a>
+    	<a href="${pageContext.request.contextPath}/app/seller/product/bids">View Product Bids</a>
+    	
     </p>
 
     <c:choose>
@@ -56,6 +58,13 @@
                                 <a href="${pageContext.request.contextPath}/app/seller/product/edit?productId=${product.productId}">
                                     Edit
                                 </a>
+                                
+                                <form method="post"
+							          action="${pageContext.request.contextPath}/app/seller/product/delete"
+							          style="display:inline;">
+							        <input type="hidden" name="productId" value="${product.productId}" />
+							        <input type="submit" value="Delete" />
+							    </form>
                             </td>
                         </tr>
                     </c:forEach>

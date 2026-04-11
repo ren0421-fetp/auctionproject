@@ -7,6 +7,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -101,4 +103,23 @@ public class TestSellerProductController {
                .andExpect(status().is3xxRedirection())
                .andExpect(redirectedUrl("/seller/product/list"));
     }*/
+    
+    @Test
+    public void testLoadSellerBidsView() throws Exception {
+        mockMvc.perform(get("/seller/product/bids")
+                .sessionAttr("loggedInUsername", "seller1")
+                .sessionAttr("loggedInUserType", "seller"))
+               .andExpect(status().isOk())
+               .andExpect(view().name("sellerBidListView"));
+    }
+
+    @Test
+    public void testDeleteProductRedirectsOrReturnsList() throws Exception {
+        mockMvc.perform(post("/seller/product/delete")
+                .sessionAttr("loggedInUsername", "seller1")
+                .sessionAttr("loggedInUserType", "seller")
+                .param("productId", "1"))
+               .andExpect(status().isOk());
+    }
+
 }

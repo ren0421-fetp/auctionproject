@@ -2,6 +2,7 @@ package org.fujitsu.training.codes.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
@@ -124,4 +125,13 @@ public interface ProductDao {
         </script>
     """)
     int updateProduct(Product product);
+    
+    @Delete("""
+            delete from product_master
+            where product_id = #{productId}
+              and seller_username = #{sellerUsername}
+        """)
+        int deleteProductByIdAndSeller(@Param("productId") Integer productId,
+                @Param("sellerUsername") String sellerUsername);
+
 }

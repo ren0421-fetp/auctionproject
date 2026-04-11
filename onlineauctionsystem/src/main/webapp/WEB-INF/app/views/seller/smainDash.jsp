@@ -17,10 +17,11 @@
 
  <div style="margin-top:20px;">
         <a href="${pageContext.request.contextPath}/app/seller/product/add">Add Product</a>
-        |
         <a href="${pageContext.request.contextPath}/app/seller/product/list">My Products</a>
-        |
+        <a href="${pageContext.request.contextPath}/app/seller/profile">My Profile</a>
         <a href="${pageContext.request.contextPath}/app/seller/home">Refresh Dashboard</a>
+		<a href="${pageContext.request.contextPath}/app/seller/product/bids">View Bids</a>
+    	
     </div>
 </body>
 </html>

@@ -149,4 +149,37 @@ public class SellerProductController {
         form.getPhotoFile().transferTo(destination);
         form.setPhotoPath("/app/product/" + fileName);
     }
+    
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String deleteProduct(@RequestParam("productId") Integer productId,
+            Model model,
+            HttpSession session) {
+
+        String sellerUsername = getSellerUsername(session);
+        if (sellerUsername == null) {
+            return "redirect:/app/login";
+        }
+
+        try {
+            sellerProductDaoImpl.deleteSellerProduct(productId, sellerUsername);
+            return "redirect:/app/seller/product/list";
+        } catch (Exception ex) {
+            logger.error("Failed to delete product {} for seller {}: {}", productId, sellerUsername, ex.getMessage(), ex);
+            model.addAttribute("sellerProducts", sellerProductDaoImpl.getSellerProducts(sellerUsername));
+            model.addAttribute("deleteError", ex.getMessage());
+            return "sellerProductListView";
+        }
+    }
+
+    @RequestMapping(value = "/bids", method = RequestMethod.GET)
+    public String loadSellerBids(Model model, HttpSession session) {
+        String sellerUsername = getSellerUsername(session);
+        if (sellerUsername == null) {
+            return "redirect:/app/login";
+        }
+
+        model.addAttribute("sellerBids", sellerProductDaoImpl.getSellerBids(sellerUsername));
+        return "sellerBidListView";
+    }
+
 }
