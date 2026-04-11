@@ -5,12 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registration</title>
+<title>Registration</title>
 </head>
 <body>
     <h1>Create a New Account</h1>
 
-    <form:form modelAttribute="registrationForm" method="post">
+    <form:form modelAttribute="registrationForm" method="post" enctype="multipart/form-data">
+
         <div>
             <form:label path="firstName">first name</form:label>
             <form:input path="firstName"/>
@@ -91,10 +92,11 @@
             <form:input path="contactNo"/>
             <form:errors path="contactNo" cssStyle="color:red;"/>
         </div>
-
+        
         <div>
-            <form:label path="photoPath">photo path</form:label>
-            <form:input path="photoPath"/>
+            <form:label path="photoFile">profile photo</form:label>
+            <form:input path="photoFile" type="file" accept="image/*"/>
+            <form:errors path="photoFile" cssStyle="color:red;"/>
         </div>
 
         <div>

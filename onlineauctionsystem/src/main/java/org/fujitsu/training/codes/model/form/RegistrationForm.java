@@ -1,5 +1,7 @@
 package org.fujitsu.training.codes.model.form;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class RegistrationForm {
 	private String firstName;
 	private String lastName;
@@ -15,6 +17,7 @@ public class RegistrationForm {
 	private String contactNo;
 	private String photoPath;
 	private String userType;
+	private MultipartFile photoFile;
 
 	public String getFirstName() {
 		return firstName;
@@ -127,4 +130,14 @@ public class RegistrationForm {
 	public void setUserType(String userType) {
 		this.userType = userType;
 	}
+
+	public MultipartFile getPhotoFile() {
+		return photoFile;
+	}
+
+	public void setPhotoFile(MultipartFile photoFile) {
+		this.photoFile = photoFile;
+	}
+	
+	
 }

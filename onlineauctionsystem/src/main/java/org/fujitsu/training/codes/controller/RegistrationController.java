@@ -56,7 +56,7 @@ public class RegistrationController {
         try {
             String username = registrationService.registerUser(form);
             model.addAttribute("registeredUsername", username);
-            return "auth/registration_success";
+            return "registerSuccess";
         } catch (DuplicateUsernameException ex) {
             result.rejectValue("username", "duplicate", ex.getMessage());
         } catch (IllegalArgumentException ex) {

@@ -1,0 +1,224 @@
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Starting registration process for username: newbidder99
+Unexpected database error while registering user newbidder99: 
+### Error updating database.  Cause: org.postgresql.util.PSQLException: ERROR: new row for relation "user_master" violates check constraint "chk_user_type"
+  Detail: Failing row contains (newbidder99, Jane, Smith, F, 456 Main St, 1, 1, 1, janesmith@example.com, 09876543210, /images/test.jpg, 46708f23d682fef9aa996ecbb139bfb6c9ffdc039905ad6ad5c85a88b9411d97, BIDDER, f, 0).
+### The error may exist in org/fujitsu/training/codes/dao/UserDao.java (best guess)
+### The error may involve org.fujitsu.training.codes.dao.UserDao.insertUser-Inline
+### The error occurred while setting parameters
+### SQL: insert into user_master (         username, first_name, last_name, gender, address,         country_id, state_id, city_id, email, contact_no,         photo_path, password_hash, user_type, is_locked, failed_login_attempts     ) values (         ?, ?, ?, ?, ?,         ?, ?, ?, ?, ?,         ?, ?, ?, ?, ?     )
+### Cause: org.postgresql.util.PSQLException: ERROR: new row for relation "user_master" violates check constraint "chk_user_type"
+  Detail: Failing row contains (newbidder99, Jane, Smith, F, 456 Main St, 1, 1, 1, janesmith@example.com, 09876543210, /images/test.jpg, 46708f23d682fef9aa996ecbb139bfb6c9ffdc039905ad6ad5c85a88b9411d97, BIDDER, f, 0).
+org.apache.ibatis.exceptions.PersistenceException: 
+### Error updating database.  Cause: org.postgresql.util.PSQLException: ERROR: new row for relation "user_master" violates check constraint "chk_user_type"
+  Detail: Failing row contains (newbidder99, Jane, Smith, F, 456 Main St, 1, 1, 1, janesmith@example.com, 09876543210, /images/test.jpg, 46708f23d682fef9aa996ecbb139bfb6c9ffdc039905ad6ad5c85a88b9411d97, BIDDER, f, 0).
+### The error may exist in org/fujitsu/training/codes/dao/UserDao.java (best guess)
+### The error may involve org.fujitsu.training.codes.dao.UserDao.insertUser-Inline
+### The error occurred while setting parameters
+### SQL: insert into user_master (         username, first_name, last_name, gender, address,         country_id, state_id, city_id, email, contact_no,         photo_path, password_hash, user_type, is_locked, failed_login_attempts     ) values (         ?, ?, ?, ?, ?,         ?, ?, ?, ?, ?,         ?, ?, ?, ?, ?     )
+### Cause: org.postgresql.util.PSQLException: ERROR: new row for relation "user_master" violates check constraint "chk_user_type"
+  Detail: Failing row contains (newbidder99, Jane, Smith, F, 456 Main St, 1, 1, 1, janesmith@example.com, 09876543210, /images/test.jpg, 46708f23d682fef9aa996ecbb139bfb6c9ffdc039905ad6ad5c85a88b9411d97, BIDDER, f, 0).
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:199)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at org.fujitsu.training.codes.dao.impl.RegistrationDaoImpl.registerUser(RegistrationDaoImpl.java:108)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.fujitsu.training.codes.dao.impl.RegistrationDaoImpl$$SpringCGLIB$$0.registerUser(<generated>)
+	at org.fujitsu.training.codes.dao.impl.TestRegistrationDaoImpl.testRegisterUser(TestRegistrationDaoImpl.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:701)
+	at org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:502)
+	at org.junit.jupiter.engine.support.MethodReflectionUtils.invoke(MethodReflectionUtils.java:45)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:61)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:124)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:163)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:148)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:123)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:99)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:66)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:47)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:39)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invokeVoid(InterceptingExecutableInvoker.java:71)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$0(TestMethodTestDescriptor.java:219)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:215)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:157)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:70)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:176)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:36)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:52)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58)
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$2(InterceptingLauncher.java:57)
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25)
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:56)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:81)
+	at org.eclipse.jdt.internal.junit6.runner.JUnit6TestReference.run(JUnit6TestReference.java:105)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:520)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:748)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:443)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:211)
+Caused by: org.postgresql.util.PSQLException: ERROR: new row for relation "user_master" violates check constraint "chk_user_type"
+  Detail: Failing row contains (newbidder99, Jane, Smith, F, 456 Main St, 1, 1, 1, janesmith@example.com, 09876543210, /images/test.jpg, 46708f23d682fef9aa996ecbb139bfb6c9ffdc039905ad6ad5c85a88b9411d97, BIDDER, f, 0).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:526)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:436)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:196)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:182)
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:95)
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:95)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	... 90 more
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Starting registration process for username: testuser55
+Successfully registered user: testuser55
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Starting registration process for username: testuser55
+Registration failed: Username 'testuser55' already exists.
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Starting registration process for username: testuser55
+Registration failed: Username 'testuser55' already exists.
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 2 ms
+Starting registration process for username: testuser55
+Registration failed: Username 'testuser55' already exists.
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 3 ms
+Starting registration process for username: testuser9955
+Successfully registered user: testuser9955
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Starting registration process for username: testuser9955
+Registration failed: Username 'testuser9955' already exists.
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Starting registration process for username: testuser9955
+Registration failed: Username 'testuser9955' already exists.
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Starting registration process for username: testuser9956
+Successfully registered user: testuser9956
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 2 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 1 ms
+Starting registration process for username: testuser9956
+Successfully registered user: testuser9956
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
+The XML configuration namespace for Spring MVC is deprecated, please use Java configuration instead.
+HV000001: Hibernate Validator 9.1.0.Final
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 2 ms
+Initializing Spring TestDispatcherServlet ''
+Initializing Servlet ''
+Completed initialization in 0 ms
+Starting registration process for username: testuser9956
+Successfully registered user: testuser9956
+Starting registration process for username: newbidder99
+Successfully registered user: newbidder99
