@@ -20,6 +20,8 @@
     <property name="basePackage" value="org.fujitsu.training.codes.dao" />
 </bean>
 
+<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
+
      <!-- View Resolver -->
      <bean id="viewResolver1" 
          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
