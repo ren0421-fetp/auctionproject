@@ -75,8 +75,27 @@
     <property name="url" value="/WEB-INF/app/views/seller/bid_list.jsp" />
 </bean>
 
+<bean id="bidderProductListView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/bidder/product_list.jsp" />
+</bean>
 
-    
+<bean id="bidderProductDetailView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/bidder/product_detail.jsp" />
+</bean>
+
+<bean id="bidderPackageListView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/bidder/package_list.jsp" />
+</bean>
+
+<bean id="bidderMyBidsView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/bidder/my_bids.jsp" />
+</bean>
+
+<bean id="bidderModifyBidView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/bidder/modify_bid.jsp" />
+</bean>
+
+
      
      <!-- Error pages -->
      <bean id="errIllegalArgView" class="org.springframework.web.servlet.view.JstlView">

@@ -15,6 +15,8 @@ public class Product {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private String categoryName;
+    private BigDecimal currentHighestBid;
+    private String auctionPhase;
 
     public Integer getProductId() {
         return productId;
@@ -103,4 +105,20 @@ public class Product {
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
+
+	public BigDecimal getCurrentHighestBid() {
+		return currentHighestBid;
+	}
+
+	public void setCurrentHighestBid(BigDecimal currentHighestBid) {
+		this.currentHighestBid = currentHighestBid;
+	}
+
+	public String getAuctionPhase() {
+		return auctionPhase;
+	}
+
+	public void setAuctionPhase(String auctionPhase) {
+		this.auctionPhase = auctionPhase;
+	}
 }
