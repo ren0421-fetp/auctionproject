@@ -84,7 +84,7 @@
     <mvc:resources mapping="/imgPath/**" 
           location="classpath:/image/" />
     <mvc:resources mapping="/profile/**" 
-    	  location="/resources/profile/" />
+               location="file:C:/auction_uploads/profile/" />
    
 </beans>
 
