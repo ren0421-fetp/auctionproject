@@ -16,7 +16,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-@Transactional
 public class LoginDaoImpl {
     private static final Logger logger = LogManager.getLogger(LoginDaoImpl.class);
     private final SqlSessionFactory ssf;
@@ -77,7 +76,6 @@ public class LoginDaoImpl {
             return user;
 
         } catch (InvalidCredentialsException | AccountLockedException e) {
-            sess.rollback();
             throw e;
         } catch (Exception e) {
             logger.error("Database error during login for {}: {}", username, e.getMessage());

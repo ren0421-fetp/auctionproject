@@ -58,11 +58,22 @@ public class LoginController {
 
         try {
             User loggedInUser = loginService.login(form);
+            
+            session.setAttribute("loggedInUser", loggedInUser);
+            
             session.setAttribute("loggedInUsername", loggedInUser.getUsername());
             session.setAttribute("loggedInUserType", loggedInUser.getUserType());
             
             logger.info("User {} logged in successfully. Redirecting...", loggedInUser.getUsername());
-            return "loginSuccess"; 
+            
+            String role = String.valueOf(loggedInUser.getUserType().toLowerCase());
+            if ("admin".equals(role)) {
+                return "adminMainDash";
+            } else if ("seller".equals(role)) {
+                return "sellerMainDash";
+            } else {
+                return "bidderMainDash";
+            }
             
         } catch (InvalidCredentialsException ex) {
             result.reject("loginError", ex.getMessage());

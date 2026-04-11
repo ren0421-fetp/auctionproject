@@ -58,7 +58,7 @@ public class RegistrationController {
         try {
             if (form.getPhotoFile() != null && !form.getPhotoFile().isEmpty()) {
                 // 1. Get the real path of the folder
-                String realPath = request.getServletContext().getRealPath("/WEB-INF/app/images/profile/");
+                String realPath = request.getServletContext().getRealPath("/resources/profile/");
                 java.io.File dir = new java.io.File(realPath);
                 
                 // 2. Guarantee the folder exists
@@ -74,7 +74,7 @@ public class RegistrationController {
                 form.getPhotoFile().transferTo(destination);
                 
                 // 4. Set the relative path for the database (used for JSP <img> tags)
-                form.setPhotoPath("/images/profile/" + fileName); 
+                form.setPhotoPath("/resources/profile/" + fileName); 
             }
 
             // 2. Now the form has a photoPath value for the DAO to use

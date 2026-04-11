@@ -26,7 +26,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-@Transactional
 public class RegistrationDaoImpl {
     private final UserDao userDao;
     private final CountryDao countryDao;

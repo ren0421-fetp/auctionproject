@@ -24,7 +24,7 @@
 
     <!-- 3. Mapper Scanner (Replaces manual MapperFactoryBean) -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="org.fujitsu.training.codes.app.dao" />
+        <property name="basePackage" value="org.fujitsu.training.codes.dao" /> <!-- before, may app.dao -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 
