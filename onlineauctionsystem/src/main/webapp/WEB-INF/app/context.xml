@@ -138,6 +138,9 @@
     <property name="url" value="/WEB-INF/app/views/admin/report.jsp" />
 </bean>
 
+<bean id="newsView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/common/news.jsp" />
+</bean>
 
 
      

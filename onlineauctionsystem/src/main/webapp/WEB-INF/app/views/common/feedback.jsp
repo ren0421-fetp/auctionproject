@@ -58,22 +58,5 @@
     </form:form>
 
     <hr/>
-
-    <h2>Auction News</h2>
-    <c:choose>
-        <c:when test="${empty newsList}">
-            <p>No news available.</p>
-        </c:when>
-        <c:otherwise>
-            <ul>
-                <c:forEach var="news" items="${newsList}">
-                    <li>
-					    <strong><c:out value="${news.newsTitle}" /></strong><br/>
-					    <c:out value="${news.newsContent}" />
-					</li>
-                </c:forEach>
-            </ul>
-        </c:otherwise>
-    </c:choose>
 </body>
 </html>
