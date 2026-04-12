@@ -8,7 +8,7 @@
 
             <a class="nav-link ${activeNav == 'auctions' ? 'active' : 'link-dark'}"
                href="${pageContext.request.contextPath}/app/bidder/auctions/list">Browse Auctions</a>
-
+               
             <a class="nav-link ${activeNav == 'packages' ? 'active' : 'link-dark'}"
                href="${pageContext.request.contextPath}/app/bidder/package/list">Packages</a>
 
