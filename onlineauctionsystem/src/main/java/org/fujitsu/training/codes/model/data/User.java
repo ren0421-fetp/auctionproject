@@ -16,6 +16,7 @@ public class User {
 	private String userType;
 	private Boolean isLocked;
 	private Integer failedLoginAttempts;
+	private String cityName;
 
 	public String getUsername() {
 		return username;
@@ -136,4 +137,14 @@ public class User {
 	public void setFailedLoginAttempts(Integer failedLoginAttempts) {
 		this.failedLoginAttempts = failedLoginAttempts;
 	}
+
+	public String getCityName() {
+		return cityName;
+	}
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+	
+	
 }

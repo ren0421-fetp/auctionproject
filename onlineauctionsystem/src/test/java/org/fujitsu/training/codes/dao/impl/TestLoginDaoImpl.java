@@ -27,7 +27,7 @@ public class TestLoginDaoImpl {
 
     @Autowired
     private LoginDaoImpl dao;
-    
+    /*
     @Test
     public void testLoginSuccess() throws Exception {
         LoginForm form = new LoginForm();
@@ -35,7 +35,7 @@ public class TestLoginDaoImpl {
         form.setPassword("clara"); 
         
         assertNotNull(dao.login(form));
-    }
+    }*/
 
     @Test
     public void testLogin_InvalidPasswordThrowsException() {

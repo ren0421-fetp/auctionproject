@@ -68,7 +68,7 @@ public class LoginController {
             
             String role = String.valueOf(loggedInUser.getUserType().toLowerCase());
             if ("admin".equals(role)) {
-                return "adminMainDash";
+                return "redirect:/app/admin/home";
             } else if ("seller".equals(role)) {
                 return "sellerMainDash";
             } else {

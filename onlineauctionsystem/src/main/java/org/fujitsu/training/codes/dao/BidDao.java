@@ -81,9 +81,22 @@ public interface BidDao {
                     p.product_name,
                     p.min_bid_price,
                     p.photo_path,
-                    p.seller_username
+                    p.seller_username,
+                    case when conf.product_id is not null then true else false end as product_confirmed,
+                    conf.winner_username as confirmed_winner_username,
+                    conf.confirmed_price,
+                    conf.confirmed_at
                 from bid_master b
                 join product_master p on p.product_id = b.product_id
+                left join (
+                    select
+                        b2.product_id,
+                        bc.winner_username,
+                        bc.confirmed_price,
+                        bc.confirmed_at
+                    from bidconfirm_master bc
+                    join bid_master b2 on b2.bid_id = bc.bid_id
+                ) conf on conf.product_id = b.product_id
                 where b.bidder_username = #{bidderUsername}
                 order by b.bid_date desc, b.bid_id desc
             """)
@@ -96,9 +109,14 @@ public interface BidDao {
                 @Result(property = "productName", column = "product_name"),
                 @Result(property = "minBidPrice", column = "min_bid_price"),
                 @Result(property = "productPhotoPath", column = "photo_path"),
-                @Result(property = "sellerUsername", column = "seller_username")
+                @Result(property = "sellerUsername", column = "seller_username"),
+                @Result(property = "productConfirmed", column = "product_confirmed"),
+                @Result(property = "confirmedWinnerUsername", column = "confirmed_winner_username"),
+                @Result(property = "confirmedPrice", column = "confirmed_price"),
+                @Result(property = "confirmedAt", column = "confirmed_at")
             })
             List<Bid> selectBidsByBidder(@Param("bidderUsername") String bidderUsername);
+
         	
         @Select("""
                 select
@@ -129,5 +147,88 @@ public interface BidDao {
             })
             Bid selectBidByIdAndBidder(@Param("bidId") Integer bidId,
                     @Param("bidderUsername") String bidderUsername);
+
+        @Select("""
+                select
+                    b.bid_id,
+                    b.product_id,
+                    b.bidder_username,
+                    b.bid_date,
+                    b.bid_price,
+                    p.product_name,
+                    p.min_bid_price,
+                    p.photo_path,
+                    p.seller_username,
+                    p.start_date as product_start_date,
+                    p.end_date as product_end_date,
+                    case
+                        when current_timestamp >= p.end_date then 'Ended'
+                        else 'Active'
+                    end as auction_state,
+                    case when conf.product_id is not null then true else false end as product_confirmed,
+                    conf.winner_username as confirmed_winner_username,
+                    conf.confirmed_price,
+                    conf.confirmed_at
+                from bid_master b
+                join product_master p on p.product_id = b.product_id
+                left join (
+                    select
+                        b2.product_id,
+                        bc.winner_username,
+                        bc.confirmed_price,
+                        bc.confirmed_at
+                    from bidconfirm_master bc
+                    join bid_master b2 on b2.bid_id = bc.bid_id
+                ) conf on conf.product_id = b.product_id
+                order by b.product_id, b.bid_price desc, b.bid_date desc
+            """)
+            @Results({
+                @Result(property = "bidId", column = "bid_id"),
+                @Result(property = "productId", column = "product_id"),
+                @Result(property = "bidderUsername", column = "bidder_username"),
+                @Result(property = "bidDate", column = "bid_date"),
+                @Result(property = "bidPrice", column = "bid_price"),
+                @Result(property = "productName", column = "product_name"),
+                @Result(property = "minBidPrice", column = "min_bid_price"),
+                @Result(property = "productPhotoPath", column = "photo_path"),
+                @Result(property = "sellerUsername", column = "seller_username"),
+                @Result(property = "productStartDate", column = "product_start_date"),
+                @Result(property = "productEndDate", column = "product_end_date"),
+                @Result(property = "auctionState", column = "auction_state"),
+                @Result(property = "productConfirmed", column = "product_confirmed"),
+                @Result(property = "confirmedWinnerUsername", column = "confirmed_winner_username"),
+                @Result(property = "confirmedPrice", column = "confirmed_price"),
+                @Result(property = "confirmedAt", column = "confirmed_at")
+            })
+            List<Bid> selectAllBidsForAdmin();
+
+
+            @Select("""
+                select
+                    b.bid_id,
+                    b.product_id,
+                    b.bidder_username,
+                    b.bid_date,
+                    b.bid_price,
+                    p.product_name,
+                    p.min_bid_price,
+                    p.photo_path,
+                    p.seller_username
+                from bid_master b
+                join product_master p on p.product_id = b.product_id
+                where b.bid_id = #{bidId}
+            """)
+            @Results({
+                @Result(property = "bidId", column = "bid_id"),
+                @Result(property = "productId", column = "product_id"),
+                @Result(property = "bidderUsername", column = "bidder_username"),
+                @Result(property = "bidDate", column = "bid_date"),
+                @Result(property = "bidPrice", column = "bid_price"),
+                @Result(property = "productName", column = "product_name"),
+                @Result(property = "minBidPrice", column = "min_bid_price"),
+                @Result(property = "productPhotoPath", column = "photo_path"),
+                @Result(property = "sellerUsername", column = "seller_username")
+            })
+            Bid selectBidById(@Param("bidId") Integer bidId);
 
 }

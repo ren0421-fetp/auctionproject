@@ -95,6 +95,50 @@
     <property name="url" value="/WEB-INF/app/views/bidder/modify_bid.jsp" />
 </bean>
 
+<bean id="adminBidConfirmationView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/admin/bid_confirmations.jsp" />
+</bean>
+<bean id="adminCategoryView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/admin/category.jsp" />
+</bean>
+
+<bean id="adminPackageView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/admin/package.jsp" />
+</bean>
+
+<bean id="adminUserPackageView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/admin/user_package.jsp" />
+</bean>
+<bean id="adminUserView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/admin/user.jsp" />
+</bean>
+
+<bean id="adminProductView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/admin/product.jsp" />
+</bean>
+
+<bean id="adminLocationView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/admin/location.jsp" />
+</bean>
+
+
+<bean id="adminNewsView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/admin/news.jsp" />
+</bean>
+
+<bean id="feedbackView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/common/feedback.jsp" />
+</bean>
+
+<bean id="adminFeedbackView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/admin/feedback.jsp" />
+</bean>
+
+<bean id="adminReportView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/admin/report.jsp" />
+</bean>
+
+
 
      
      <!-- Error pages -->
@@ -125,6 +169,9 @@
                location="file:C:/auction_uploads/profile/" />
     <mvc:resources mapping="/product/**"
         location="file:C:/auction_uploads/product/" />
+    <mvc:resources mapping="/package/**"
+        location="file:C:/auction_uploads/package/" />
+    
     
    
 </beans>

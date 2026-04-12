@@ -256,4 +256,126 @@ public interface ProductDao {
         })
         Product selectProductDetailById(@Param("productId") Integer productId);
         
+        @Update("""
+                update product_master
+                set status = 'closed'
+                where product_id = #{productId}
+            """)
+            int closeProductById(@Param("productId") Integer productId);
+        
+        @Select("""
+                <script>
+                select
+                    p.product_id,
+                    p.cat_id,
+                    p.seller_username,
+                    p.product_name,
+                    p.description,
+                    p.min_bid_price,
+                    p.status,
+                    p.photo_path,
+                    p.start_date,
+                    p.end_date,
+                    c.cat_name,
+                    max(b.bid_price) as current_highest_bid
+                from product_master p
+                join category_master c on c.cat_id = p.cat_id
+                left join bid_master b on b.product_id = p.product_id
+                where 1 = 1
+                <if test="status != null and status != ''">
+                    and p.status = #{status}
+                </if>
+                <if test="sellerUsername != null and sellerUsername != ''">
+                    and p.seller_username = #{sellerUsername}
+                </if>
+                group by
+                    p.product_id,
+                    p.cat_id,
+                    p.seller_username,
+                    p.product_name,
+                    p.description,
+                    p.min_bid_price,
+                    p.status,
+                    p.photo_path,
+                    p.start_date,
+                    p.end_date,
+                    c.cat_name
+                order by p.product_id desc
+                </script>
+            """)
+            @Results({
+                @Result(property = "productId", column = "product_id"),
+                @Result(property = "catId", column = "cat_id"),
+                @Result(property = "sellerUsername", column = "seller_username"),
+                @Result(property = "productName", column = "product_name"),
+                @Result(property = "description", column = "description"),
+                @Result(property = "minBidPrice", column = "min_bid_price"),
+                @Result(property = "status", column = "status"),
+                @Result(property = "photoPath", column = "photo_path"),
+                @Result(property = "startDate", column = "start_date"),
+                @Result(property = "endDate", column = "end_date"),
+                @Result(property = "categoryName", column = "cat_name"),
+                @Result(property = "currentHighestBid", column = "current_highest_bid")
+            })
+            List<Product> selectAllProductsForAdmin(@Param("status") String status,
+                    @Param("sellerUsername") String sellerUsername);
+
+            @Select("""
+                select
+                    p.product_id,
+                    p.cat_id,
+                    p.seller_username,
+                    p.product_name,
+                    p.description,
+                    p.min_bid_price,
+                    p.status,
+                    p.photo_path,
+                    p.start_date,
+                    p.end_date,
+                    c.cat_name
+                from product_master p
+                join category_master c on c.cat_id = p.cat_id
+                where p.product_id = #{productId}
+            """)
+            @Results({
+                @Result(property = "productId", column = "product_id"),
+                @Result(property = "catId", column = "cat_id"),
+                @Result(property = "sellerUsername", column = "seller_username"),
+                @Result(property = "productName", column = "product_name"),
+                @Result(property = "description", column = "description"),
+                @Result(property = "minBidPrice", column = "min_bid_price"),
+                @Result(property = "status", column = "status"),
+                @Result(property = "photoPath", column = "photo_path"),
+                @Result(property = "startDate", column = "start_date"),
+                @Result(property = "endDate", column = "end_date"),
+                @Result(property = "categoryName", column = "cat_name")
+            })
+            Product selectProductByIdForAdmin(@Param("productId") Integer productId);
+
+            @Update("""
+                <script>
+                update product_master
+                set cat_id = #{catId},
+                    seller_username = #{sellerUsername},
+                    product_name = #{productName},
+                    description = #{description},
+                    min_bid_price = #{minBidPrice},
+                    status = #{status},
+                    start_date = #{startDate},
+                    end_date = #{endDate}
+                    <if test="photoPath != null and photoPath != ''">
+                        , photo_path = #{photoPath}
+                    </if>
+                where product_id = #{productId}
+                </script>
+            """)
+            int updateProductForAdmin(Product product);
+
+            @Delete("""
+                delete from product_master
+                where product_id = #{productId}
+            """)
+            int deleteProductById(@Param("productId") Integer productId);
+
+
 }

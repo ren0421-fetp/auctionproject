@@ -19,6 +19,8 @@
         <a href="${pageContext.request.contextPath}/app/bidder/auctions/list">Browse Auctions</a>
     	<a href="${pageContext.request.contextPath}/app/bidder/package/list">Purchase Package</a>
     	<a href="${pageContext.request.contextPath}/app/bidder/auctions/my-bids">Show Your Bid</a>
+    	<a href="${pageContext.request.contextPath}/app/feedback">Feedback</a>
+    	
     </div>
 </body>
 </html>

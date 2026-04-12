@@ -21,6 +21,7 @@
         <a href="${pageContext.request.contextPath}/app/seller/profile">My Profile</a>
         <a href="${pageContext.request.contextPath}/app/seller/home">Refresh Dashboard</a>
 		<a href="${pageContext.request.contextPath}/app/seller/product/bids">View Bids</a>
+    	<a href="${pageContext.request.contextPath}/app/feedback">Feedback</a>
     	
     </div>
 </body>

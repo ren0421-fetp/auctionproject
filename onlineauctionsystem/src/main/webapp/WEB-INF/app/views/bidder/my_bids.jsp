@@ -22,7 +22,7 @@
         <c:otherwise>
             <table border="1" cellpadding="8">
                 <thead>
-                   <tr>
+                  <tr>
 					    <th>bid id</th>
 					    <th>product id</th>
 					    <th>product name</th>
@@ -31,6 +31,7 @@
 					    <th>your bid</th>
 					    <th>bid date</th>
 					    <th>photo</th>
+					    <th>result</th>
 					    <th>action</th>
 					</tr>
                 </thead>
@@ -52,10 +53,36 @@
                                 </c:if>
                             </td>
 							<td>
-						        <a href="${pageContext.request.contextPath}/app/bidder/auctions/modify?bidId=${bid.bidId}">
-						            Modify Bid
-						        </a>
-						    </td>
+							    <c:choose>
+							        <c:when test="${bid.productConfirmed}">
+							            <span>Locked</span>
+							        </c:when>
+							        <c:otherwise>
+							            <a href="${pageContext.request.contextPath}/app/bidder/auctions/modify?bidId=${bid.bidId}">
+							                Modify Bid
+							            </a>
+							        </c:otherwise>
+							    </c:choose>
+							</td>
+
+							    <c:choose>
+							        <c:when test="${bid.productConfirmed}">
+							            <c:choose>
+							                <c:when test="${bid.bidderUsername == bid.confirmedWinnerUsername}">
+							                    You Won
+							                </c:when>
+							                <c:otherwise>
+							                    You Lost
+							                </c:otherwise>
+							            </c:choose>
+							            <br/>
+							            <small>Confirmed at <c:out value="${bid.confirmedPrice}" /></small>
+							        </c:when>
+							        <c:otherwise>
+							            Pending
+							        </c:otherwise>
+							    </c:choose>
+							</td>				    
                         </tr>
                     </c:forEach>
                 </tbody>

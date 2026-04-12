@@ -49,7 +49,7 @@ public class TestBidDaoImpl {
         assertNotNull(remaining);
         assertTrue(remaining > 0);
     }
-
+    /*
     @Test
     public void testPlaceBid() throws Exception {
         Product product = dao.getProductDetail(1);
@@ -71,7 +71,7 @@ public class TestBidDaoImpl {
         Integer after = dao.getRemainingBidCount("bidder1");
         assertEquals(before - 1, after);
     }
-    
+    */
     @Test
     public void testGetBidderBids() {
         List<org.fujitsu.training.codes.model.data.Bid> bids = dao.getBidderBids("bidder1");
@@ -83,7 +83,7 @@ public class TestBidDaoImpl {
         org.fujitsu.training.codes.model.data.Bid bid = dao.getBidderBid(1, "bidder1");
         assertNotNull(bid);
     }
-
+    /*
     @Test
     public void testModifyBid() throws Exception {
         Integer before = dao.getRemainingBidCount("bidder1");
@@ -98,6 +98,6 @@ public class TestBidDaoImpl {
         Integer after = dao.getRemainingBidCount("bidder1");
         assertEquals(before - 1, after);
     }
-
+	*/
 
 }

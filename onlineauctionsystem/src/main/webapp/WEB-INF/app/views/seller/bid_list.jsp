@@ -23,15 +23,16 @@
             <table border="1" cellpadding="8">
                 <thead>
                     <tr>
-                        <th>bid id</th>
-                        <th>product id</th>
-                        <th>product name</th>
-                        <th>bidder</th>
-                        <th>minimum bid</th>
-                        <th>bid price</th>
-                        <th>bid date</th>
-                        <th>photo</th>
-                    </tr>
+					    <th>bid id</th>
+					    <th>product id</th>
+					    <th>product name</th>
+					    <th>bidder</th>
+					    <th>minimum bid</th>
+					    <th>bid price</th>
+					    <th>bid date</th>
+					    <th>photo</th>
+					    <th>result</th>
+					</tr>
                 </thead>
                 <tbody>
                     <c:forEach var="bid" items="${sellerBids}">
@@ -50,6 +51,26 @@
                                          style="width:90px; height:90px;" />
                                 </c:if>
                             </td>
+                            <td>
+							    <c:choose>
+							        <c:when test="${bid.productConfirmed}">
+							            <c:choose>
+							                <c:when test="${bid.bidderUsername == bid.confirmedWinnerUsername}">
+							                    Winner at <c:out value="${bid.confirmedPrice}" />
+							                </c:when>
+							                <c:otherwise>
+							                    Lost
+							                </c:otherwise>
+							            </c:choose>
+							            <br/>
+							            <small>Confirmed: <c:out value="${bid.confirmedAt}" /></small>
+							        </c:when>
+							        <c:otherwise>
+							            Pending
+							        </c:otherwise>
+							    </c:choose>
+							</td>
+                            
                         </tr>
                     </c:forEach>
                 </tbody>

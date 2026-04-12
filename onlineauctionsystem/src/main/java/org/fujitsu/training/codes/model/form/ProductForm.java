@@ -16,6 +16,7 @@ public class ProductForm {
     private String photoPath;
     private String currentPhotoPath;
     private MultipartFile photoFile;
+    private String sellerUsername;
 
     public Integer getProductId() {
         return productId;
@@ -104,4 +105,14 @@ public class ProductForm {
     public void setPhotoFile(MultipartFile photoFile) {
         this.photoFile = photoFile;
     }
+
+	public String getSellerUsername() {
+		return sellerUsername;
+	}
+
+	public void setSellerUsername(String sellerUsername) {
+		this.sellerUsername = sellerUsername;
+	}
+    
+    
 }
