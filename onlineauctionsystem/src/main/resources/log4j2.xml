@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
     <Appenders>
-        <File name="PurchasingFile" fileName="${sys:user.dir}/logs/purchasing.log">
-            <PatternLayout pattern="%m%n"/>
+        <File name="AdminFile" fileName="${sys:user.dir}/logs/admin.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="SellerFile" fileName="${sys:user.dir}/logs/seller.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="BidderFile" fileName="${sys:user.dir}/logs/bidder.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="CommonFile" fileName="${sys:user.dir}/logs/common.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="AuthFile" fileName="${sys:user.dir}/logs/auth.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
@@ -11,7 +23,25 @@
     <Loggers>
         <Root level="info">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="PurchasingFile"/>
         </Root>
+        <Logger name="admin-flow" level="info" additivity="false">
+		    <AppenderRef ref="AdminFile"/>
+		</Logger>
+		
+		<Logger name="seller-flow" level="info" additivity="false">
+		    <AppenderRef ref="SellerFile"/>
+		</Logger>
+		
+		<Logger name="bidder-flow" level="info" additivity="false">
+		    <AppenderRef ref="BidderFile"/>
+		</Logger>
+		
+		<Logger name="common-flow" level="info" additivity="false">
+		    <AppenderRef ref="CommonFile"/>
+		</Logger>
+		
+		<Logger name="auth-flow" level="info" additivity="false">
+		    <AppenderRef ref="AuthFile"/>
+		</Logger>       
     </Loggers>
 </Configuration>

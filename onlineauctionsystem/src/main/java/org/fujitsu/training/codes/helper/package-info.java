@@ -1,0 +1,1 @@
+package org.fujitsu.training.codes.helper;

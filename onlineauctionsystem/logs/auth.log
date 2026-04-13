@@ -1,0 +1,8 @@
+10:23:11.390 [main] INFO  auth-flow - Processing login for username=.
+10:23:11.390 [main] WARN  auth-flow - Login validation failed for username=.
+10:23:11.408 [main] INFO  auth-flow - Loading login page.
+10:23:11.409 [main] INFO  auth-flow - Login page loaded.
+10:23:11.485 [main] INFO  auth-flow - Loading registration page.
+10:23:11.500 [main] INFO  auth-flow - Registration page loaded.
+10:23:11.525 [main] INFO  auth-flow - Processing registration for username=testuser9956.
+10:23:11.537 [main] INFO  auth-flow - Registration completed successfully for username=testuser9956.

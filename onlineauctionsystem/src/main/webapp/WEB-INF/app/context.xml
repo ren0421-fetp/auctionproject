@@ -151,6 +151,9 @@
      <bean id="numberFormatView" class="org.springframework.web.servlet.view.JstlView">
          <property name="url" value="/WEB-INF/app/views/errors/numberformat_err.jsp" />
      </bean>
+     <bean id="globalErrView" class="org.springframework.web.servlet.view.JstlView">
+         <property name="url" value="/WEB-INF/app/views/errors/global_err.jsp" />
+     </bean>
     <!--  
      <bean id="messageSource" 
      class="org.springframework.context.support.ResourceBundleMessageSource">
