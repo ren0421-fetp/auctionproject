@@ -38,101 +38,246 @@
 <title>Bidder Dashboard</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/cssPath/app-layout.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/app/cssPath/app-layout.css">
 </head>
-<body>
+<body class="app-workspace">
     <%@ include file="/WEB-INF/app/views/fragments/app_header.jspf" %>
 
-    <div class="container-fluid py-4 app-shell">
+    <div class="container-fluid app-shell">
         <div class="row g-4">
-            <div class="col-lg-3 col-xl-2 sidebar-col">
+            <div class="col-xl-3 col-xxl-2 sidebar-col">
                 <%@ include file="/WEB-INF/app/views/fragments/sidebar_bidder.jspf" %>
             </div>
 
-            <div class="col-lg-9 col-xl-10">
-                <div class="content-panel">
-                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+            <div class="col-xl-9 col-xxl-10">
+                <div class="dashboard-surface">
+                    <div class="dashboard-hero mb-4">
                         <div>
-                            <h1 class="h3 page-title">Bidder Dashboard</h1>
-                            <p class="page-subtitle mb-0">
-                                Browse auctions, manage your package, and track your bidding activity.
+                            <p class="dashboard-eyebrow">Bidder Workspace</p>
+                            <h1 class="dashboard-title">
+                                Welcome back, ${loggedInUser.firstName}.
+                            </h1>
+                            <p class="dashboard-subtitle">
+                                Track live opportunities, keep an eye on your package request flow,
+                                and move quickly when the next item is worth chasing.
                             </p>
                         </div>
 
-                        <c:if test="${not empty loggedInUser.photoPath}">
-                            <img src="${pageContext.request.contextPath}${loggedInUser.photoPath}"
-                                 alt="Profile Image"
-                                 class="rounded-circle border"
-                                 style="width:88px; height:88px; object-fit:cover;" />
-                        </c:if>
+                        <div class="dashboard-hero-actions">
+                            <a class="btn btn-dark rounded-pill px-4"
+                               href="${pageContext.request.contextPath}/app/bidder/auctions/list">
+                                Browse Auctions
+                            </a>
+                            <a class="btn btn-light border rounded-pill px-4"
+                               href="${pageContext.request.contextPath}/app/bidder/package/list">
+                                View Packages
+                            </a>
+                        </div>
                     </div>
 
                     <%@ include file="/WEB-INF/app/views/fragments/flash_messages.jspf" %>
 
-                    <div class="row g-3">
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card h-100 border-0 bg-light">
-                                <div class="card-body">
-                                    <h2 class="h6 text-muted">Browse Auctions</h2>
-                                    <p class="mb-3">Discover active and upcoming auction items.</p>
-                                    <a class="btn btn-sm btn-danger"
-                                       href="${pageContext.request.contextPath}/app/bidder/auctions/list">Open</a>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6 col-xl-4">
+                            <div class="stat-card stat-accent">
+                                <div class="stat-label">Open Opportunities</div>
+                                <div class="stat-value">24</div>
+                                <div class="stat-meta">Fresh auction listings worth watching this cycle.</div>
+                                <div class="mini-chart">
+                                    <span style="height:28%;"></span>
+                                    <span style="height:40%;"></span>
+                                    <span style="height:58%;"></span>
+                                    <span style="height:48%;"></span>
+                                    <span style="height:72%;"></span>
+                                    <span style="height:88%;"></span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card h-100 border-0 bg-light">
-                                <div class="card-body">
-                                    <h2 class="h6 text-muted">Packages</h2>
-                                    <p class="mb-3">Purchase or view your bidding package.</p>
-                                    <a class="btn btn-sm btn-danger"
-                                       href="${pageContext.request.contextPath}/app/bidder/package/list">Open</a>
-                                </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="stat-card stat-soft">
+                                <div class="stat-label">Package Request Status</div>
+                                <div class="stat-value">Pending</div>
+                                <div class="stat-meta">Your latest request is in review. Stay ready for approval updates.</div>
+                                <div class="accent-line"></div>
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card h-100 border-0 bg-light">
-                                <div class="card-body">
-                                    <h2 class="h6 text-muted">Show Your Bids</h2>
-                                    <p class="mb-3">Track your submitted bids and results.</p>
-                                    <a class="btn btn-sm btn-danger"
-                                       href="${pageContext.request.contextPath}/app/bidder/auctions/my-bids">Open</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card h-100 border-0 bg-light">
-                                <div class="card-body">
-                                    <h2 class="h6 text-muted">News</h2>
-                                    <p class="mb-3">Read the latest auction announcements.</p>
-                                    <a class="btn btn-sm btn-danger"
-                                       href="${pageContext.request.contextPath}/app/news">Open</a>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="stat-card stat-warning">
+                                <div class="stat-label">My Active Bids</div>
+                                <div class="stat-value">08</div>
+                                <div class="stat-meta">Listings where your attention matters most right now.</div>
+                                <div class="mini-chart">
+                                    <span style="height:22%;"></span>
+                                    <span style="height:30%;"></span>
+                                    <span style="height:44%;"></span>
+                                    <span style="height:39%;"></span>
+                                    <span style="height:52%;"></span>
+                                    <span style="height:66%;"></span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-4">
-                        <div class="card border-0 bg-light">
-                            <div class="card-body">
-                                <h2 class="h5 mb-3">Quick Start</h2>
-                                <p class="mb-2">Use this dashboard as your bidder workspace.</p>
-                                <ul class="mb-0">
-                                    <li>Open Browse Auctions to find available listings.</li>
-                                    <li>Purchase a package before placing or updating bids if needed.</li>
-                                    <li>Use Show Your Bids to monitor your current bidding activity.</li>
+                    <div class="row g-3">
+                        <div class="col-xl-4">
+                            <div class="panel-card h-100">
+                                <div class="panel-kicker">Package Snapshot</div>
+                                <h2 class="panel-title">Stay ready before the next bid opens.</h2>
+                                <p class="panel-copy mb-4">
+                                    Keep your request status visible and make sure your balance strategy fits the listings you want.
+                                </p>
+
+                                <div class="info-grid">
+                                    <div class="info-pill">
+                                        <span class="info-pill-label">Current focus</span>
+                                        <span class="info-pill-value">Bid package review</span>
+                                    </div>
+                                    <div class="info-pill">
+                                        <span class="info-pill-label">Latest request</span>
+                                        <span class="info-pill-value">Starter package</span>
+                                    </div>
+                                    <div class="info-pill">
+                                        <span class="info-pill-label">Status</span>
+                                        <span class="status-chip status-pending">Awaiting approval</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4">
+                            <div class="panel-card h-100">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div>
+                                        <div class="panel-kicker">Recent Bid Activity</div>
+                                        <h2 class="panel-title mb-0">Latest movement</h2>
+                                    </div>
+                                    <a class="btn btn-sm btn-light border rounded-pill px-3"
+                                       href="${pageContext.request.contextPath}/app/bidder/auctions/my-bids">
+                                        Open list
+                                    </a>
+                                </div>
+
+                                <div class="activity-row">
+                                    <div>
+                                        <div class="activity-title">Vintage camera listing</div>
+                                        <div class="activity-meta">Updated 18 minutes ago</div>
+                                    </div>
+                                    <span class="status-chip status-open">Watching</span>
+                                </div>
+
+                                <div class="activity-row">
+                                    <div>
+                                        <div class="activity-title">Mechanical keyboard auction</div>
+                                        <div class="activity-meta">Your bid is still active</div>
+                                    </div>
+                                    <span class="status-chip status-watch">In play</span>
+                                </div>
+
+                                <div class="activity-row">
+                                    <div>
+                                        <div class="activity-title">Collector item bundle</div>
+                                        <div class="activity-meta">Bid window closes later today</div>
+                                    </div>
+                                    <span class="status-chip status-open">Open</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4">
+                            <div class="panel-card panel-card-dark h-100">
+                                <div class="panel-kicker">Next Move</div>
+                                <h2 class="panel-title">Focus on the listings with the best timing.</h2>
+                                <p class="panel-copy mb-4">
+                                    Move from discovery to action quickly once your package is ready and the right listing appears.
+                                </p>
+
+                                <div class="highlight-bid">3 priority items</div>
+                                <div class="muted-light mb-3">worth checking before the next refresh</div>
+
+                                <ul class="mini-list">
+                                    <li>Review newly opened listings this afternoon.</li>
+                                    <li>Watch approval status before placing higher bids.</li>
+                                    <li>Keep your active bids monitored in one place.</li>
                                 </ul>
                             </div>
                         </div>
-                    </div>
 
+                        <div class="col-xl-7">
+                            <div class="panel-card h-100">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div>
+                                        <div class="panel-kicker">Auction Spotlight</div>
+                                        <h2 class="panel-title mb-0">A cleaner way to keep your bidder flow moving</h2>
+                                    </div>
+                                    <span class="status-chip status-open">Live market</span>
+                                </div>
+
+                                <p class="panel-copy mb-4">
+                                    Use the bidder dashboard as your launch point: browse fresh listings, track the bids that matter,
+                                    and move into your package request workflow without losing context.
+                                </p>
+
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="quick-link-tile">
+                                            <div class="quick-link-title">Browse Live Listings</div>
+                                            <div class="quick-link-copy">Jump into the auction feed and review available items.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="quick-link-tile">
+                                            <div class="quick-link-title">Check My Bids</div>
+                                            <div class="quick-link-copy">See where your attention is needed right now.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="quick-link-tile">
+                                            <div class="quick-link-title">Manage Packages</div>
+                                            <div class="quick-link-copy">Follow request approvals and prepare your next step.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-5">
+                            <div class="panel-card h-100">
+                                <div class="panel-kicker">Quick Access</div>
+                                <h2 class="panel-title">Jump straight into the bidder tools</h2>
+
+                                <div class="quick-links-grid mt-4">
+                                    <a class="quick-link-tile"
+                                       href="${pageContext.request.contextPath}/app/bidder/auctions/list">
+                                        <div class="quick-link-title">Browse Auctions</div>
+                                        <div class="quick-link-copy">Explore the current market window.</div>
+                                    </a>
+
+                                    <a class="quick-link-tile"
+                                       href="${pageContext.request.contextPath}/app/bidder/package/list">
+                                        <div class="quick-link-title">Package Requests</div>
+                                        <div class="quick-link-copy">Track request-based bid access.</div>
+                                    </a>
+
+                                    <a class="quick-link-tile"
+                                       href="${pageContext.request.contextPath}/app/bidder/auctions/my-bids">
+                                        <div class="quick-link-title">My Bids</div>
+                                        <div class="quick-link-copy">Review what is active, open, or worth updating.</div>
+                                    </a>
+
+                                    <a class="quick-link-tile"
+                                       href="${pageContext.request.contextPath}/app/news">
+                                        <div class="quick-link-title">Announcements</div>
+                                        <div class="quick-link-copy">Check platform and auction updates.</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

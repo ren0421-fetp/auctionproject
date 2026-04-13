@@ -118,9 +118,9 @@ public class LoginHelper {
             if ("admin".equals(role)) {
                 return "redirect:/app/admin/home";
             } else if ("seller".equals(role)) {
-                return "sellerMainDash";
+                return "redirect:/app/seller/home";
             } else {
-                return "bidderMainDash";
+                return "redirect:/app/bidder/home";
             }
         } catch (InvalidCredentialsException ex) {
             logger.error("Login failed for username={}: {}", form.getUsername(), ex.getMessage(), ex);

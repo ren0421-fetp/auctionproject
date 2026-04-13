@@ -71,20 +71,20 @@ public class BidderPackageHelper {
         model.addAttribute("remainingBidCount", packageDaoImpl.getRemainingBidCount(bidderUsername));
 
         if ("1".equals(success)) {
-            model.addAttribute("purchaseSuccess", "Package purchased successfully.");
+            model.addAttribute("purchaseSuccess", "Package purchase request submitted successfully.");
         }
 
         logger.info("Bidder package page loaded. bidderUsername={}", bidderUsername);
     }
 
     public String processPurchasePackage(Integer packageId, String bidderUsername, Model model) {
-        logger.info("Processing package purchase. bidderUsername={}, packageId={}", bidderUsername, packageId);
+        logger.info("Processing package purchase request. bidderUsername={}, packageId={}", bidderUsername, packageId);
         try {
             packageDaoImpl.purchasePackage(packageId, bidderUsername);
-            logger.info("Package purchase completed. bidderUsername={}, packageId={}", bidderUsername, packageId);
+            logger.info("Package purchase request completed. bidderUsername={}, packageId={}", bidderUsername, packageId);
             return SUCCESS_REDIRECT;
         } catch (Exception ex) {
-            logger.error("Package purchase failed for bidder {}: {}", bidderUsername, ex.getMessage(), ex);
+            logger.error("Package purchase request failed for bidder {}: {}", bidderUsername, ex.getMessage(), ex);
             model.addAttribute("availablePackages", packageDaoImpl.getAvailablePackages());
             model.addAttribute("remainingBidCount", packageDaoImpl.getRemainingBidCount(bidderUsername));
             model.addAttribute("purchaseError", ex.getMessage());

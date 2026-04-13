@@ -1,28 +1,98 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
-<div class="card border-0 shadow-sm">
-    <div class="card-body p-3">
-        <div class="nav flex-column nav-pills gap-1">
-            <a class="nav-link ${activeNav == 'dashboard' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/seller/home">Dashboard</a>
+<div class="app-sidebar-card">
+    <div class="app-sidebar-brand-block">
+        <div class="app-sidebar-mark">OA</div>
+        <div>
+            <div class="app-sidebar-title">Seller Space</div>
+            <p class="app-sidebar-subtitle">Manage listings, bids, and your account.</p>
+        </div>
+    </div>
 
-            <a class="nav-link ${activeNav == 'profile' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/seller/profile">My Profile</a>
+    <div class="app-side-nav">
+        <a class="app-nav-link ${activeNav == 'dashboard' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/seller/home">
+            <span class="app-nav-icon">DB</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Dashboard</span>
+                <span class="app-nav-caption">Your seller overview</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'add-product' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/seller/product/add">Add Product</a>
+        <a class="app-nav-link ${activeNav == 'profile' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/seller/profile">
+            <span class="app-nav-icon">PR</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">My Profile</span>
+                <span class="app-nav-caption">Update account details</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'products' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/seller/product/list">My Products</a>
+        <a class="app-nav-link ${activeNav == 'add-product' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/seller/product/add">
+            <span class="app-nav-icon">AD</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Add Product</span>
+                <span class="app-nav-caption">Create a new listing</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'bids' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/seller/product/bids">View Bids</a>
+        <a class="app-nav-link ${activeNav == 'products' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/seller/product/list">
+            <span class="app-nav-icon">MP</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">My Products</span>
+                <span class="app-nav-caption">Manage current listings</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'news' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/news">News</a>
+        <a class="app-nav-link ${activeNav == 'bids' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/seller/product/bids">
+            <span class="app-nav-icon">BD</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">View Bids</span>
+                <span class="app-nav-caption">Monitor bidder activity</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'feedback' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/feedback">Feedback</a>
+        <a class="app-nav-link ${activeNav == 'news' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/news">
+            <span class="app-nav-icon">NW</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">News</span>
+                <span class="app-nav-caption">Auction updates</span>
+            </span>
+        </a>
+
+        <a class="app-nav-link ${activeNav == 'feedback' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/feedback">
+            <span class="app-nav-icon">FB</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Feedback</span>
+                <span class="app-nav-caption">Share platform feedback</span>
+            </span>
+        </a>
+    </div>
+
+    <div class="app-sidebar-footer">
+        <div class="app-user-chip">
+            <div class="app-user-avatar">
+                <c:choose>
+                    <c:when test="${not empty loggedInUser.photoPath}">
+                        <img src="${pageContext.request.contextPath}${loggedInUser.photoPath}" alt="Profile Image" />
+                    </c:when>
+                    <c:otherwise>S</c:otherwise>
+                </c:choose>
+            </div>
+
+            <div>
+                <div class="app-user-name">${loggedInUser.firstName} ${loggedInUser.lastName}</div>
+                <div class="app-user-role">Seller Workspace</div>
+            </div>
+        </div>
+
+        <div class="sidebar-note">
+            Keep listings polished, watch bid activity closely, and move quickly when an auction needs your attention.
         </div>
     </div>
 </div>

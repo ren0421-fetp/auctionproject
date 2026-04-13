@@ -1,25 +1,89 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
-<div class="card border-0 shadow-sm">
-    <div class="card-body p-3">
-        <div class="nav flex-column nav-pills gap-1">
-            <a class="nav-link ${activeNav == 'dashboard' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/bidder/home">Dashboard</a>
+<div class="app-sidebar-card">
+    <div class="app-sidebar-brand-block">
+        <div class="app-sidebar-mark">OA</div>
+        <div>
+            <div class="app-sidebar-title">Bidder Space</div>
+            <p class="app-sidebar-subtitle">Track auctions, bids, and package requests.</p>
+        </div>
+    </div>
 
-            <a class="nav-link ${activeNav == 'auctions' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/bidder/auctions/list">Browse Auctions</a>
-               
-            <a class="nav-link ${activeNav == 'packages' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/bidder/package/list">Packages</a>
+    <div class="app-side-nav">
+        <a class="app-nav-link ${activeNav == 'dashboard' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/bidder/home">
+            <span class="app-nav-icon">DB</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Dashboard</span>
+                <span class="app-nav-caption">Your live bidder overview</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'my-bids' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/bidder/auctions/my-bids">Show Your Bids</a>
+        <a class="app-nav-link ${activeNav == 'auctions' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/bidder/auctions/list">
+            <span class="app-nav-icon">AU</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Browse Auctions</span>
+                <span class="app-nav-caption">Find active and upcoming items</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'news' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/news">News</a>
+        <a class="app-nav-link ${activeNav == 'packages' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/bidder/package/list">
+            <span class="app-nav-icon">PK</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Packages</span>
+                <span class="app-nav-caption">Review requests and balance</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'feedback' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/feedback">Feedback</a>
+        <a class="app-nav-link ${activeNav == 'my-bids' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/bidder/auctions/my-bids">
+            <span class="app-nav-icon">BD</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">My Bids</span>
+                <span class="app-nav-caption">Follow current bidding activity</span>
+            </span>
+        </a>
+
+        <a class="app-nav-link ${activeNav == 'news' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/news">
+            <span class="app-nav-icon">NW</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">News</span>
+                <span class="app-nav-caption">Read latest auction updates</span>
+            </span>
+        </a>
+
+        <a class="app-nav-link ${activeNav == 'feedback' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/feedback">
+            <span class="app-nav-icon">FB</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Feedback</span>
+                <span class="app-nav-caption">Share your platform experience</span>
+            </span>
+        </a>
+    </div>
+
+    <div class="app-sidebar-footer">
+        <div class="app-user-chip">
+            <div class="app-user-avatar">
+                <c:choose>
+                    <c:when test="${not empty loggedInUser.photoPath}">
+                        <img src="${pageContext.request.contextPath}${loggedInUser.photoPath}" alt="Profile Image" />
+                    </c:when>
+                    <c:otherwise>B</c:otherwise>
+                </c:choose>
+            </div>
+
+            <div>
+                <div class="app-user-name">${loggedInUser.firstName} ${loggedInUser.lastName}</div>
+                <div class="app-user-role">Bidder Workspace</div>
+            </div>
+        </div>
+
+        <div class="sidebar-note">
+            Stay ready for the next auction window, monitor your package request flow, and move quickly when listings open.
         </div>
     </div>
 </div>

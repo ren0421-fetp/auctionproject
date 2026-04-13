@@ -1,40 +1,134 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
-<div class="card border-0 shadow-sm">
-    <div class="card-body p-3">
-        <div class="nav flex-column nav-pills gap-1">
-            <a class="nav-link ${activeNav == 'dashboard' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/admin/home">Dashboard</a>
+<div class="app-sidebar-card">
+    <div class="app-sidebar-brand-block">
+        <div class="app-sidebar-mark">OA</div>
+        <div>
+            <div class="app-sidebar-title">Admin Space</div>
+            <p class="app-sidebar-subtitle">Manage the marketplace from one place.</p>
+        </div>
+    </div>
 
-            <a class="nav-link ${activeNav == 'users' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/admin/users">Manage User</a>
+    <div class="app-side-nav">
+        <a class="app-nav-link ${activeNav == 'dashboard' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/admin/home">
+            <span class="app-nav-icon">DB</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Dashboard</span>
+                <span class="app-nav-caption">Marketplace control center</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'categories' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/admin/categories">Manage Categories</a>
+        <a class="app-nav-link ${activeNav == 'users' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/admin/users">
+            <span class="app-nav-icon">US</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Manage User</span>
+                <span class="app-nav-caption">Lock, unlock, and review roles</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'products' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/admin/products">Manage Product</a>
+        <a class="app-nav-link ${activeNav == 'categories' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/admin/categories">
+            <span class="app-nav-icon">CT</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Categories</span>
+                <span class="app-nav-caption">Organize product groupings</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'bidding' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/admin/bids/confirmations">Manage Bidding</a>
+        <a class="app-nav-link ${activeNav == 'products' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/admin/products">
+            <span class="app-nav-icon">PD</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Products</span>
+                <span class="app-nav-caption">Manage all auction items</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'packages' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/admin/packages">Manage Package</a>
+        <a class="app-nav-link ${activeNav == 'bidding' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/admin/bids/confirmations">
+            <span class="app-nav-icon">BD</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Bidding</span>
+                <span class="app-nav-caption">Confirm outcomes and winners</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'user-packages' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/admin/user-packages">Manage User Package</a>
+        <a class="app-nav-link ${activeNav == 'packages' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/admin/packages">
+            <span class="app-nav-icon">PK</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Packages</span>
+                <span class="app-nav-caption">Manage package offerings</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'locations' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/admin/locations">Manage Locations</a>
+        <a class="app-nav-link ${activeNav == 'user-packages' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/admin/user-packages">
+            <span class="app-nav-icon">UP</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">User Package</span>
+                <span class="app-nav-caption">Approve and assign packages</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'news' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/admin/news">Manage News</a>
+        <a class="app-nav-link ${activeNav == 'locations' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/admin/locations">
+            <span class="app-nav-icon">LC</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Locations</span>
+                <span class="app-nav-caption">Manage countries, states, cities</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'feedback' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/admin/feedback">View Feedback</a>
+        <a class="app-nav-link ${activeNav == 'news' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/admin/news">
+            <span class="app-nav-icon">NW</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">News</span>
+                <span class="app-nav-caption">Publish announcements</span>
+            </span>
+        </a>
 
-            <a class="nav-link ${activeNav == 'reports' ? 'active' : 'link-dark'}"
-               href="${pageContext.request.contextPath}/app/admin/reports">Reports</a>
+        <a class="app-nav-link ${activeNav == 'feedback' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/admin/feedback">
+            <span class="app-nav-icon">FB</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Feedback</span>
+                <span class="app-nav-caption">Review user comments</span>
+            </span>
+        </a>
+
+        <a class="app-nav-link ${activeNav == 'reports' ? 'active' : ''}"
+           href="${pageContext.request.contextPath}/app/admin/reports">
+            <span class="app-nav-icon">RP</span>
+            <span class="app-nav-text">
+                <span class="app-nav-label">Reports</span>
+                <span class="app-nav-caption">View platform summaries</span>
+            </span>
+        </a>
+    </div>
+
+    <div class="app-sidebar-footer">
+        <div class="app-user-chip">
+            <div class="app-user-avatar">
+                <c:choose>
+                    <c:when test="${not empty loggedInUser.photoPath}">
+                        <img src="${pageContext.request.contextPath}${loggedInUser.photoPath}" alt="Profile Image" />
+                    </c:when>
+                    <c:otherwise>A</c:otherwise>
+                </c:choose>
+            </div>
+
+            <div>
+                <div class="app-user-name">${loggedInUser.firstName} ${loggedInUser.lastName}</div>
+                <div class="app-user-role">Admin Workspace</div>
+            </div>
+        </div>
+
+        <div class="sidebar-note">
+            Watch system health, package approvals, auction outcomes, and user activity from one structured workspace.
         </div>
     </div>
 </div>

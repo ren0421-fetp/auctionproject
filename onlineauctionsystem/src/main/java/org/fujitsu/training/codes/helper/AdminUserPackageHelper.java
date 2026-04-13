@@ -74,6 +74,7 @@ package org.fujitsu.training.codes.helper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.fujitsu.training.codes.dao.impl.AdminUserPackageDaoImpl;
+import org.fujitsu.training.codes.model.form.PackagePurchaseRequestReviewForm;
 import org.fujitsu.training.codes.model.form.UserPackageForm;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
@@ -97,36 +98,77 @@ public class AdminUserPackageHelper {
 
         UserPackageForm form = resolveUserPackageForm(userPackageId);
         model.addAttribute("userPackageForm", form);
+        model.addAttribute("reviewForm", new PackagePurchaseRequestReviewForm());
         model.addAttribute("bidders", adminUserPackageDaoImpl.getBidders());
         model.addAttribute("packages", adminUserPackageDaoImpl.getPackages());
         model.addAttribute("userPackageInfos", adminUserPackageDaoImpl.getAllUserPackageInfos());
+        model.addAttribute("packagePurchaseRequests", adminUserPackageDaoImpl.getAllPackagePurchaseRequestInfos());
 
         if ("1".equals(success)) {
-            model.addAttribute("assignSuccess", "User package assigned successfully.");
+            model.addAttribute("assignSuccess", "Action completed successfully.");
         }
 
         logger.info("Admin user-package page loaded. userPackageId={}", userPackageId);
     }
 
     public String processAssignPackage(UserPackageForm form, BindingResult result, Model model) {
-        logger.info("Processing user-package assignment. username={}, packageId={}",
+        logger.info("Processing manual user-package assignment. username={}, packageId={}",
                 form.getUsername(), form.getPackageId());
 
         if (result.hasErrors()) {
             populatePage(model, form);
-            logger.warn("User-package validation failed. username={}, packageId={}",
+            logger.warn("Manual user-package validation failed. username={}, packageId={}",
                     form.getUsername(), form.getPackageId());
             return VIEW_NAME;
         }
 
         try {
             adminUserPackageDaoImpl.assignPackage(form);
-            logger.info("User-package assignment completed. username={}, packageId={}",
+            logger.info("Manual user-package assignment completed. username={}, packageId={}",
                     form.getUsername(), form.getPackageId());
             return SUCCESS_REDIRECT;
         } catch (Exception ex) {
-            logger.error("Failed to assign package to bidder {}: {}", form.getUsername(), ex.getMessage(), ex);
+            logger.error("Manual user-package assignment failed. username={}, packageId={}: {}",
+                    form.getUsername(), form.getPackageId(), ex.getMessage(), ex);
             populatePage(model, form);
+            model.addAttribute("assignError", ex.getMessage());
+            return VIEW_NAME;
+        }
+    }
+
+    public String processApproveRequest(PackagePurchaseRequestReviewForm form,
+            String adminUsername,
+            Model model) {
+        logger.info("Processing package request approval. requestId={}, adminUsername={}",
+                form.getRequestId(), adminUsername);
+        try {
+            adminUserPackageDaoImpl.approvePackageRequest(form, adminUsername);
+            logger.info("Package request approval completed. requestId={}, adminUsername={}",
+                    form.getRequestId(), adminUsername);
+            return SUCCESS_REDIRECT;
+        } catch (Exception ex) {
+            logger.error("Package request approval failed. requestId={}, adminUsername={}: {}",
+                    form.getRequestId(), adminUsername, ex.getMessage(), ex);
+            populatePage(model, new UserPackageForm());
+            model.addAttribute("assignError", ex.getMessage());
+            return VIEW_NAME;
+        }
+    }
+
+    public String processRejectRequest(PackagePurchaseRequestReviewForm form,
+            String adminUsername,
+            Model model) {
+        logger.info("Processing package request rejection. requestId={}, adminUsername={}",
+                form.getRequestId(), adminUsername);
+        try {
+            adminUserPackageDaoImpl.rejectPackageRequest(form, adminUsername);
+            logger.info("Package request rejection completed. requestId={}, adminUsername={}",
+                    form.getRequestId(), adminUsername);
+            return SUCCESS_REDIRECT;
+        } catch (Exception ex) {
+            logger.error("Package request rejection failed. requestId={}, adminUsername={}: {}",
+                    form.getRequestId(), adminUsername, ex.getMessage(), ex);
+            populatePage(model, new UserPackageForm());
             model.addAttribute("assignError", ex.getMessage());
             return VIEW_NAME;
         }
@@ -143,8 +185,11 @@ public class AdminUserPackageHelper {
 
     private void populatePage(Model model, UserPackageForm form) {
         model.addAttribute("userPackageForm", form);
+        model.addAttribute("reviewForm", new PackagePurchaseRequestReviewForm());
         model.addAttribute("bidders", adminUserPackageDaoImpl.getBidders());
         model.addAttribute("packages", adminUserPackageDaoImpl.getPackages());
         model.addAttribute("userPackageInfos", adminUserPackageDaoImpl.getAllUserPackageInfos());
+        model.addAttribute("packagePurchaseRequests", adminUserPackageDaoImpl.getAllPackagePurchaseRequestInfos());
     }
 }
+

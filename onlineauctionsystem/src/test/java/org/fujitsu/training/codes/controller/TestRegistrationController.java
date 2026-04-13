@@ -85,6 +85,6 @@ public class TestRegistrationController {
                 .param("confirmPassword", "Pass123!")
                 .param("userType", "bidder"))
                .andDo(print())
-               .andExpect(view().name("registerSuccess")); 
+               .andExpect(view().name("redirect:/app/login")); 
     }
 }

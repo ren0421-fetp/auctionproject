@@ -1,4 +1,4 @@
-package org.fujitsu.training.codes.dao.impl;
+/*package org.fujitsu.training.codes.dao.impl;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -231,4 +231,285 @@ public class BidDaoImpl {
         }
     }
 
+}
+*/
+
+package org.fujitsu.training.codes.dao.impl;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.fujitsu.training.codes.model.data.Bid;
+import org.fujitsu.training.codes.model.data.Category;
+import org.fujitsu.training.codes.model.data.Product;
+import org.fujitsu.training.codes.model.form.BidForm;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class BidDaoImpl {
+    private static final Logger logger = LogManager.getLogger("bidder-flow");
+
+    private final SqlSessionFactory ssf;
+
+    public BidDaoImpl(SqlSessionFactory ssf) {
+        this.ssf = ssf;
+    }
+
+    public List<Product> getOpenProducts(String keyword, Integer catId,
+            BigDecimal minPrice, BigDecimal maxPrice) {
+    	logger.info("Getting open products");
+        try (SqlSession sess = ssf.openSession()) {
+            Map<String, Object> params = new HashMap<>();
+            params.put("keyword", keyword);
+            params.put("catId", catId);
+            params.put("minPrice", minPrice);
+            params.put("maxPrice", maxPrice);
+            logger.info("Returning open products");
+            return sess.selectList("org.fujitsu.training.codes.dao.ProductDao.selectOpenProducts", params);
+        } catch (Exception ex) {
+            logger.error("Failed to load open products: {}", ex.getMessage(), ex);
+            return Collections.emptyList();
+        }
+    }
+
+    public List<Category> getCategories() {
+    	logger.info("Getting categories");
+        try (SqlSession sess = ssf.openSession()) {
+        	logger.info("Returning categories");
+            return sess.selectList("org.fujitsu.training.codes.dao.CategoryDao.selectAllCategories");
+        } catch (Exception ex) {
+            logger.error("Failed to load bidder categories: {}", ex.getMessage(), ex);
+            return Collections.emptyList();
+        }
+    }
+
+    public Product getProductDetail(Integer productId) {
+    	logger.info("Getting product detail");
+        try (SqlSession sess = ssf.openSession()) {
+        	logger.info("Returning product detail");
+            return sess.selectOne("org.fujitsu.training.codes.dao.ProductDao.selectProductDetailById", productId);
+        } catch (Exception ex) {
+            logger.error("Failed to load product detail for productId={}: {}", productId, ex.getMessage(), ex);
+            return null;
+        }
+    }
+
+    public Integer getRemainingBidCount(String username) {
+    	logger.info("Getting remaining bid count");
+        try (SqlSession sess = ssf.openSession()) {
+        	logger.info("Returning bid count");
+            return sess.selectOne("org.fujitsu.training.codes.dao.PackageUserDao.selectRemainingBidCountByUsername", username);
+        } catch (Exception ex) {
+            logger.error("Failed to load remaining bid count for username={}: {}", username, ex.getMessage(), ex);
+            return null;
+        }
+    }
+
+    public void placeBid(BidForm form, String bidderUsername) throws Exception {
+        logger.info("Starting bid placement. bidderUsername={}, productId={}",
+                bidderUsername, form.getProductId());
+
+        SqlSession sess = ssf.openSession();
+        try {
+            Product product = sess.selectOne(
+                    "org.fujitsu.training.codes.dao.ProductDao.selectProductDetailById",
+                    form.getProductId());
+
+            if (product == null) {
+                throw new IllegalArgumentException("Product not found.");
+            }
+
+            if (!"open".equalsIgnoreCase(product.getStatus())) {
+                throw new IllegalArgumentException("Product is not open for bidding.");
+            }
+
+            LocalDateTime now = LocalDateTime.now();
+            if (now.isBefore(product.getStartDate()) || now.isAfter(product.getEndDate())) {
+                throw new IllegalArgumentException("Bidding is not allowed outside the auction period.");
+            }
+
+            Integer remainingBidCount = sess.selectOne(
+                    "org.fujitsu.training.codes.dao.PackageUserDao.selectRemainingBidCountByUsername",
+                    bidderUsername);
+
+            if (remainingBidCount == null || remainingBidCount <= 0) {
+                throw new IllegalArgumentException("You do not have enough package bid balance.");
+            }
+
+            BigDecimal highestBid = sess.selectOne(
+                    "org.fujitsu.training.codes.dao.BidDao.selectHighestBidByProductId",
+                    form.getProductId());
+
+            BigDecimal minimumRequired = product.getMinBidPrice();
+            if (highestBid != null && highestBid.compareTo(minimumRequired) > 0) {
+                minimumRequired = highestBid;
+            }
+
+            if (form.getBidPrice().compareTo(minimumRequired) <= 0) {
+                throw new IllegalArgumentException("Bid must be higher than the current required amount.");
+            }
+
+            Bid bid = new Bid();
+            bid.setProductId(form.getProductId());
+            bid.setBidderUsername(bidderUsername);
+            bid.setBidDate(now);
+            bid.setBidPrice(form.getBidPrice());
+
+            Integer inserted = sess.insert("org.fujitsu.training.codes.dao.BidDao.insertBid", bid);
+            if (inserted == null || inserted != 1) {
+                throw new IllegalStateException("Failed to save bid.");
+            }
+
+            Integer updated = sess.update(
+                    "org.fujitsu.training.codes.dao.PackageUserDao.decrementBidCountByUsername",
+                    bidderUsername);
+
+            if (updated == null || updated != 1) {
+                throw new IllegalStateException("Failed to deduct package bid balance.");
+            }
+
+            sess.commit();
+            logger.info("Bid placement completed. bidderUsername={}, productId={}",
+                    bidderUsername, form.getProductId());
+        } catch (Exception ex) {
+            sess.rollback();
+            logger.error("Bid placement failed. bidderUsername={}, productId={}: {}",
+                    bidderUsername, form.getProductId(), ex.getMessage(), ex);
+            throw ex;
+        } finally {
+            sess.close();
+        }
+    }
+
+    public List<Bid> getBidderBids(String bidderUsername) {
+        try (SqlSession sess = ssf.openSession()) {
+            return sess.selectList("org.fujitsu.training.codes.dao.BidDao.selectBidsByBidder", bidderUsername);
+        } catch (Exception ex) {
+            logger.error("Failed to load bids for bidderUsername={}: {}", bidderUsername, ex.getMessage(), ex);
+            return Collections.emptyList();
+        }
+    }
+
+    public Bid getBidderBid(Integer bidId, String bidderUsername) {
+    	logger.info("Getting bidder bids");
+        try (SqlSession sess = ssf.openSession()) {
+            Map<String, Object> params = new HashMap<>();
+            params.put("bidId", bidId);
+            params.put("bidderUsername", bidderUsername);
+            logger.info("Returning bidder bids");
+            return sess.selectOne("org.fujitsu.training.codes.dao.BidDao.selectBidByIdAndBidder", params);
+        } catch (Exception ex) {
+            logger.error("Failed to load bid for bidId={}, bidderUsername={}: {}",
+                    bidId, bidderUsername, ex.getMessage(), ex);
+            return null;
+        }
+    }
+
+    public BidForm toModifyForm(Bid bid) {
+        BidForm form = new BidForm();
+        form.setBidId(bid.getBidId());
+        form.setProductId(bid.getProductId());
+        form.setBidPrice(bid.getBidPrice());
+        return form;
+    }
+
+    public void modifyBid(BidForm form, String bidderUsername) throws Exception {
+        logger.info("Starting bid modification. bidId={}, bidderUsername={}",
+                form.getBidId(), bidderUsername);
+
+        SqlSession sess = ssf.openSession();
+        try {
+            Map<String, Object> bidParams = new HashMap<>();
+            bidParams.put("bidId", form.getBidId());
+            bidParams.put("bidderUsername", bidderUsername);
+
+            Bid existingBid = sess.selectOne(
+                    "org.fujitsu.training.codes.dao.BidDao.selectBidByIdAndBidder",
+                    bidParams);
+
+            if (existingBid == null) {
+                throw new IllegalArgumentException("Bid not found or does not belong to the bidder.");
+            }
+
+            Product product = sess.selectOne(
+                    "org.fujitsu.training.codes.dao.ProductDao.selectProductDetailById",
+                    existingBid.getProductId());
+
+            if (product == null) {
+                throw new IllegalArgumentException("Product not found.");
+            }
+
+            if (!"open".equalsIgnoreCase(product.getStatus())) {
+                throw new IllegalArgumentException("Product is not open for bidding.");
+            }
+
+            LocalDateTime now = LocalDateTime.now();
+            if (now.isBefore(product.getStartDate()) || now.isAfter(product.getEndDate())) {
+                throw new IllegalArgumentException("Bidding is not allowed outside the auction period.");
+            }
+
+            Integer remainingBidCount = sess.selectOne(
+                    "org.fujitsu.training.codes.dao.PackageUserDao.selectRemainingBidCountByUsername",
+                    bidderUsername);
+
+            if (remainingBidCount == null || remainingBidCount <= 0) {
+                throw new IllegalArgumentException("You do not have enough package bid balance.");
+            }
+
+            BigDecimal highestBid = sess.selectOne(
+                    "org.fujitsu.training.codes.dao.BidDao.selectHighestBidByProductId",
+                    existingBid.getProductId());
+
+            BigDecimal minimumRequired = product.getMinBidPrice();
+            if (highestBid != null && highestBid.compareTo(minimumRequired) > 0) {
+                minimumRequired = highestBid;
+            }
+
+            if (form.getBidPrice().compareTo(existingBid.getBidPrice()) <= 0) {
+                throw new IllegalArgumentException("Modified bid must be higher than your previous bid.");
+            }
+
+            if (form.getBidPrice().compareTo(minimumRequired) <= 0) {
+                throw new IllegalArgumentException("Modified bid must be higher than the current highest bid.");
+            }
+
+            Bid newBid = new Bid();
+            newBid.setProductId(existingBid.getProductId());
+            newBid.setBidderUsername(bidderUsername);
+            newBid.setBidDate(now);
+            newBid.setBidPrice(form.getBidPrice());
+
+            Integer inserted = sess.insert("org.fujitsu.training.codes.dao.BidDao.insertBid", newBid);
+            if (inserted == null || inserted != 1) {
+                throw new IllegalStateException("Failed to save modified bid.");
+            }
+
+            Integer updated = sess.update(
+                    "org.fujitsu.training.codes.dao.PackageUserDao.decrementBidCountByUsername",
+                    bidderUsername);
+
+            if (updated == null || updated != 1) {
+                throw new IllegalStateException("Failed to deduct package bid balance.");
+            }
+
+            sess.commit();
+            logger.info("Bid modification completed. bidId={}, bidderUsername={}",
+                    form.getBidId(), bidderUsername);
+        } catch (Exception ex) {
+            sess.rollback();
+            logger.error("Bid modification failed. bidId={}, bidderUsername={}: {}",
+                    form.getBidId(), bidderUsername, ex.getMessage(), ex);
+            throw ex;
+        } finally {
+            sess.close();
+        }
+    }
 }

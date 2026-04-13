@@ -108,6 +108,8 @@ public class AdminUserPackageController {
 package org.fujitsu.training.codes.controller;
 
 import org.fujitsu.training.codes.helper.AdminUserPackageHelper;
+import org.fujitsu.training.codes.helper.SessionRoleHelper;
+import org.fujitsu.training.codes.model.form.PackagePurchaseRequestReviewForm;
 import org.fujitsu.training.codes.model.form.UserPackageForm;
 import org.fujitsu.training.codes.validator.UserPackageFormValidator;
 import org.springframework.stereotype.Controller;
@@ -132,11 +134,14 @@ public class AdminUserPackageController {
 
     private final AdminUserPackageHelper adminUserPackageHelper;
     private final UserPackageFormValidator userPackageFormValidator;
+    private final SessionRoleHelper sessionRoleHelper;
 
     public AdminUserPackageController(AdminUserPackageHelper adminUserPackageHelper,
-            UserPackageFormValidator userPackageFormValidator) {
+            UserPackageFormValidator userPackageFormValidator,
+            SessionRoleHelper sessionRoleHelper) {
         this.adminUserPackageHelper = adminUserPackageHelper;
         this.userPackageFormValidator = userPackageFormValidator;
+        this.sessionRoleHelper = sessionRoleHelper;
     }
 
     @InitBinder("userPackageForm")
@@ -151,7 +156,7 @@ public class AdminUserPackageController {
             Model model,
             HttpSession session) {
 
-        if (!isAdmin(session)) {
+        if (!sessionRoleHelper.isAdmin(session)) {
             return LOGIN_REDIRECT;
         }
 
@@ -166,16 +171,39 @@ public class AdminUserPackageController {
             Model model,
             HttpSession session) {
 
-        if (!isAdmin(session)) {
+        if (!sessionRoleHelper.isAdmin(session)) {
             return LOGIN_REDIRECT;
         }
 
         return adminUserPackageHelper.processAssignPackage(form, result, model);
     }
 
-    private boolean isAdmin(HttpSession session) {
-        String username = (String) session.getAttribute("loggedInUsername");
-        String userType = (String) session.getAttribute("loggedInUserType");
-        return username != null && userType != null && "admin".equalsIgnoreCase(userType);
+    @RequestMapping(value = "/requests/approve", method = RequestMethod.POST)
+    public String approveRequest(
+            @ModelAttribute PackagePurchaseRequestReviewForm form,
+            Model model,
+            HttpSession session) {
+
+        if (!sessionRoleHelper.isAdmin(session)) {
+            return LOGIN_REDIRECT;
+        }
+
+        String adminUsername = sessionRoleHelper.getLoggedInUsername(session);
+        return adminUserPackageHelper.processApproveRequest(form, adminUsername, model);
+    }
+
+    @RequestMapping(value = "/requests/reject", method = RequestMethod.POST)
+    public String rejectRequest(
+            @ModelAttribute PackagePurchaseRequestReviewForm form,
+            Model model,
+            HttpSession session) {
+
+        if (!sessionRoleHelper.isAdmin(session)) {
+            return LOGIN_REDIRECT;
+        }
+
+        String adminUsername = sessionRoleHelper.getLoggedInUsername(session);
+        return adminUserPackageHelper.processRejectRequest(form, adminUsername, model);
     }
 }
+

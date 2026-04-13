@@ -91,9 +91,14 @@ public class RegistrationController {
 
 package org.fujitsu.training.codes.controller;
 
+import java.util.List;
+
 import org.fujitsu.training.codes.helper.RegistrationHelper;
+import org.fujitsu.training.codes.model.data.City;
+import org.fujitsu.training.codes.model.data.State;
 import org.fujitsu.training.codes.model.form.RegistrationForm;
 import org.fujitsu.training.codes.validator.RegistrationFormValidator;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -103,6 +108,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/registration")

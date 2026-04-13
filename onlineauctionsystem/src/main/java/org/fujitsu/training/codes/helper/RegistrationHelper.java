@@ -141,7 +141,7 @@ public class RegistrationHelper {
             String username = registrationDaoImpl.registerUser(form);
             model.addAttribute("registeredUsername", username);
             logger.info("Registration completed successfully for username={}.", username);
-            return "registerSuccess";
+            return "redirect:/app/login";
         } catch (DuplicateUsernameException ex) {
             logger.error("Registration failed for username={}: {}", form.getUsername(), ex.getMessage(), ex);
             result.rejectValue("username", "duplicate", ex.getMessage());

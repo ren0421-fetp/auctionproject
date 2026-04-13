@@ -142,7 +142,9 @@
     <property name="url" value="/WEB-INF/app/views/common/news.jsp" />
 </bean>
 
-
+<bean id="homeView" class="org.springframework.web.servlet.view.JstlView">
+    <property name="url" value="/WEB-INF/app/views/public/home.jsp" />
+</bean>
      
      <!-- Error pages -->
      <bean id="errIllegalArgView" class="org.springframework.web.servlet.view.JstlView">

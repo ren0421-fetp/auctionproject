@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.fujitsu.training.codes.model.data.City;
 import org.fujitsu.training.codes.model.data.State;
 
 public interface StateDao {
