@@ -16,7 +16,7 @@
                 </c:if>
 
                 <a class="btn btn-dark btn-sm rounded-pill px-3"
-                   href="${pageContext.request.contextPath}/app/login">
+                   href="${pageContext.request.contextPath}/app/logout">
                     Logout
                 </a>
             </div>

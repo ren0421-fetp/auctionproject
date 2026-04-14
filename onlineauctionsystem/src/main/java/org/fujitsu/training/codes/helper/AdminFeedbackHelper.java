@@ -1,23 +1,3 @@
-/*package org.fujitsu.training.codes.helper;
-
-import org.fujitsu.training.codes.dao.impl.FeedbackFlowDaoImpl;
-import org.springframework.stereotype.Component;
-import org.springframework.ui.Model;
-
-@Component
-public class AdminFeedbackHelper {
-
-    private final FeedbackFlowDaoImpl feedbackFlowDaoImpl;
-
-    public AdminFeedbackHelper(FeedbackFlowDaoImpl feedbackFlowDaoImpl) {
-        this.feedbackFlowDaoImpl = feedbackFlowDaoImpl;
-    }
-
-    public void prepareLoadFeedback(Model model) {
-        model.addAttribute("feedbackList", feedbackFlowDaoImpl.getAllFeedback());
-    }
-}*/
-
 package org.fujitsu.training.codes.helper;
 
 import org.apache.logging.log4j.LogManager;
@@ -28,18 +8,17 @@ import org.springframework.ui.Model;
 
 @Component
 public class AdminFeedbackHelper {
-    private static final Logger logger = LogManager.getLogger("admin-flow");
+	private static final Logger logger = LogManager.getLogger("admin-flow");
 
-    private final FeedbackFlowDaoImpl feedbackFlowDaoImpl;
+	private final FeedbackFlowDaoImpl feedbackFlowDaoImpl;
 
-    public AdminFeedbackHelper(FeedbackFlowDaoImpl feedbackFlowDaoImpl) {
-        this.feedbackFlowDaoImpl = feedbackFlowDaoImpl;
-    }
+	public AdminFeedbackHelper(FeedbackFlowDaoImpl feedbackFlowDaoImpl) {
+		this.feedbackFlowDaoImpl = feedbackFlowDaoImpl;
+	}
 
-    public void prepareLoadFeedback(Model model) {
-        logger.info("Loading admin feedback page.");
-        model.addAttribute("feedbackList", feedbackFlowDaoImpl.getAllFeedback());
-        logger.info("Admin feedback page loaded.");
-    }
+	public void prepareLoadFeedback(Model model) {
+		logger.info("Loading admin feedback page.");
+		model.addAttribute("feedbackList", feedbackFlowDaoImpl.getAllFeedback());
+		logger.info("Admin feedback page loaded.");
+	}
 }
-

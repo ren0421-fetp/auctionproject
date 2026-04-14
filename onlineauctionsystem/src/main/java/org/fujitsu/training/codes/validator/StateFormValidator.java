@@ -9,20 +9,20 @@ import org.springframework.validation.Validator;
 @Component
 public class StateFormValidator implements Validator {
 
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return StateForm.class.equals(clazz);
-    }
+	@Override
+	public boolean supports(Class<?> clazz) {
+		return StateForm.class.equals(clazz);
+	}
 
-    @Override
-    public void validate(Object target, Errors errors) {
-        StateForm form = (StateForm) target;
+	@Override
+	public void validate(Object target, Errors errors) {
+		StateForm form = (StateForm) target;
 
-        if (form.getCountryId() == null) {
-            errors.rejectValue("countryId", "country.required", "Country is required.");
-        }
+		if (form.getCountryId() == null) {
+			errors.rejectValue("countryId", "country.required", "Country is required.");
+		}
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "stateName",
-                "state_name.required", "State name is required.");
-    }
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "stateName", "state_name.required",
+				"State name is required.");
+	}
 }

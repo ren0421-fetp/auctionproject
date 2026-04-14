@@ -3326,3 +3326,439 @@
 18:13:00.547 [main] INFO  admin-flow - Starting manual package assignment. username=bidder1, packageId=1
 18:13:00.551 [main] INFO  admin-flow - Manual package assignment completed. username=bidder1, packageId=1
 18:13:00.557 [main] INFO  admin-flow - Getting all granted user package infos.
+19:01:08.786 [main] INFO  admin-flow - Loading admin bid confirmations page.
+19:01:08.787 [main] INFO  admin-flow - Getting all bids for admin
+19:01:08.793 [main] INFO  admin-flow - Returning all bids
+19:01:08.840 [main] INFO  admin-flow - Admin bid confirmations page loaded.
+19:01:08.892 [main] INFO  admin-flow - Loading admin category page.
+19:01:08.893 [main] INFO  admin-flow - Getting all categories
+19:01:08.893 [main] INFO  admin-flow - returning all categories
+19:01:08.896 [main] INFO  admin-flow - Admin category page loaded.
+19:01:08.919 [main] INFO  admin-flow - Loading admin location page. countryId=null, stateId=null, cityId=null
+19:01:08.920 [main] INFO  admin-flow - Getting all countries
+19:01:08.920 [main] INFO  admin-flow - Returning all countries
+19:01:08.926 [main] INFO  admin-flow - Getting all cities
+19:01:08.926 [main] INFO  admin-flow - Returning all cities
+19:01:08.930 [main] INFO  admin-flow - Admin location page loaded.
+19:01:08.951 [main] INFO  admin-flow - Processing country save. countryId=null, countryName=Japan
+19:01:08.951 [main] INFO  admin-flow - Starting country save. countryId=null, countryName=Japan
+19:01:09.014 [main] INFO  admin-flow - Country save completed. countryId=null, countryName=Japan
+19:01:09.014 [main] INFO  admin-flow - Country save completed. countryId=null, countryName=Japan
+19:01:09.041 [main] INFO  admin-flow - Loading admin news page. newsId=null
+19:01:09.042 [main] INFO  admin-flow - Getting all news
+19:01:09.042 [main] INFO  admin-flow - Returning all news
+19:01:09.044 [main] INFO  admin-flow - Admin news page loaded. newsId=null
+19:01:09.055 [main] INFO  admin-flow - Processing news save. newsId=null, title=Tomorrow holiday
+19:01:09.055 [main] INFO  admin-flow - Starting news save. newsId=null, newsTitle=Tomorrow holiday
+19:01:09.059 [main] INFO  admin-flow - News save completed. newsId=null, newsTitle=Tomorrow holiday
+19:01:09.059 [main] INFO  admin-flow - News save completed. newsId=null, title=Tomorrow holiday
+19:01:09.084 [main] INFO  admin-flow - Processing admin package save. packageId=null, packageName=gold package
+19:01:09.090 [main] INFO  admin-flow - Starting package save. packageId=null, packageName=gold package
+19:01:09.096 [main] INFO  admin-flow - Package save completed. packageId=125, packageName=gold package
+19:01:09.097 [main] INFO  admin-flow - Admin package save completed. packageId=null, packageName=gold package
+19:01:09.105 [main] INFO  admin-flow - Loading admin package page.
+19:01:09.105 [main] INFO  admin-flow - Getting all packages
+19:01:09.105 [main] INFO  admin-flow - Returning all packages
+19:01:09.107 [main] INFO  admin-flow - Admin package page loaded.
+19:01:09.121 [main] INFO  admin-flow - Processing admin product close. productId=2
+19:01:09.121 [main] INFO  admin-flow - Starting admin product close. productId=2
+19:01:09.123 [main] INFO  admin-flow - Admin product close completed. productId=2
+19:01:09.124 [main] INFO  admin-flow - Admin product close completed. productId=2
+19:01:09.135 [main] INFO  admin-flow - Loading admin product page. productId=null, status=null, sellerUsername=null
+19:01:09.135 [main] INFO  admin-flow - Getting categories
+19:01:09.135 [main] INFO  admin-flow - Returning categories
+19:01:09.138 [main] INFO  admin-flow - Getting all products
+19:01:09.139 [main] INFO  admin-flow - Returning all products
+19:01:09.143 [main] INFO  admin-flow - Admin product page loaded. productId=null
+19:01:09.153 [main] INFO  admin-flow - Processing admin product save. productId=null, productName=admin test item
+19:01:09.155 [main] INFO  admin-flow - Starting admin product save. productId=null, productName=admin test item
+19:01:09.160 [main] INFO  admin-flow - Admin product save completed. productId=204, productName=admin test item
+19:01:09.160 [main] INFO  admin-flow - Admin product save completed. productId=null, productName=admin test item
+19:01:09.172 [main] INFO  admin-flow - Loading admin report page.
+19:01:09.172 [main] INFO  admin-flow - Admin report page loaded.
+19:01:09.183 [main] INFO  admin-flow - Processing user lock. username=bidder1
+19:01:09.184 [main] INFO  admin-flow - Starting user lock. username=bidder1
+19:01:09.185 [main] INFO  admin-flow - User lock completed. username=bidder1
+19:01:09.185 [main] INFO  admin-flow - User lock completed. username=bidder1
+19:01:09.192 [main] INFO  admin-flow - Loading admin user page. userType=null
+19:01:09.192 [main] INFO  admin-flow - Getting all users
+19:01:09.192 [main] INFO  admin-flow - Returning all users
+19:01:09.195 [main] INFO  admin-flow - Admin user page loaded. userType=null
+19:01:09.207 [main] INFO  admin-flow - Loading admin user-package page. userPackageId=null
+19:01:09.207 [main] INFO  admin-flow - Getting bidders.
+19:01:09.208 [main] INFO  admin-flow - Getting packages.
+19:01:09.210 [main] INFO  admin-flow - Getting all granted user package infos.
+19:01:09.214 [main] INFO  admin-flow - Getting all package purchase request infos.
+19:01:09.216 [main] INFO  admin-flow - Admin user-package page loaded. userPackageId=null
+19:01:09.223 [main] INFO  admin-flow - Processing manual user-package assignment. username=bidder1, packageId=1
+19:01:09.223 [main] INFO  admin-flow - Starting manual package assignment. username=bidder1, packageId=1
+19:01:09.228 [main] INFO  admin-flow - Manual package assignment completed. username=bidder1, packageId=1
+19:01:09.228 [main] INFO  admin-flow - Manual user-package assignment completed. username=bidder1, packageId=1
+19:01:09.489 [main] INFO  admin-flow - Getting all bids for admin
+19:01:09.489 [main] INFO  admin-flow - Returning all bids
+19:01:09.503 [main] INFO  admin-flow - Getting all categories
+19:01:09.503 [main] INFO  admin-flow - returning all categories
+19:01:09.511 [main] INFO  admin-flow - Starting category save. catId=null, catName=Home Decor
+19:01:09.514 [main] INFO  admin-flow - Category save completed. catId=67, catName=Home Decor
+19:01:09.521 [main] INFO  admin-flow - Getting all countries
+19:01:09.521 [main] INFO  admin-flow - Returning all countries
+19:01:09.528 [main] INFO  admin-flow - Starting country save. countryId=null, countryName=Japan
+19:01:09.531 [main] INFO  admin-flow - Country save completed. countryId=null, countryName=Japan
+19:01:09.539 [main] INFO  admin-flow - Starting news save. newsId=null, newsTitle=Tomorrow holiday
+19:01:09.541 [main] INFO  admin-flow - News save completed. newsId=null, newsTitle=Tomorrow holiday
+19:01:09.547 [main] INFO  admin-flow - Getting all news
+19:01:09.547 [main] INFO  admin-flow - Returning all news
+19:01:09.556 [main] INFO  admin-flow - Getting all packages
+19:01:09.556 [main] INFO  admin-flow - Returning all packages
+19:01:09.563 [main] INFO  admin-flow - Starting package save. packageId=null, packageName=silver package
+19:01:09.566 [main] INFO  admin-flow - Package save completed. packageId=126, packageName=silver package
+19:01:09.575 [main] INFO  admin-flow - Starting admin product close. productId=2
+19:01:09.576 [main] INFO  admin-flow - Admin product close completed. productId=2
+19:01:09.582 [main] INFO  admin-flow - Starting admin product save. productId=null, productName=admin dao item
+19:01:09.586 [main] INFO  admin-flow - Admin product save completed. productId=205, productName=admin dao item
+19:01:09.592 [main] INFO  admin-flow - Getting all products
+19:01:09.592 [main] INFO  admin-flow - Returning all products
+19:01:09.601 [main] INFO  admin-flow - Getting confirmed bids report
+19:01:09.601 [main] INFO  admin-flow - Returning confirmed bids report
+19:01:09.610 [main] INFO  admin-flow - Getting user registration report
+19:01:09.610 [main] INFO  admin-flow - Returning user registration report
+19:01:09.619 [main] INFO  admin-flow - Getting bid report
+19:01:09.619 [main] INFO  admin-flow - Returning bid report
+19:01:09.626 [main] INFO  admin-flow - Getting auction report
+19:01:09.626 [main] INFO  admin-flow - Returning auction report
+19:01:09.640 [main] INFO  admin-flow - Getting all users
+19:01:09.641 [main] INFO  admin-flow - Returning all users
+19:01:09.650 [main] INFO  admin-flow - Starting user lock. username=bidder1
+19:01:09.651 [main] INFO  admin-flow - User lock completed. username=bidder1
+19:01:09.651 [main] INFO  admin-flow - Starting user unlock. username=bidder1
+19:01:09.653 [main] INFO  admin-flow - User unlock completed. username=bidder1
+19:01:09.662 [main] INFO  admin-flow - Starting manual package assignment. username=bidder1, packageId=1
+19:01:09.666 [main] INFO  admin-flow - Manual package assignment completed. username=bidder1, packageId=1
+19:01:09.672 [main] INFO  admin-flow - Getting all granted user package infos.
+22:13:54.953 [main] INFO  admin-flow - Loading admin bid confirmations page.
+22:13:54.954 [main] INFO  admin-flow - Getting all bids for admin
+22:13:54.962 [main] INFO  admin-flow - Returning all bids
+22:13:55.034 [main] INFO  admin-flow - Admin bid confirmations page loaded.
+22:13:55.100 [main] INFO  admin-flow - Loading admin category page.
+22:13:55.101 [main] INFO  admin-flow - Getting all categories
+22:13:55.101 [main] INFO  admin-flow - returning all categories
+22:13:55.103 [main] INFO  admin-flow - Admin category page loaded.
+22:13:55.135 [main] INFO  admin-flow - Loading admin location page. countryId=null, stateId=null, cityId=null
+22:13:55.135 [main] INFO  admin-flow - Getting all countries
+22:13:55.135 [main] INFO  admin-flow - Returning all countries
+22:13:55.141 [main] INFO  admin-flow - Getting all cities
+22:13:55.141 [main] INFO  admin-flow - Returning all cities
+22:13:55.145 [main] INFO  admin-flow - Admin location page loaded.
+22:13:55.163 [main] INFO  admin-flow - Processing country save. countryId=null, countryName=Japan
+22:13:55.163 [main] INFO  admin-flow - Starting country save. countryId=null, countryName=Japan
+22:13:55.223 [main] INFO  admin-flow - Country save completed. countryId=null, countryName=Japan
+22:13:55.223 [main] INFO  admin-flow - Country save completed. countryId=null, countryName=Japan
+22:13:55.246 [main] INFO  admin-flow - Loading admin news page. newsId=null
+22:13:55.246 [main] INFO  admin-flow - Getting all news
+22:13:55.246 [main] INFO  admin-flow - Returning all news
+22:13:55.249 [main] INFO  admin-flow - Admin news page loaded. newsId=null
+22:13:55.260 [main] INFO  admin-flow - Processing news save. newsId=null, title=Tomorrow holiday
+22:13:55.260 [main] INFO  admin-flow - Starting news save. newsId=null, newsTitle=Tomorrow holiday
+22:13:55.264 [main] INFO  admin-flow - News save completed. newsId=null, newsTitle=Tomorrow holiday
+22:13:55.264 [main] INFO  admin-flow - News save completed. newsId=null, title=Tomorrow holiday
+22:13:55.293 [main] INFO  admin-flow - Processing admin package save. packageId=null, packageName=gold package
+22:13:55.297 [main] INFO  admin-flow - Starting package save. packageId=null, packageName=gold package
+22:13:55.301 [main] INFO  admin-flow - Package save completed. packageId=127, packageName=gold package
+22:13:55.301 [main] INFO  admin-flow - Admin package save completed. packageId=null, packageName=gold package
+22:13:55.310 [main] INFO  admin-flow - Loading admin package page.
+22:13:55.310 [main] INFO  admin-flow - Getting all packages
+22:13:55.310 [main] INFO  admin-flow - Returning all packages
+22:13:55.312 [main] INFO  admin-flow - Admin package page loaded.
+22:13:55.325 [main] INFO  admin-flow - Processing admin product close. productId=2
+22:13:55.325 [main] INFO  admin-flow - Starting admin product close. productId=2
+22:13:55.328 [main] INFO  admin-flow - Admin product close completed. productId=2
+22:13:55.328 [main] INFO  admin-flow - Admin product close completed. productId=2
+22:13:55.339 [main] INFO  admin-flow - Loading admin product page. productId=null, status=null, sellerUsername=null
+22:13:55.340 [main] INFO  admin-flow - Getting categories
+22:13:55.340 [main] INFO  admin-flow - Returning categories
+22:13:55.343 [main] INFO  admin-flow - Getting all products
+22:13:55.344 [main] INFO  admin-flow - Returning all products
+22:13:55.348 [main] INFO  admin-flow - Admin product page loaded. productId=null
+22:13:55.363 [main] INFO  admin-flow - Processing admin product save. productId=null, productName=admin test item
+22:13:55.364 [main] INFO  admin-flow - Starting admin product save. productId=null, productName=admin test item
+22:13:55.370 [main] INFO  admin-flow - Admin product save completed. productId=208, productName=admin test item
+22:13:55.370 [main] INFO  admin-flow - Admin product save completed. productId=null, productName=admin test item
+22:13:55.385 [main] INFO  admin-flow - Loading admin report page.
+22:13:55.385 [main] INFO  admin-flow - Admin report page loaded.
+22:13:55.397 [main] INFO  admin-flow - Processing user lock. username=bidder1
+22:13:55.397 [main] INFO  admin-flow - Starting user lock. username=bidder1
+22:13:55.398 [main] INFO  admin-flow - User lock completed. username=bidder1
+22:13:55.399 [main] INFO  admin-flow - User lock completed. username=bidder1
+22:13:55.407 [main] INFO  admin-flow - Loading admin user page. userType=null
+22:13:55.407 [main] INFO  admin-flow - Getting all users
+22:13:55.407 [main] INFO  admin-flow - Returning all users
+22:13:55.410 [main] INFO  admin-flow - Admin user page loaded. userType=null
+22:13:55.424 [main] INFO  admin-flow - Loading admin user-package page. userPackageId=null
+22:13:55.424 [main] INFO  admin-flow - Getting bidders.
+22:13:55.426 [main] INFO  admin-flow - Getting packages.
+22:13:55.428 [main] INFO  admin-flow - Getting all granted user package infos.
+22:13:55.431 [main] INFO  admin-flow - Getting all package purchase request infos.
+22:13:55.433 [main] INFO  admin-flow - Admin user-package page loaded. userPackageId=null
+22:13:55.444 [main] INFO  admin-flow - Processing manual user-package assignment. username=bidder1, packageId=1
+22:13:55.444 [main] INFO  admin-flow - Starting manual package assignment. username=bidder1, packageId=1
+22:13:55.449 [main] INFO  admin-flow - Manual package assignment completed. username=bidder1, packageId=1
+22:13:55.449 [main] INFO  admin-flow - Manual user-package assignment completed. username=bidder1, packageId=1
+22:13:55.813 [main] INFO  admin-flow - Getting all bids for admin
+22:13:55.814 [main] INFO  admin-flow - Returning all bids
+22:13:55.834 [main] INFO  admin-flow - Getting all categories
+22:13:55.834 [main] INFO  admin-flow - returning all categories
+22:13:55.843 [main] INFO  admin-flow - Starting category save. catId=null, catName=Home Decor
+22:13:55.846 [main] INFO  admin-flow - Category save completed. catId=69, catName=Home Decor
+22:13:55.856 [main] INFO  admin-flow - Getting all countries
+22:13:55.857 [main] INFO  admin-flow - Returning all countries
+22:13:55.866 [main] INFO  admin-flow - Starting country save. countryId=null, countryName=Japan
+22:13:55.868 [main] INFO  admin-flow - Country save completed. countryId=null, countryName=Japan
+22:13:55.877 [main] INFO  admin-flow - Starting news save. newsId=null, newsTitle=Tomorrow holiday
+22:13:55.879 [main] INFO  admin-flow - News save completed. newsId=null, newsTitle=Tomorrow holiday
+22:13:55.884 [main] INFO  admin-flow - Getting all news
+22:13:55.884 [main] INFO  admin-flow - Returning all news
+22:13:55.895 [main] INFO  admin-flow - Getting all packages
+22:13:55.895 [main] INFO  admin-flow - Returning all packages
+22:13:55.901 [main] INFO  admin-flow - Starting package save. packageId=null, packageName=silver package
+22:13:55.904 [main] INFO  admin-flow - Package save completed. packageId=128, packageName=silver package
+22:13:55.917 [main] INFO  admin-flow - Starting admin product close. productId=2
+22:13:55.918 [main] INFO  admin-flow - Admin product close completed. productId=2
+22:13:55.926 [main] INFO  admin-flow - Starting admin product save. productId=null, productName=admin dao item
+22:13:55.930 [main] INFO  admin-flow - Admin product save completed. productId=209, productName=admin dao item
+22:13:55.937 [main] INFO  admin-flow - Getting all products
+22:13:55.938 [main] INFO  admin-flow - Returning all products
+22:13:55.951 [main] INFO  admin-flow - Getting confirmed bids report
+22:13:55.952 [main] INFO  admin-flow - Returning confirmed bids report
+22:13:55.961 [main] INFO  admin-flow - Getting user registration report
+22:13:55.961 [main] INFO  admin-flow - Returning user registration report
+22:13:55.967 [main] INFO  admin-flow - Getting bid report
+22:13:55.968 [main] INFO  admin-flow - Returning bid report
+22:13:55.975 [main] INFO  admin-flow - Getting auction report
+22:13:55.975 [main] INFO  admin-flow - Returning auction report
+22:13:55.991 [main] INFO  admin-flow - Getting all users
+22:13:55.991 [main] INFO  admin-flow - Returning all users
+22:13:56.001 [main] INFO  admin-flow - Starting user lock. username=bidder1
+22:13:56.003 [main] INFO  admin-flow - User lock completed. username=bidder1
+22:13:56.003 [main] INFO  admin-flow - Starting user unlock. username=bidder1
+22:13:56.004 [main] INFO  admin-flow - User unlock completed. username=bidder1
+22:13:56.015 [main] INFO  admin-flow - Starting manual package assignment. username=bidder1, packageId=1
+22:13:56.020 [main] INFO  admin-flow - Manual package assignment completed. username=bidder1, packageId=1
+22:13:56.027 [main] INFO  admin-flow - Getting all granted user package infos.
+22:29:04.610 [main] INFO  admin-flow - Loading admin bid confirmations page.
+22:29:04.610 [main] INFO  admin-flow - Getting all bids for admin
+22:29:04.614 [main] INFO  admin-flow - Returning all bids
+22:29:04.655 [main] INFO  admin-flow - Admin bid confirmations page loaded.
+22:29:04.711 [main] INFO  admin-flow - Loading admin category page.
+22:29:04.711 [main] INFO  admin-flow - Getting all categories
+22:29:04.711 [main] INFO  admin-flow - returning all categories
+22:29:04.715 [main] INFO  admin-flow - Admin category page loaded.
+22:29:04.745 [main] INFO  admin-flow - Loading admin location page. countryId=null, stateId=null, cityId=null
+22:29:04.746 [main] INFO  admin-flow - Getting all countries
+22:29:04.746 [main] INFO  admin-flow - Returning all countries
+22:29:04.751 [main] INFO  admin-flow - Getting all cities
+22:29:04.751 [main] INFO  admin-flow - Returning all cities
+22:29:04.753 [main] INFO  admin-flow - Admin location page loaded.
+22:29:04.772 [main] INFO  admin-flow - Processing country save. countryId=null, countryName=Japan
+22:29:04.773 [main] INFO  admin-flow - Starting country save. countryId=null, countryName=Japan
+22:29:04.828 [main] INFO  admin-flow - Country save completed. countryId=null, countryName=Japan
+22:29:04.828 [main] INFO  admin-flow - Country save completed. countryId=null, countryName=Japan
+22:29:04.856 [main] INFO  admin-flow - Loading admin news page. newsId=null
+22:29:04.856 [main] INFO  admin-flow - Getting all news
+22:29:04.856 [main] INFO  admin-flow - Returning all news
+22:29:04.859 [main] INFO  admin-flow - Admin news page loaded. newsId=null
+22:29:04.870 [main] INFO  admin-flow - Processing news save. newsId=null, title=Tomorrow holiday
+22:29:04.870 [main] INFO  admin-flow - Starting news save. newsId=null, newsTitle=Tomorrow holiday
+22:29:04.873 [main] INFO  admin-flow - News save completed. newsId=null, newsTitle=Tomorrow holiday
+22:29:04.874 [main] INFO  admin-flow - News save completed. newsId=null, title=Tomorrow holiday
+22:29:04.897 [main] INFO  admin-flow - Processing admin package save. packageId=null, packageName=gold package
+22:29:04.901 [main] INFO  admin-flow - Starting package save. packageId=null, packageName=gold package
+22:29:04.905 [main] INFO  admin-flow - Package save completed. packageId=129, packageName=gold package
+22:29:04.905 [main] INFO  admin-flow - Admin package save completed. packageId=null, packageName=gold package
+22:29:04.912 [main] INFO  admin-flow - Loading admin package page.
+22:29:04.912 [main] INFO  admin-flow - Getting all packages
+22:29:04.912 [main] INFO  admin-flow - Returning all packages
+22:29:04.914 [main] INFO  admin-flow - Admin package page loaded.
+22:29:04.932 [main] INFO  admin-flow - Processing admin product close. productId=2
+22:29:04.933 [main] INFO  admin-flow - Starting admin product close. productId=2
+22:29:04.935 [main] INFO  admin-flow - Admin product close completed. productId=2
+22:29:04.935 [main] INFO  admin-flow - Admin product close completed. productId=2
+22:29:04.945 [main] INFO  admin-flow - Loading admin product page. productId=null, status=null, sellerUsername=null
+22:29:04.946 [main] INFO  admin-flow - Getting categories
+22:29:04.946 [main] INFO  admin-flow - Returning categories
+22:29:04.951 [main] INFO  admin-flow - Getting all products
+22:29:04.951 [main] INFO  admin-flow - Returning all products
+22:29:04.956 [main] INFO  admin-flow - Admin product page loaded. productId=null
+22:29:04.968 [main] INFO  admin-flow - Processing admin product save. productId=null, productName=admin test item
+22:29:04.970 [main] INFO  admin-flow - Starting admin product save. productId=null, productName=admin test item
+22:29:04.974 [main] INFO  admin-flow - Admin product save completed. productId=211, productName=admin test item
+22:29:04.975 [main] INFO  admin-flow - Admin product save completed. productId=null, productName=admin test item
+22:29:04.989 [main] INFO  admin-flow - Loading admin report page.
+22:29:04.989 [main] INFO  admin-flow - Admin report page loaded.
+22:29:05.004 [main] INFO  admin-flow - Processing user lock. username=bidder1
+22:29:05.004 [main] INFO  admin-flow - Starting user lock. username=bidder1
+22:29:05.006 [main] INFO  admin-flow - User lock completed. username=bidder1
+22:29:05.006 [main] INFO  admin-flow - User lock completed. username=bidder1
+22:29:05.018 [main] INFO  admin-flow - Loading admin user page. userType=null
+22:29:05.018 [main] INFO  admin-flow - Getting all users
+22:29:05.018 [main] INFO  admin-flow - Returning all users
+22:29:05.022 [main] INFO  admin-flow - Admin user page loaded. userType=null
+22:29:05.032 [main] INFO  admin-flow - Loading admin user-package page. userPackageId=null
+22:29:05.033 [main] INFO  admin-flow - Getting bidders.
+22:29:05.035 [main] INFO  admin-flow - Getting packages.
+22:29:05.037 [main] INFO  admin-flow - Getting all granted user package infos.
+22:29:05.040 [main] INFO  admin-flow - Getting all package purchase request infos.
+22:29:05.042 [main] INFO  admin-flow - Admin user-package page loaded. userPackageId=null
+22:29:05.051 [main] INFO  admin-flow - Processing manual user-package assignment. username=bidder1, packageId=1
+22:29:05.051 [main] INFO  admin-flow - Starting manual package assignment. username=bidder1, packageId=1
+22:29:05.056 [main] INFO  admin-flow - Manual package assignment completed. username=bidder1, packageId=1
+22:29:05.057 [main] INFO  admin-flow - Manual user-package assignment completed. username=bidder1, packageId=1
+22:29:05.367 [main] INFO  admin-flow - Getting all bids for admin
+22:29:05.367 [main] INFO  admin-flow - Returning all bids
+22:29:05.382 [main] INFO  admin-flow - Getting all categories
+22:29:05.382 [main] INFO  admin-flow - returning all categories
+22:29:05.389 [main] INFO  admin-flow - Starting category save. catId=null, catName=Home Decor
+22:29:05.392 [main] INFO  admin-flow - Category save completed. catId=70, catName=Home Decor
+22:29:05.403 [main] INFO  admin-flow - Getting all countries
+22:29:05.403 [main] INFO  admin-flow - Returning all countries
+22:29:05.409 [main] INFO  admin-flow - Starting country save. countryId=null, countryName=Japan
+22:29:05.410 [main] INFO  admin-flow - Country save completed. countryId=null, countryName=Japan
+22:29:05.419 [main] INFO  admin-flow - Starting news save. newsId=null, newsTitle=Tomorrow holiday
+22:29:05.421 [main] INFO  admin-flow - News save completed. newsId=null, newsTitle=Tomorrow holiday
+22:29:05.425 [main] INFO  admin-flow - Getting all news
+22:29:05.425 [main] INFO  admin-flow - Returning all news
+22:29:05.434 [main] INFO  admin-flow - Getting all packages
+22:29:05.434 [main] INFO  admin-flow - Returning all packages
+22:29:05.439 [main] INFO  admin-flow - Starting package save. packageId=null, packageName=silver package
+22:29:05.441 [main] INFO  admin-flow - Package save completed. packageId=130, packageName=silver package
+22:29:05.448 [main] INFO  admin-flow - Starting admin product close. productId=2
+22:29:05.449 [main] INFO  admin-flow - Admin product close completed. productId=2
+22:29:05.453 [main] INFO  admin-flow - Starting admin product save. productId=null, productName=admin dao item
+22:29:05.457 [main] INFO  admin-flow - Admin product save completed. productId=212, productName=admin dao item
+22:29:05.462 [main] INFO  admin-flow - Getting all products
+22:29:05.462 [main] INFO  admin-flow - Returning all products
+22:29:05.474 [main] INFO  admin-flow - Getting confirmed bids report
+22:29:05.474 [main] INFO  admin-flow - Returning confirmed bids report
+22:29:05.483 [main] INFO  admin-flow - Getting user registration report
+22:29:05.483 [main] INFO  admin-flow - Returning user registration report
+22:29:05.488 [main] INFO  admin-flow - Getting bid report
+22:29:05.488 [main] INFO  admin-flow - Returning bid report
+22:29:05.494 [main] INFO  admin-flow - Getting auction report
+22:29:05.494 [main] INFO  admin-flow - Returning auction report
+22:29:05.504 [main] INFO  admin-flow - Getting all users
+22:29:05.504 [main] INFO  admin-flow - Returning all users
+22:29:05.512 [main] INFO  admin-flow - Starting user lock. username=bidder1
+22:29:05.513 [main] INFO  admin-flow - User lock completed. username=bidder1
+22:29:05.513 [main] INFO  admin-flow - Starting user unlock. username=bidder1
+22:29:05.515 [main] INFO  admin-flow - User unlock completed. username=bidder1
+22:29:05.525 [main] INFO  admin-flow - Starting manual package assignment. username=bidder1, packageId=1
+22:29:05.529 [main] INFO  admin-flow - Manual package assignment completed. username=bidder1, packageId=1
+22:29:05.534 [main] INFO  admin-flow - Getting all granted user package infos.
+10:12:58.604 [main] INFO  admin-flow - Loading admin bid confirmations page.
+10:12:58.605 [main] INFO  admin-flow - Getting all bids for admin
+10:12:58.614 [main] INFO  admin-flow - Returning all bids
+10:12:58.666 [main] INFO  admin-flow - Admin bid confirmations page loaded.
+10:12:58.729 [main] INFO  admin-flow - Loading admin category page.
+10:12:58.729 [main] INFO  admin-flow - Getting all categories
+10:12:58.729 [main] INFO  admin-flow - returning all categories
+10:12:58.733 [main] INFO  admin-flow - Admin category page loaded.
+10:12:58.764 [main] INFO  admin-flow - Loading admin location page. countryId=null, stateId=null, cityId=null
+10:12:58.764 [main] INFO  admin-flow - Getting all countries
+10:12:58.764 [main] INFO  admin-flow - Returning all countries
+10:12:58.771 [main] INFO  admin-flow - Getting all cities
+10:12:58.772 [main] INFO  admin-flow - Returning all cities
+10:12:58.775 [main] INFO  admin-flow - Admin location page loaded.
+10:12:58.802 [main] INFO  admin-flow - Processing country save. countryId=null, countryName=Japan
+10:12:58.803 [main] INFO  admin-flow - Starting country save. countryId=null, countryName=Japan
+10:12:58.853 [main] INFO  admin-flow - Country save completed. countryId=null, countryName=Japan
+10:12:58.853 [main] INFO  admin-flow - Country save completed. countryId=null, countryName=Japan
+10:12:58.869 [main] INFO  admin-flow - Loading admin news page. newsId=null
+10:12:58.869 [main] INFO  admin-flow - Getting all news
+10:12:58.869 [main] INFO  admin-flow - Returning all news
+10:12:58.872 [main] INFO  admin-flow - Admin news page loaded. newsId=null
+10:12:58.884 [main] INFO  admin-flow - Processing news save. newsId=null, title=Tomorrow holiday
+10:12:58.884 [main] INFO  admin-flow - Starting news save. newsId=null, newsTitle=Tomorrow holiday
+10:12:58.890 [main] INFO  admin-flow - News save completed. newsId=null, newsTitle=Tomorrow holiday
+10:12:58.890 [main] INFO  admin-flow - News save completed. newsId=null, title=Tomorrow holiday
+10:12:58.913 [main] INFO  admin-flow - Processing admin package save. packageId=null, packageName=gold package
+10:12:58.918 [main] INFO  admin-flow - Starting package save. packageId=null, packageName=gold package
+10:12:58.923 [main] INFO  admin-flow - Package save completed. packageId=131, packageName=gold package
+10:12:58.924 [main] INFO  admin-flow - Admin package save completed. packageId=null, packageName=gold package
+10:12:58.933 [main] INFO  admin-flow - Loading admin package page.
+10:12:58.934 [main] INFO  admin-flow - Getting all packages
+10:12:58.934 [main] INFO  admin-flow - Returning all packages
+10:12:58.936 [main] INFO  admin-flow - Admin package page loaded.
+10:12:58.954 [main] INFO  admin-flow - Processing admin product close. productId=2
+10:12:58.954 [main] INFO  admin-flow - Starting admin product close. productId=2
+10:12:58.956 [main] INFO  admin-flow - Admin product close completed. productId=2
+10:12:58.957 [main] INFO  admin-flow - Admin product close completed. productId=2
+10:12:58.968 [main] INFO  admin-flow - Loading admin product page. productId=null, status=null, sellerUsername=null
+10:12:58.968 [main] INFO  admin-flow - Getting categories
+10:12:58.968 [main] INFO  admin-flow - Returning categories
+10:12:58.974 [main] INFO  admin-flow - Getting all products
+10:12:58.974 [main] INFO  admin-flow - Returning all products
+10:12:58.980 [main] INFO  admin-flow - Admin product page loaded. productId=null
+10:12:58.994 [main] INFO  admin-flow - Processing admin product save. productId=null, productName=admin test item
+10:12:58.997 [main] INFO  admin-flow - Starting admin product save. productId=null, productName=admin test item
+10:12:59.004 [main] INFO  admin-flow - Admin product save completed. productId=215, productName=admin test item
+10:12:59.005 [main] INFO  admin-flow - Admin product save completed. productId=null, productName=admin test item
+10:12:59.020 [main] INFO  admin-flow - Loading admin report page.
+10:12:59.021 [main] INFO  admin-flow - Admin report page loaded.
+10:12:59.036 [main] INFO  admin-flow - Processing user lock. username=bidder1
+10:12:59.036 [main] INFO  admin-flow - Starting user lock. username=bidder1
+10:12:59.038 [main] INFO  admin-flow - User lock completed. username=bidder1
+10:12:59.038 [main] INFO  admin-flow - User lock completed. username=bidder1
+10:12:59.049 [main] INFO  admin-flow - Loading admin user page. userType=null
+10:12:59.049 [main] INFO  admin-flow - Getting all users
+10:12:59.049 [main] INFO  admin-flow - Returning all users
+10:12:59.053 [main] INFO  admin-flow - Admin user page loaded. userType=null
+10:12:59.070 [main] INFO  admin-flow - Loading admin user-package page. userPackageId=null
+10:12:59.070 [main] INFO  admin-flow - Getting bidders.
+10:12:59.072 [main] INFO  admin-flow - Getting packages.
+10:12:59.074 [main] INFO  admin-flow - Getting all granted user package infos.
+10:12:59.080 [main] INFO  admin-flow - Getting all package purchase request infos.
+10:12:59.083 [main] INFO  admin-flow - Admin user-package page loaded. userPackageId=null
+10:12:59.095 [main] INFO  admin-flow - Processing manual user-package assignment. username=bidder1, packageId=1
+10:12:59.095 [main] INFO  admin-flow - Starting manual package assignment. username=bidder1, packageId=1
+10:12:59.104 [main] INFO  admin-flow - Manual package assignment completed. username=bidder1, packageId=1
+10:12:59.104 [main] INFO  admin-flow - Manual user-package assignment completed. username=bidder1, packageId=1
+10:12:59.423 [main] INFO  admin-flow - Getting all bids for admin
+10:12:59.424 [main] INFO  admin-flow - Returning all bids
+10:12:59.442 [main] INFO  admin-flow - Getting all categories
+10:12:59.442 [main] INFO  admin-flow - returning all categories
+10:12:59.450 [main] INFO  admin-flow - Starting category save. catId=null, catName=Home Decor
+10:12:59.453 [main] INFO  admin-flow - Category save completed. catId=71, catName=Home Decor
+10:12:59.463 [main] INFO  admin-flow - Getting all countries
+10:12:59.463 [main] INFO  admin-flow - Returning all countries
+10:12:59.470 [main] INFO  admin-flow - Starting country save. countryId=null, countryName=Japan
+10:12:59.472 [main] INFO  admin-flow - Country save completed. countryId=null, countryName=Japan
+10:12:59.480 [main] INFO  admin-flow - Starting news save. newsId=null, newsTitle=Tomorrow holiday
+10:12:59.482 [main] INFO  admin-flow - News save completed. newsId=null, newsTitle=Tomorrow holiday
+10:12:59.488 [main] INFO  admin-flow - Getting all news
+10:12:59.488 [main] INFO  admin-flow - Returning all news
+10:12:59.500 [main] INFO  admin-flow - Getting all packages
+10:12:59.500 [main] INFO  admin-flow - Returning all packages
+10:12:59.504 [main] INFO  admin-flow - Starting package save. packageId=null, packageName=silver package
+10:12:59.506 [main] INFO  admin-flow - Package save completed. packageId=132, packageName=silver package
+10:12:59.513 [main] INFO  admin-flow - Starting admin product close. productId=2
+10:12:59.514 [main] INFO  admin-flow - Admin product close completed. productId=2
+10:12:59.517 [main] INFO  admin-flow - Starting admin product save. productId=null, productName=admin dao item
+10:12:59.521 [main] INFO  admin-flow - Admin product save completed. productId=216, productName=admin dao item
+10:12:59.524 [main] INFO  admin-flow - Getting all products
+10:12:59.524 [main] INFO  admin-flow - Returning all products
+10:12:59.532 [main] INFO  admin-flow - Getting confirmed bids report
+10:12:59.532 [main] INFO  admin-flow - Returning confirmed bids report
+10:12:59.540 [main] INFO  admin-flow - Getting user registration report
+10:12:59.540 [main] INFO  admin-flow - Returning user registration report
+10:12:59.546 [main] INFO  admin-flow - Getting bid report
+10:12:59.546 [main] INFO  admin-flow - Returning bid report
+10:12:59.551 [main] INFO  admin-flow - Getting auction report
+10:12:59.551 [main] INFO  admin-flow - Returning auction report
+10:12:59.562 [main] INFO  admin-flow - Getting all users
+10:12:59.563 [main] INFO  admin-flow - Returning all users
+10:12:59.570 [main] INFO  admin-flow - Starting user lock. username=bidder1
+10:12:59.572 [main] INFO  admin-flow - User lock completed. username=bidder1
+10:12:59.572 [main] INFO  admin-flow - Starting user unlock. username=bidder1
+10:12:59.573 [main] INFO  admin-flow - User unlock completed. username=bidder1
+10:12:59.584 [main] INFO  admin-flow - Starting manual package assignment. username=bidder1, packageId=1
+10:12:59.589 [main] INFO  admin-flow - Manual package assignment completed. username=bidder1, packageId=1
+10:12:59.595 [main] INFO  admin-flow - Getting all granted user package infos.

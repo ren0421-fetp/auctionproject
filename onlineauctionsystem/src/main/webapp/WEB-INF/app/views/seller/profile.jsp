@@ -108,32 +108,45 @@
                                             <form:errors path="address" cssClass="field-error" element="div"/>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <form:label path="countryId" cssClass="filter-label">Country</form:label>
-                                            <form:select path="countryId" cssClass="app-select">
-                                                <form:option value="" label="-- select country --"/>
-                                                <form:options items="${countryOpts}" itemValue="countryId" itemLabel="countryName"/>
-                                            </form:select>
-                                            <form:errors path="countryId" cssClass="field-error" element="div"/>
-                                        </div>
+                                       <div class="col-md-4">
+										    <form:label path="countryId" cssClass="filter-label">Country</form:label>
+										    <form:select path="countryId" id="countryId" cssClass="app-select">
+										        <form:option value="" label="-- select country --"/>
+										        <form:options items="${countryOpts}" itemValue="countryId" itemLabel="countryName"/>
+										    </form:select>
+										    <form:errors path="countryId" cssClass="field-error" element="div"/>
+										</div>
+										
+										<div class="col-md-4">
+										    <form:label path="stateId" cssClass="filter-label">State</form:label>
+										    <form:select path="stateId" id="stateId" cssClass="app-select">
+										        <option value="">-- select state --</option>
+										        <c:forEach var="state" items="${stateOpts}">
+										            <option value="${state.stateId}"
+										                    data-country-id="${state.countryId}"
+										                    <c:if test="${sellerProfileForm.stateId == state.stateId}">selected</c:if>>
+										                <c:out value="${state.stateName}" />
+										            </option>
+										        </c:forEach>
+										    </form:select>
+										    <form:errors path="stateId" cssClass="field-error" element="div"/>
+										</div>
+										
+										<div class="col-md-4">
+										    <form:label path="cityId" cssClass="filter-label">City</form:label>
+										    <form:select path="cityId" id="cityId" cssClass="app-select">
+										        <option value="">-- select city --</option>
+										        <c:forEach var="city" items="${cityOpts}">
+										            <option value="${city.cityId}"
+										                    data-state-id="${city.stateId}"
+										                    <c:if test="${sellerProfileForm.cityId == city.cityId}">selected</c:if>>
+										                <c:out value="${city.cityName}" />
+										            </option>
+										        </c:forEach>
+										    </form:select>
+										    <form:errors path="cityId" cssClass="field-error" element="div"/>
+										</div>
 
-                                        <div class="col-md-4">
-                                            <form:label path="stateId" cssClass="filter-label">State</form:label>
-                                            <form:select path="stateId" cssClass="app-select">
-                                                <form:option value="" label="-- select state --"/>
-                                                <form:options items="${stateOpts}" itemValue="stateId" itemLabel="stateName"/>
-                                            </form:select>
-                                            <form:errors path="stateId" cssClass="field-error" element="div"/>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <form:label path="cityId" cssClass="filter-label">City</form:label>
-                                            <form:select path="cityId" cssClass="app-select">
-                                                <form:option value="" label="-- select city --"/>
-                                                <form:options items="${cityOpts}" itemValue="cityId" itemLabel="cityName"/>
-                                            </form:select>
-                                            <form:errors path="cityId" cssClass="field-error" element="div"/>
-                                        </div>
 
                                         <div class="col-md-6">
                                             <form:label path="email" cssClass="filter-label">Email</form:label>
@@ -205,6 +218,68 @@
                 </div>
             </div>
         </div>
+
+<script>
+    const countrySelect = document.getElementById("countryId");
+    const stateSelect = document.getElementById("stateId");
+    const citySelect = document.getElementById("cityId");
+
+    const allStateOptions = Array.from(stateSelect.querySelectorAll("option"))
+        .slice(1)
+        .map(option => option.cloneNode(true));
+
+    const allCityOptions = Array.from(citySelect.querySelectorAll("option"))
+        .slice(1)
+        .map(option => option.cloneNode(true));
+
+    function resetSelect(select, label) {
+        select.innerHTML = "";
+        const option = document.createElement("option");
+        option.value = "";
+        option.textContent = label;
+        select.appendChild(option);
+    }
+
+    function populateStates(countryId, selectedStateId) {
+        resetSelect(stateSelect, "-- select state --");
+
+        allStateOptions
+            .filter(option => countryId && option.dataset.countryId === countryId)
+            .forEach(option => {
+                const clone = option.cloneNode(true);
+                clone.selected = clone.value === selectedStateId;
+                stateSelect.appendChild(clone);
+            });
+    }
+
+    function populateCities(stateId, selectedCityId) {
+        resetSelect(citySelect, "-- select city --");
+
+        allCityOptions
+            .filter(option => stateId && option.dataset.stateId === stateId)
+            .forEach(option => {
+                const clone = option.cloneNode(true);
+                clone.selected = clone.value === selectedCityId;
+                citySelect.appendChild(clone);
+            });
+    }
+
+    const initialCountryId = countrySelect.value;
+    const initialStateId = stateSelect.value;
+    const initialCityId = citySelect.value;
+
+    populateStates(initialCountryId, initialStateId);
+    populateCities(initialStateId, initialCityId);
+
+    countrySelect.addEventListener("change", function () {
+        populateStates(this.value, "");
+        populateCities("", "");
+    });
+
+    stateSelect.addEventListener("change", function () {
+        populateCities(this.value, "");
+    });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

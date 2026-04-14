@@ -9,20 +9,19 @@ import org.springframework.validation.Validator;
 @Component
 public class CityFormValidator implements Validator {
 
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return CityForm.class.equals(clazz);
-    }
+	@Override
+	public boolean supports(Class<?> clazz) {
+		return CityForm.class.equals(clazz);
+	}
 
-    @Override
-    public void validate(Object target, Errors errors) {
-        CityForm form = (CityForm) target;
+	@Override
+	public void validate(Object target, Errors errors) {
+		CityForm form = (CityForm) target;
 
-        if (form.getStateId() == null) {
-            errors.rejectValue("stateId", "state.required", "State is required.");
-        }
+		if (form.getStateId() == null) {
+			errors.rejectValue("stateId", "state.required", "State is required.");
+		}
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cityName",
-                "city_name.required", "City name is required.");
-    }
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cityName", "city_name.required", "City name is required.");
+	}
 }

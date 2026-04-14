@@ -80,6 +80,5 @@ public interface CountryDao {
         </if>
         </script>
     """)
-    int countCountryByName(@Param("countryName") String countryName,
-            @Param("countryId") Integer countryId);
+	int countCountryByName(@Param("countryName") String countryName, @Param("countryId") Integer countryId);
 }

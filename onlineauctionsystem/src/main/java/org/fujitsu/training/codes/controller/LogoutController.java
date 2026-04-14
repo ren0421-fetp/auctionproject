@@ -4,12 +4,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
-@RequestMapping("/home")
-public class PublicHomeController {
+@RequestMapping("/logout")
+public class LogoutController {
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String loadHome() {
-		return "homeView";
+	public String logout(HttpSession session) {
+		if (session != null) {
+			session.invalidate();
+		}
+		return "redirect:/app/login";
 	}
 }

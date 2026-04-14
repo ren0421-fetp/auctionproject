@@ -8,27 +8,27 @@ import org.fujitsu.training.codes.model.data.BidConfirm;
 
 public interface BidConfirmDao {
 
-    @Select("""
-        select count(*)
-        from bidconfirm_master bc
-        join bid_master b on b.bid_id = bc.bid_id
-        where b.product_id = #{productId}
-    """)
-    int countConfirmedByProductId(@Param("productId") Integer productId);
+	@Select("""
+			    select count(*)
+			    from bidconfirm_master bc
+			    join bid_master b on b.bid_id = bc.bid_id
+			    where b.product_id = #{productId}
+			""")
+	int countConfirmedByProductId(@Param("productId") Integer productId);
 
-    @Insert("""
-        insert into bidconfirm_master (
-            bid_id,
-            winner_username,
-            confirmed_price,
-            confirmed_at
-        ) values (
-            #{bidId},
-            #{winnerUsername},
-            #{confirmedPrice},
-            #{confirmedAt}
-        )
-    """)
-    @Options(useGeneratedKeys = true, keyProperty = "confirmBidId", keyColumn = "confirm_bid_id")
-    int insertBidConfirmation(BidConfirm bidConfirm);
+	@Insert("""
+			    insert into bidconfirm_master (
+			        bid_id,
+			        winner_username,
+			        confirmed_price,
+			        confirmed_at
+			    ) values (
+			        #{bidId},
+			        #{winnerUsername},
+			        #{confirmedPrice},
+			        #{confirmedAt}
+			    )
+			""")
+	@Options(useGeneratedKeys = true, keyProperty = "confirmBidId", keyColumn = "confirm_bid_id")
+	int insertBidConfirmation(BidConfirm bidConfirm);
 }

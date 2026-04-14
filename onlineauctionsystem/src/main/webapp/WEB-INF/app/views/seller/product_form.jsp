@@ -53,7 +53,7 @@
                             <form:hidden path="currentPhotoPath"/>
                             <form:hidden path="photoPath"/>
 
-                            <form:errors path="*" cssClass="alert-soft-error mb-3" element="div"/>
+                            <!--<form:errors path="*" cssClass="alert-soft-error mb-3" element="div"/> -->
 
                             <div class="row g-3">
                                 <div class="col-md-6">

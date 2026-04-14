@@ -9,16 +9,14 @@ import org.springframework.validation.Validator;
 @Component
 public class LoginFormValidator implements Validator {
 
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return LoginForm.class.equals(clazz);
-    }
+	@Override
+	public boolean supports(Class<?> clazz) {
+		return LoginForm.class.equals(clazz);
+	}
 
-    @Override
-    public void validate(Object target, Errors errors) {
-        ValidationUtils.rejectIfEmptyOrWhitespace(
-                errors, "username", "username.required", "Username is required.");
-        ValidationUtils.rejectIfEmptyOrWhitespace(
-                errors, "password", "password.required", "Password is required.");
-    }
+	@Override
+	public void validate(Object target, Errors errors) {
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "username.required", "Username is required.");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "password.required", "Password is required.");
+	}
 }

@@ -1,10 +1,11 @@
 package org.fujitsu.training.codes.dao.impl;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.fujitsu.training.codes.dao.impl.LoginDaoImpl;
 import org.fujitsu.training.codes.exceptions.InvalidCredentialsException;
+import org.fujitsu.training.codes.model.data.User;
 import org.fujitsu.training.codes.model.form.LoginForm;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,18 +28,31 @@ public class TestLoginDaoImpl {
 
     @Autowired
     private LoginDaoImpl dao;
-    /*
+   
     @Test
-    public void testLoginSuccess() throws Exception {
+    public void testLoginValidCredentials() throws Exception {
         LoginForm form = new LoginForm();
-        form.setUsername("maria"); 
-        form.setPassword("clara"); 
-        
-        assertNotNull(dao.login(form));
-    }*/
+        form.setUsername("admin");
+        form.setPassword("admin123");
+
+        User user = dao.login(form);
+
+        assertEquals("admin", user.getUsername());
+    }
 
     @Test
-    public void testLogin_InvalidPasswordThrowsException() {
+    public void testLoginInvalidUsername() {
+        LoginForm form = new LoginForm();
+        form.setUsername("adminnn");
+        form.setPassword("admin123");
+
+        assertThrows(InvalidCredentialsException.class, () -> {
+            dao.login(form);
+        });
+    }
+    
+    @Test
+    public void testLoginInvalidPasswordThrowsException() {
         LoginForm form = new LoginForm();
         form.setUsername("admin");
         form.setPassword("wrong_password");

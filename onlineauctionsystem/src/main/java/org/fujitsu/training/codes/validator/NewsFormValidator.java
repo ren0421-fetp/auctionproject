@@ -9,16 +9,16 @@ import org.springframework.validation.Validator;
 @Component
 public class NewsFormValidator implements Validator {
 
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return NewsForm.class.equals(clazz);
-    }
+	@Override
+	public boolean supports(Class<?> clazz) {
+		return NewsForm.class.equals(clazz);
+	}
 
-    @Override
-    public void validate(Object target, Errors errors) {
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "newsTitle",
-                "news_title.required", "News title is required.");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "newsContent",
-                "news_content.required", "News content is required.");
-    }
+	@Override
+	public void validate(Object target, Errors errors) {
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "newsTitle", "news_title.required",
+				"News title is required.");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "newsContent", "news_content.required",
+				"News content is required.");
+	}
 }
