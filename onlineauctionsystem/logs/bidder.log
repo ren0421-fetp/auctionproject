@@ -1492,3 +1492,549 @@
 10:12:59.628 [main] INFO  bidder-flow - Returning open products
 10:12:59.693 [main] INFO  bidder-flow - Getting all available packages.
 10:12:59.695 [main] INFO  bidder-flow - Returning all available packages.
+10:22:15.724 [main] INFO  bidder-flow - Loading modify-bid form. bidderUsername=bidder1, bidId=1
+10:22:15.725 [main] INFO  bidder-flow - Getting bidder bids
+10:22:15.725 [main] INFO  bidder-flow - Returning bidder bids
+10:22:15.727 [main] INFO  bidder-flow - Getting product detail
+10:22:15.727 [main] INFO  bidder-flow - Returning product detail
+10:22:15.729 [main] INFO  bidder-flow - Getting remaining bid count
+10:22:15.729 [main] INFO  bidder-flow - Returning bid count
+10:22:15.733 [main] INFO  bidder-flow - Modify-bid form loaded. bidderUsername=bidder1, bidId=1
+10:22:15.742 [main] INFO  bidder-flow - Loading bidder my-bids page. bidderUsername=bidder1
+10:22:15.745 [main] INFO  bidder-flow - Bidder my-bids page loaded. bidderUsername=bidder1
+10:22:15.754 [main] INFO  bidder-flow - Loading bidder product detail. bidderUsername=bidder1, productId=1
+10:22:15.754 [main] INFO  bidder-flow - Getting product detail
+10:22:15.754 [main] INFO  bidder-flow - Returning product detail
+10:22:15.756 [main] INFO  bidder-flow - Getting remaining bid count
+10:22:15.756 [main] INFO  bidder-flow - Returning bid count
+10:22:15.757 [main] INFO  bidder-flow - Bidder product detail loaded. bidderUsername=bidder1, productId=1
+10:22:15.769 [main] INFO  bidder-flow - Loading bidder auction list. keyword=Sap, catId=null, minPrice=1000, maxPrice=60000
+10:22:15.769 [main] INFO  bidder-flow - Getting open products
+10:22:15.769 [main] INFO  bidder-flow - Returning open products
+10:22:15.773 [main] INFO  bidder-flow - Getting categories
+10:22:15.773 [main] INFO  bidder-flow - Returning categories
+10:22:15.774 [main] INFO  bidder-flow - Bidder auction list loaded.
+10:22:15.781 [main] INFO  bidder-flow - Processing bid submission. bidderUsername=bidder1, productId=1
+10:22:15.781 [main] INFO  bidder-flow - Getting product detail
+10:22:15.781 [main] INFO  bidder-flow - Returning product detail
+10:22:15.783 [main] INFO  bidder-flow - Getting remaining bid count
+10:22:15.783 [main] INFO  bidder-flow - Returning bid count
+10:22:15.783 [main] WARN  bidder-flow - Bid validation failed. bidderUsername=bidder1, productId=1
+10:22:15.827 [main] INFO  bidder-flow - Loading bidder package page. bidderUsername=bidder1
+10:22:15.828 [main] INFO  bidder-flow - Getting all available packages.
+10:22:15.829 [main] INFO  bidder-flow - Returning all available packages.
+10:22:15.829 [main] INFO  bidder-flow - Getting remaining bid count for username=bidder1
+10:22:15.830 [main] INFO  bidder-flow - Returning remaining bid count for username=bidder1
+10:22:15.830 [main] INFO  bidder-flow - Bidder package page loaded. bidderUsername=bidder1
+10:22:16.189 [main] INFO  bidder-flow - Getting remaining bid count
+10:22:16.189 [main] INFO  bidder-flow - Returning bid count
+10:22:16.196 [main] INFO  bidder-flow - Getting bidder bids
+10:22:16.196 [main] INFO  bidder-flow - Returning bidder bids
+10:22:16.204 [main] INFO  bidder-flow - Getting open products
+10:22:16.204 [main] INFO  bidder-flow - Returning open products
+10:22:16.266 [main] INFO  bidder-flow - Getting all available packages.
+10:22:16.267 [main] INFO  bidder-flow - Returning all available packages.
+10:36:39.889 [main] INFO  bidder-flow - Loading modify-bid form. bidderUsername=bidder1, bidId=1
+10:36:39.890 [main] INFO  bidder-flow - Getting bidder bids
+10:36:39.890 [main] INFO  bidder-flow - Returning bidder bids
+10:36:39.892 [main] INFO  bidder-flow - Getting product detail
+10:36:39.892 [main] INFO  bidder-flow - Returning product detail
+10:36:39.894 [main] INFO  bidder-flow - Getting remaining bid count
+10:36:39.894 [main] INFO  bidder-flow - Returning bid count
+10:36:39.898 [main] INFO  bidder-flow - Modify-bid form loaded. bidderUsername=bidder1, bidId=1
+10:36:39.907 [main] INFO  bidder-flow - Loading bidder my-bids page. bidderUsername=bidder1
+10:36:39.910 [main] INFO  bidder-flow - Bidder my-bids page loaded. bidderUsername=bidder1
+10:36:39.918 [main] INFO  bidder-flow - Loading bidder product detail. bidderUsername=bidder1, productId=1
+10:36:39.918 [main] INFO  bidder-flow - Getting product detail
+10:36:39.918 [main] INFO  bidder-flow - Returning product detail
+10:36:39.919 [main] INFO  bidder-flow - Getting remaining bid count
+10:36:39.920 [main] INFO  bidder-flow - Returning bid count
+10:36:39.920 [main] INFO  bidder-flow - Bidder product detail loaded. bidderUsername=bidder1, productId=1
+10:36:39.933 [main] INFO  bidder-flow - Loading bidder auction list. keyword=Sap, catId=null, minPrice=1000, maxPrice=60000
+10:36:39.933 [main] INFO  bidder-flow - Getting open products
+10:36:39.933 [main] INFO  bidder-flow - Returning open products
+10:36:39.935 [main] INFO  bidder-flow - Getting categories
+10:36:39.936 [main] INFO  bidder-flow - Returning categories
+10:36:39.936 [main] INFO  bidder-flow - Bidder auction list loaded.
+10:36:39.946 [main] INFO  bidder-flow - Processing bid submission. bidderUsername=bidder1, productId=1
+10:36:39.947 [main] INFO  bidder-flow - Getting product detail
+10:36:39.947 [main] INFO  bidder-flow - Returning product detail
+10:36:39.949 [main] INFO  bidder-flow - Getting remaining bid count
+10:36:39.949 [main] INFO  bidder-flow - Returning bid count
+10:36:39.949 [main] WARN  bidder-flow - Bid validation failed. bidderUsername=bidder1, productId=1
+10:36:40.007 [main] INFO  bidder-flow - Loading bidder package page. bidderUsername=bidder1
+10:36:40.007 [main] INFO  bidder-flow - Getting all available packages.
+10:36:40.008 [main] INFO  bidder-flow - Returning all available packages.
+10:36:40.008 [main] INFO  bidder-flow - Getting remaining bid count for username=bidder1
+10:36:40.009 [main] INFO  bidder-flow - Returning remaining bid count for username=bidder1
+10:36:40.009 [main] INFO  bidder-flow - Bidder package page loaded. bidderUsername=bidder1
+10:36:40.374 [main] INFO  bidder-flow - Getting remaining bid count
+10:36:40.374 [main] INFO  bidder-flow - Returning bid count
+10:36:40.380 [main] INFO  bidder-flow - Getting bidder bids
+10:36:40.380 [main] INFO  bidder-flow - Returning bidder bids
+10:36:40.388 [main] INFO  bidder-flow - Getting open products
+10:36:40.388 [main] INFO  bidder-flow - Returning open products
+10:36:40.446 [main] INFO  bidder-flow - Getting all available packages.
+10:36:40.448 [main] INFO  bidder-flow - Returning all available packages.
+11:52:33.290 [main] INFO  bidder-flow - Loading modify-bid form. bidderUsername=bidder1, bidId=1
+11:52:33.293 [main] INFO  bidder-flow - Getting bidder bids
+11:52:33.293 [main] INFO  bidder-flow - Returning bidder bids
+11:52:33.295 [main] INFO  bidder-flow - Getting product detail
+11:52:33.296 [main] INFO  bidder-flow - Returning product detail
+11:52:33.298 [main] INFO  bidder-flow - Getting remaining bid count
+11:52:33.299 [main] INFO  bidder-flow - Returning bid count
+11:52:33.303 [main] INFO  bidder-flow - Modify-bid form loaded. bidderUsername=bidder1, bidId=1
+11:52:33.313 [main] INFO  bidder-flow - Loading bidder my-bids page. bidderUsername=bidder1
+11:52:33.315 [main] INFO  bidder-flow - Bidder my-bids page loaded. bidderUsername=bidder1
+11:52:33.324 [main] INFO  bidder-flow - Loading bidder product detail. bidderUsername=bidder1, productId=1
+11:52:33.324 [main] INFO  bidder-flow - Getting product detail
+11:52:33.324 [main] INFO  bidder-flow - Returning product detail
+11:52:33.326 [main] INFO  bidder-flow - Getting remaining bid count
+11:52:33.327 [main] INFO  bidder-flow - Returning bid count
+11:52:33.328 [main] INFO  bidder-flow - Bidder product detail loaded. bidderUsername=bidder1, productId=1
+11:52:33.343 [main] INFO  bidder-flow - Loading bidder auction list. keyword=Sap, catId=null, minPrice=1000, maxPrice=60000
+11:52:33.343 [main] INFO  bidder-flow - Getting open products
+11:52:33.343 [main] INFO  bidder-flow - Returning open products
+11:52:33.349 [main] INFO  bidder-flow - Getting categories
+11:52:33.349 [main] INFO  bidder-flow - Returning categories
+11:52:33.350 [main] INFO  bidder-flow - Bidder auction list loaded.
+11:52:33.363 [main] INFO  bidder-flow - Processing bid submission. bidderUsername=bidder1, productId=1
+11:52:33.363 [main] INFO  bidder-flow - Getting product detail
+11:52:33.363 [main] INFO  bidder-flow - Returning product detail
+11:52:33.365 [main] INFO  bidder-flow - Getting remaining bid count
+11:52:33.366 [main] INFO  bidder-flow - Returning bid count
+11:52:33.367 [main] WARN  bidder-flow - Bid validation failed. bidderUsername=bidder1, productId=1
+11:52:33.440 [main] INFO  bidder-flow - Loading bidder package page. bidderUsername=bidder1
+11:52:33.440 [main] INFO  bidder-flow - Getting all available packages.
+11:52:33.442 [main] INFO  bidder-flow - Returning all available packages.
+11:52:33.442 [main] INFO  bidder-flow - Getting remaining bid count for username=bidder1
+11:52:33.444 [main] INFO  bidder-flow - Returning remaining bid count for username=bidder1
+11:52:33.444 [main] INFO  bidder-flow - Bidder package page loaded. bidderUsername=bidder1
+11:52:33.885 [main] INFO  bidder-flow - Getting remaining bid count
+11:52:33.885 [main] INFO  bidder-flow - Returning bid count
+11:52:33.892 [main] INFO  bidder-flow - Getting bidder bids
+11:52:33.892 [main] INFO  bidder-flow - Returning bidder bids
+11:52:33.900 [main] INFO  bidder-flow - Getting open products
+11:52:33.900 [main] INFO  bidder-flow - Returning open products
+11:52:33.957 [main] INFO  bidder-flow - Getting all available packages.
+11:52:33.958 [main] INFO  bidder-flow - Returning all available packages.
+12:07:39.480 [main] INFO  bidder-flow - Loading modify-bid form. bidderUsername=bidder1, bidId=1
+12:07:39.481 [main] INFO  bidder-flow - Getting bidder bids
+12:07:39.481 [main] INFO  bidder-flow - Returning bidder bids
+12:07:39.483 [main] INFO  bidder-flow - Getting product detail
+12:07:39.483 [main] INFO  bidder-flow - Returning product detail
+12:07:39.485 [main] INFO  bidder-flow - Getting remaining bid count
+12:07:39.486 [main] INFO  bidder-flow - Returning bid count
+12:07:39.492 [main] INFO  bidder-flow - Modify-bid form loaded. bidderUsername=bidder1, bidId=1
+12:07:39.506 [main] INFO  bidder-flow - Loading bidder my-bids page. bidderUsername=bidder1
+12:07:39.509 [main] INFO  bidder-flow - Bidder my-bids page loaded. bidderUsername=bidder1
+12:07:39.520 [main] INFO  bidder-flow - Loading bidder product detail. bidderUsername=bidder1, productId=1
+12:07:39.520 [main] INFO  bidder-flow - Getting product detail
+12:07:39.520 [main] INFO  bidder-flow - Returning product detail
+12:07:39.523 [main] INFO  bidder-flow - Getting remaining bid count
+12:07:39.523 [main] INFO  bidder-flow - Returning bid count
+12:07:39.524 [main] INFO  bidder-flow - Bidder product detail loaded. bidderUsername=bidder1, productId=1
+12:07:39.540 [main] INFO  bidder-flow - Loading bidder auction list. keyword=Sap, catId=null, minPrice=1000, maxPrice=60000
+12:07:39.541 [main] INFO  bidder-flow - Getting open products
+12:07:39.541 [main] INFO  bidder-flow - Returning open products
+12:07:39.548 [main] INFO  bidder-flow - Getting categories
+12:07:39.549 [main] INFO  bidder-flow - Returning categories
+12:07:39.550 [main] INFO  bidder-flow - Bidder auction list loaded.
+12:07:39.557 [main] INFO  bidder-flow - Processing bid submission. bidderUsername=bidder1, productId=1
+12:07:39.558 [main] INFO  bidder-flow - Getting product detail
+12:07:39.558 [main] INFO  bidder-flow - Returning product detail
+12:07:39.559 [main] INFO  bidder-flow - Getting remaining bid count
+12:07:39.559 [main] INFO  bidder-flow - Returning bid count
+12:07:39.560 [main] WARN  bidder-flow - Bid validation failed. bidderUsername=bidder1, productId=1
+12:07:39.640 [main] INFO  bidder-flow - Loading bidder package page. bidderUsername=bidder1
+12:07:39.640 [main] INFO  bidder-flow - Getting all available packages.
+12:07:39.641 [main] INFO  bidder-flow - Returning all available packages.
+12:07:39.642 [main] INFO  bidder-flow - Getting remaining bid count for username=bidder1
+12:07:39.643 [main] INFO  bidder-flow - Returning remaining bid count for username=bidder1
+12:07:39.643 [main] INFO  bidder-flow - Bidder package page loaded. bidderUsername=bidder1
+12:07:40.059 [main] INFO  bidder-flow - Getting remaining bid count
+12:07:40.059 [main] INFO  bidder-flow - Returning bid count
+12:07:40.065 [main] INFO  bidder-flow - Getting bidder bids
+12:07:40.065 [main] INFO  bidder-flow - Returning bidder bids
+12:07:40.073 [main] INFO  bidder-flow - Getting open products
+12:07:40.074 [main] INFO  bidder-flow - Returning open products
+12:07:40.134 [main] INFO  bidder-flow - Getting all available packages.
+12:07:40.135 [main] INFO  bidder-flow - Returning all available packages.
+18:37:33.602 [main] INFO  bidder-flow - Loading modify-bid form. bidderUsername=bidder1, bidId=1
+18:37:33.602 [main] INFO  bidder-flow - Getting bidder bids
+18:37:33.602 [main] INFO  bidder-flow - Returning bidder bids
+18:37:33.606 [main] INFO  bidder-flow - Getting product detail
+18:37:33.606 [main] INFO  bidder-flow - Returning product detail
+18:37:33.608 [main] INFO  bidder-flow - Getting remaining bid count
+18:37:33.609 [main] INFO  bidder-flow - Returning bid count
+18:37:33.615 [main] INFO  bidder-flow - Modify-bid form loaded. bidderUsername=bidder1, bidId=1
+18:37:33.624 [main] INFO  bidder-flow - Loading bidder my-bids page. bidderUsername=bidder1
+18:37:33.627 [main] INFO  bidder-flow - Bidder my-bids page loaded. bidderUsername=bidder1
+18:37:33.636 [main] INFO  bidder-flow - Loading bidder product detail. bidderUsername=bidder1, productId=1
+18:37:33.636 [main] INFO  bidder-flow - Getting product detail
+18:37:33.637 [main] INFO  bidder-flow - Returning product detail
+18:37:33.639 [main] INFO  bidder-flow - Getting remaining bid count
+18:37:33.639 [main] INFO  bidder-flow - Returning bid count
+18:37:33.640 [main] INFO  bidder-flow - Bidder product detail loaded. bidderUsername=bidder1, productId=1
+18:37:33.652 [main] INFO  bidder-flow - Loading bidder auction list. keyword=Sap, catId=null, minPrice=1000, maxPrice=60000
+18:37:33.652 [main] INFO  bidder-flow - Getting open products
+18:37:33.652 [main] INFO  bidder-flow - Returning open products
+18:37:33.659 [main] INFO  bidder-flow - Getting categories
+18:37:33.659 [main] INFO  bidder-flow - Returning categories
+18:37:33.660 [main] INFO  bidder-flow - Bidder auction list loaded.
+18:37:33.670 [main] INFO  bidder-flow - Processing bid submission. bidderUsername=bidder1, productId=1
+18:37:33.670 [main] INFO  bidder-flow - Getting product detail
+18:37:33.670 [main] INFO  bidder-flow - Returning product detail
+18:37:33.672 [main] INFO  bidder-flow - Getting remaining bid count
+18:37:33.673 [main] INFO  bidder-flow - Returning bid count
+18:37:33.673 [main] WARN  bidder-flow - Bid validation failed. bidderUsername=bidder1, productId=1
+18:37:33.727 [main] INFO  bidder-flow - Loading bidder package page. bidderUsername=bidder1
+18:37:33.727 [main] INFO  bidder-flow - Getting all available packages.
+18:37:33.728 [main] INFO  bidder-flow - Returning all available packages.
+18:37:33.728 [main] INFO  bidder-flow - Getting remaining bid count for username=bidder1
+18:37:33.729 [main] INFO  bidder-flow - Returning remaining bid count for username=bidder1
+18:37:33.730 [main] INFO  bidder-flow - Bidder package page loaded. bidderUsername=bidder1
+18:37:34.060 [main] INFO  bidder-flow - Getting remaining bid count
+18:37:34.061 [main] INFO  bidder-flow - Returning bid count
+18:37:34.066 [main] INFO  bidder-flow - Getting bidder bids
+18:37:34.066 [main] INFO  bidder-flow - Returning bidder bids
+18:37:34.073 [main] INFO  bidder-flow - Getting open products
+18:37:34.074 [main] INFO  bidder-flow - Returning open products
+18:37:34.134 [main] INFO  bidder-flow - Getting all available packages.
+18:37:34.136 [main] INFO  bidder-flow - Returning all available packages.
+07:40:45.139 [main] INFO  bidder-flow - Loading modify-bid form. bidderUsername=bidder1, bidId=1
+07:40:45.140 [main] INFO  bidder-flow - Getting bidder bids
+07:40:45.140 [main] INFO  bidder-flow - Returning bidder bids
+07:40:45.143 [main] INFO  bidder-flow - Getting product detail
+07:40:45.143 [main] INFO  bidder-flow - Returning product detail
+07:40:45.147 [main] INFO  bidder-flow - Getting remaining bid count
+07:40:45.147 [main] INFO  bidder-flow - Returning bid count
+07:40:45.153 [main] INFO  bidder-flow - Modify-bid form loaded. bidderUsername=bidder1, bidId=1
+07:40:45.159 [main] INFO  bidder-flow - Loading bidder my-bids page. bidderUsername=bidder1
+07:40:45.161 [main] INFO  bidder-flow - Bidder my-bids page loaded. bidderUsername=bidder1
+07:40:45.170 [main] INFO  bidder-flow - Loading bidder product detail. bidderUsername=bidder1, productId=1
+07:40:45.170 [main] INFO  bidder-flow - Getting product detail
+07:40:45.170 [main] INFO  bidder-flow - Returning product detail
+07:40:45.171 [main] INFO  bidder-flow - Getting remaining bid count
+07:40:45.171 [main] INFO  bidder-flow - Returning bid count
+07:40:45.172 [main] INFO  bidder-flow - Bidder product detail loaded. bidderUsername=bidder1, productId=1
+07:40:45.189 [main] INFO  bidder-flow - Loading bidder auction list. keyword=Sap, catId=null, minPrice=1000, maxPrice=60000
+07:40:45.189 [main] INFO  bidder-flow - Getting open products
+07:40:45.189 [main] INFO  bidder-flow - Returning open products
+07:40:45.196 [main] INFO  bidder-flow - Getting categories
+07:40:45.196 [main] INFO  bidder-flow - Returning categories
+07:40:45.197 [main] INFO  bidder-flow - Bidder auction list loaded.
+07:40:45.208 [main] INFO  bidder-flow - Processing bid submission. bidderUsername=bidder1, productId=1
+07:40:45.208 [main] INFO  bidder-flow - Getting product detail
+07:40:45.208 [main] INFO  bidder-flow - Returning product detail
+07:40:45.210 [main] INFO  bidder-flow - Getting remaining bid count
+07:40:45.210 [main] INFO  bidder-flow - Returning bid count
+07:40:45.211 [main] WARN  bidder-flow - Bid validation failed. bidderUsername=bidder1, productId=1
+07:40:45.297 [main] INFO  bidder-flow - Loading bidder package page. bidderUsername=bidder1
+07:40:45.297 [main] INFO  bidder-flow - Getting all available packages.
+07:40:45.299 [main] INFO  bidder-flow - Returning all available packages.
+07:40:45.299 [main] INFO  bidder-flow - Getting remaining bid count for username=bidder1
+07:40:45.301 [main] INFO  bidder-flow - Returning remaining bid count for username=bidder1
+07:40:45.302 [main] INFO  bidder-flow - Bidder package page loaded. bidderUsername=bidder1
+07:40:45.757 [main] INFO  bidder-flow - Getting remaining bid count
+07:40:45.757 [main] INFO  bidder-flow - Returning bid count
+07:40:45.763 [main] INFO  bidder-flow - Getting bidder bids
+07:40:45.763 [main] INFO  bidder-flow - Returning bidder bids
+07:40:45.772 [main] INFO  bidder-flow - Getting open products
+07:40:45.772 [main] INFO  bidder-flow - Returning open products
+07:40:45.847 [main] INFO  bidder-flow - Getting all available packages.
+07:40:45.849 [main] INFO  bidder-flow - Returning all available packages.
+07:44:47.151 [main] INFO  bidder-flow - Loading modify-bid form. bidderUsername=bidder1, bidId=1
+07:44:47.152 [main] INFO  bidder-flow - Getting bidder bids
+07:44:47.152 [main] INFO  bidder-flow - Returning bidder bids
+07:44:47.156 [main] INFO  bidder-flow - Getting product detail
+07:44:47.156 [main] INFO  bidder-flow - Returning product detail
+07:44:47.159 [main] INFO  bidder-flow - Getting remaining bid count
+07:44:47.160 [main] INFO  bidder-flow - Returning bid count
+07:44:47.165 [main] INFO  bidder-flow - Modify-bid form loaded. bidderUsername=bidder1, bidId=1
+07:44:47.174 [main] INFO  bidder-flow - Loading bidder my-bids page. bidderUsername=bidder1
+07:44:47.179 [main] INFO  bidder-flow - Bidder my-bids page loaded. bidderUsername=bidder1
+07:44:47.191 [main] INFO  bidder-flow - Loading bidder product detail. bidderUsername=bidder1, productId=1
+07:44:47.191 [main] INFO  bidder-flow - Getting product detail
+07:44:47.191 [main] INFO  bidder-flow - Returning product detail
+07:44:47.193 [main] INFO  bidder-flow - Getting remaining bid count
+07:44:47.193 [main] INFO  bidder-flow - Returning bid count
+07:44:47.194 [main] INFO  bidder-flow - Bidder product detail loaded. bidderUsername=bidder1, productId=1
+07:44:47.206 [main] INFO  bidder-flow - Loading bidder auction list. keyword=Sap, catId=null, minPrice=1000, maxPrice=60000
+07:44:47.206 [main] INFO  bidder-flow - Getting open products
+07:44:47.207 [main] INFO  bidder-flow - Returning open products
+07:44:47.210 [main] INFO  bidder-flow - Getting categories
+07:44:47.210 [main] INFO  bidder-flow - Returning categories
+07:44:47.212 [main] INFO  bidder-flow - Bidder auction list loaded.
+07:44:47.224 [main] INFO  bidder-flow - Processing bid submission. bidderUsername=bidder1, productId=1
+07:44:47.224 [main] INFO  bidder-flow - Getting product detail
+07:44:47.224 [main] INFO  bidder-flow - Returning product detail
+07:44:47.226 [main] INFO  bidder-flow - Getting remaining bid count
+07:44:47.226 [main] INFO  bidder-flow - Returning bid count
+07:44:47.227 [main] WARN  bidder-flow - Bid validation failed. bidderUsername=bidder1, productId=1
+07:44:47.293 [main] INFO  bidder-flow - Loading bidder package page. bidderUsername=bidder1
+07:44:47.293 [main] INFO  bidder-flow - Getting all available packages.
+07:44:47.295 [main] INFO  bidder-flow - Returning all available packages.
+07:44:47.295 [main] INFO  bidder-flow - Getting remaining bid count for username=bidder1
+07:44:47.297 [main] INFO  bidder-flow - Returning remaining bid count for username=bidder1
+07:44:47.297 [main] INFO  bidder-flow - Bidder package page loaded. bidderUsername=bidder1
+07:44:47.703 [main] INFO  bidder-flow - Getting remaining bid count
+07:44:47.703 [main] INFO  bidder-flow - Returning bid count
+07:44:47.711 [main] INFO  bidder-flow - Getting bidder bids
+07:44:47.711 [main] INFO  bidder-flow - Returning bidder bids
+07:44:47.715 [main] INFO  bidder-flow - Getting open products
+07:44:47.716 [main] INFO  bidder-flow - Returning open products
+07:44:47.789 [main] INFO  bidder-flow - Getting all available packages.
+07:44:47.791 [main] INFO  bidder-flow - Returning all available packages.
+07:48:36.183 [main] INFO  bidder-flow - Loading modify-bid form. bidderUsername=bidder1, bidId=1
+07:48:36.184 [main] INFO  bidder-flow - Getting bidder bids
+07:48:36.184 [main] INFO  bidder-flow - Returning bidder bids
+07:48:36.185 [main] INFO  bidder-flow - Getting product detail
+07:48:36.186 [main] INFO  bidder-flow - Returning product detail
+07:48:36.187 [main] INFO  bidder-flow - Getting remaining bid count
+07:48:36.188 [main] INFO  bidder-flow - Returning bid count
+07:48:36.193 [main] INFO  bidder-flow - Modify-bid form loaded. bidderUsername=bidder1, bidId=1
+07:48:36.204 [main] INFO  bidder-flow - Loading bidder my-bids page. bidderUsername=bidder1
+07:48:36.207 [main] INFO  bidder-flow - Bidder my-bids page loaded. bidderUsername=bidder1
+07:48:36.214 [main] INFO  bidder-flow - Loading bidder product detail. bidderUsername=bidder1, productId=1
+07:48:36.214 [main] INFO  bidder-flow - Getting product detail
+07:48:36.214 [main] INFO  bidder-flow - Returning product detail
+07:48:36.216 [main] INFO  bidder-flow - Getting remaining bid count
+07:48:36.216 [main] INFO  bidder-flow - Returning bid count
+07:48:36.216 [main] INFO  bidder-flow - Bidder product detail loaded. bidderUsername=bidder1, productId=1
+07:48:36.230 [main] INFO  bidder-flow - Loading bidder auction list. keyword=Sap, catId=null, minPrice=1000, maxPrice=60000
+07:48:36.230 [main] INFO  bidder-flow - Getting open products
+07:48:36.230 [main] INFO  bidder-flow - Returning open products
+07:48:36.234 [main] INFO  bidder-flow - Getting categories
+07:48:36.234 [main] INFO  bidder-flow - Returning categories
+07:48:36.235 [main] INFO  bidder-flow - Bidder auction list loaded.
+07:48:36.244 [main] INFO  bidder-flow - Processing bid submission. bidderUsername=bidder1, productId=1
+07:48:36.244 [main] INFO  bidder-flow - Getting product detail
+07:48:36.245 [main] INFO  bidder-flow - Returning product detail
+07:48:36.248 [main] INFO  bidder-flow - Getting remaining bid count
+07:48:36.248 [main] INFO  bidder-flow - Returning bid count
+07:48:36.249 [main] WARN  bidder-flow - Bid validation failed. bidderUsername=bidder1, productId=1
+07:48:36.326 [main] INFO  bidder-flow - Loading bidder package page. bidderUsername=bidder1
+07:48:36.326 [main] INFO  bidder-flow - Getting all available packages.
+07:48:36.328 [main] INFO  bidder-flow - Returning all available packages.
+07:48:36.328 [main] INFO  bidder-flow - Getting remaining bid count for username=bidder1
+07:48:36.330 [main] INFO  bidder-flow - Returning remaining bid count for username=bidder1
+07:48:36.330 [main] INFO  bidder-flow - Bidder package page loaded. bidderUsername=bidder1
+07:48:36.762 [main] INFO  bidder-flow - Getting remaining bid count
+07:48:36.762 [main] INFO  bidder-flow - Returning bid count
+07:48:36.770 [main] INFO  bidder-flow - Getting bidder bids
+07:48:36.770 [main] INFO  bidder-flow - Returning bidder bids
+07:48:36.777 [main] INFO  bidder-flow - Getting open products
+07:48:36.778 [main] INFO  bidder-flow - Returning open products
+07:48:36.849 [main] INFO  bidder-flow - Getting all available packages.
+07:48:36.852 [main] INFO  bidder-flow - Returning all available packages.
+07:51:03.614 [main] INFO  bidder-flow - Loading modify-bid form. bidderUsername=bidder1, bidId=1
+07:51:03.614 [main] INFO  bidder-flow - Getting bidder bids
+07:51:03.614 [main] INFO  bidder-flow - Returning bidder bids
+07:51:03.616 [main] INFO  bidder-flow - Getting product detail
+07:51:03.616 [main] INFO  bidder-flow - Returning product detail
+07:51:03.618 [main] INFO  bidder-flow - Getting remaining bid count
+07:51:03.618 [main] INFO  bidder-flow - Returning bid count
+07:51:03.624 [main] INFO  bidder-flow - Modify-bid form loaded. bidderUsername=bidder1, bidId=1
+07:51:03.633 [main] INFO  bidder-flow - Loading bidder my-bids page. bidderUsername=bidder1
+07:51:03.636 [main] INFO  bidder-flow - Bidder my-bids page loaded. bidderUsername=bidder1
+07:51:03.651 [main] INFO  bidder-flow - Loading bidder product detail. bidderUsername=bidder1, productId=1
+07:51:03.651 [main] INFO  bidder-flow - Getting product detail
+07:51:03.651 [main] INFO  bidder-flow - Returning product detail
+07:51:03.653 [main] INFO  bidder-flow - Getting remaining bid count
+07:51:03.653 [main] INFO  bidder-flow - Returning bid count
+07:51:03.655 [main] INFO  bidder-flow - Bidder product detail loaded. bidderUsername=bidder1, productId=1
+07:51:03.670 [main] INFO  bidder-flow - Loading bidder auction list. keyword=Sap, catId=null, minPrice=1000, maxPrice=60000
+07:51:03.670 [main] INFO  bidder-flow - Getting open products
+07:51:03.670 [main] INFO  bidder-flow - Returning open products
+07:51:03.675 [main] INFO  bidder-flow - Getting categories
+07:51:03.675 [main] INFO  bidder-flow - Returning categories
+07:51:03.677 [main] INFO  bidder-flow - Bidder auction list loaded.
+07:51:03.695 [main] INFO  bidder-flow - Processing bid submission. bidderUsername=bidder1, productId=1
+07:51:03.695 [main] INFO  bidder-flow - Getting product detail
+07:51:03.695 [main] INFO  bidder-flow - Returning product detail
+07:51:03.697 [main] INFO  bidder-flow - Getting remaining bid count
+07:51:03.697 [main] INFO  bidder-flow - Returning bid count
+07:51:03.697 [main] WARN  bidder-flow - Bid validation failed. bidderUsername=bidder1, productId=1
+07:51:03.781 [main] INFO  bidder-flow - Loading bidder package page. bidderUsername=bidder1
+07:51:03.782 [main] INFO  bidder-flow - Getting all available packages.
+07:51:03.783 [main] INFO  bidder-flow - Returning all available packages.
+07:51:03.783 [main] INFO  bidder-flow - Getting remaining bid count for username=bidder1
+07:51:03.784 [main] INFO  bidder-flow - Returning remaining bid count for username=bidder1
+07:51:03.784 [main] INFO  bidder-flow - Bidder package page loaded. bidderUsername=bidder1
+07:51:04.226 [main] INFO  bidder-flow - Getting remaining bid count
+07:51:04.226 [main] INFO  bidder-flow - Returning bid count
+07:51:04.232 [main] INFO  bidder-flow - Getting bidder bids
+07:51:04.232 [main] INFO  bidder-flow - Returning bidder bids
+07:51:04.240 [main] INFO  bidder-flow - Getting open products
+07:51:04.241 [main] INFO  bidder-flow - Returning open products
+07:51:04.311 [main] INFO  bidder-flow - Getting all available packages.
+07:51:04.313 [main] INFO  bidder-flow - Returning all available packages.
+07:52:50.091 [main] INFO  bidder-flow - Loading modify-bid form. bidderUsername=bidder1, bidId=1
+07:52:50.092 [main] INFO  bidder-flow - Getting bidder bids
+07:52:50.092 [main] INFO  bidder-flow - Returning bidder bids
+07:52:50.094 [main] INFO  bidder-flow - Getting product detail
+07:52:50.094 [main] INFO  bidder-flow - Returning product detail
+07:52:50.096 [main] INFO  bidder-flow - Getting remaining bid count
+07:52:50.096 [main] INFO  bidder-flow - Returning bid count
+07:52:50.103 [main] INFO  bidder-flow - Modify-bid form loaded. bidderUsername=bidder1, bidId=1
+07:52:50.113 [main] INFO  bidder-flow - Loading bidder my-bids page. bidderUsername=bidder1
+07:52:50.117 [main] INFO  bidder-flow - Bidder my-bids page loaded. bidderUsername=bidder1
+07:52:50.126 [main] INFO  bidder-flow - Loading bidder product detail. bidderUsername=bidder1, productId=1
+07:52:50.126 [main] INFO  bidder-flow - Getting product detail
+07:52:50.126 [main] INFO  bidder-flow - Returning product detail
+07:52:50.128 [main] INFO  bidder-flow - Getting remaining bid count
+07:52:50.129 [main] INFO  bidder-flow - Returning bid count
+07:52:50.130 [main] INFO  bidder-flow - Bidder product detail loaded. bidderUsername=bidder1, productId=1
+07:52:50.143 [main] INFO  bidder-flow - Loading bidder auction list. keyword=Sap, catId=null, minPrice=1000, maxPrice=60000
+07:52:50.143 [main] INFO  bidder-flow - Getting open products
+07:52:50.144 [main] INFO  bidder-flow - Returning open products
+07:52:50.146 [main] INFO  bidder-flow - Getting categories
+07:52:50.146 [main] INFO  bidder-flow - Returning categories
+07:52:50.147 [main] INFO  bidder-flow - Bidder auction list loaded.
+07:52:50.157 [main] INFO  bidder-flow - Processing bid submission. bidderUsername=bidder1, productId=1
+07:52:50.157 [main] INFO  bidder-flow - Getting product detail
+07:52:50.157 [main] INFO  bidder-flow - Returning product detail
+07:52:50.159 [main] INFO  bidder-flow - Getting remaining bid count
+07:52:50.159 [main] INFO  bidder-flow - Returning bid count
+07:52:50.160 [main] WARN  bidder-flow - Bid validation failed. bidderUsername=bidder1, productId=1
+07:52:50.220 [main] INFO  bidder-flow - Loading bidder package page. bidderUsername=bidder1
+07:52:50.220 [main] INFO  bidder-flow - Getting all available packages.
+07:52:50.222 [main] INFO  bidder-flow - Returning all available packages.
+07:52:50.223 [main] INFO  bidder-flow - Getting remaining bid count for username=bidder1
+07:52:50.224 [main] INFO  bidder-flow - Returning remaining bid count for username=bidder1
+07:52:50.224 [main] INFO  bidder-flow - Bidder package page loaded. bidderUsername=bidder1
+07:52:50.661 [main] INFO  bidder-flow - Getting remaining bid count
+07:52:50.661 [main] INFO  bidder-flow - Returning bid count
+07:52:50.669 [main] INFO  bidder-flow - Getting bidder bids
+07:52:50.669 [main] INFO  bidder-flow - Returning bidder bids
+07:52:50.677 [main] INFO  bidder-flow - Getting open products
+07:52:50.677 [main] INFO  bidder-flow - Returning open products
+07:52:50.757 [main] INFO  bidder-flow - Getting all available packages.
+07:52:50.758 [main] INFO  bidder-flow - Returning all available packages.
+07:53:42.289 [main] INFO  bidder-flow - Loading modify-bid form. bidderUsername=bidder1, bidId=1
+07:53:42.290 [main] INFO  bidder-flow - Getting bidder bids
+07:53:42.290 [main] INFO  bidder-flow - Returning bidder bids
+07:53:42.293 [main] INFO  bidder-flow - Getting product detail
+07:53:42.293 [main] INFO  bidder-flow - Returning product detail
+07:53:42.297 [main] INFO  bidder-flow - Getting remaining bid count
+07:53:42.297 [main] INFO  bidder-flow - Returning bid count
+07:53:42.304 [main] INFO  bidder-flow - Modify-bid form loaded. bidderUsername=bidder1, bidId=1
+07:53:42.316 [main] INFO  bidder-flow - Loading bidder my-bids page. bidderUsername=bidder1
+07:53:42.320 [main] INFO  bidder-flow - Bidder my-bids page loaded. bidderUsername=bidder1
+07:53:42.331 [main] INFO  bidder-flow - Loading bidder product detail. bidderUsername=bidder1, productId=1
+07:53:42.332 [main] INFO  bidder-flow - Getting product detail
+07:53:42.332 [main] INFO  bidder-flow - Returning product detail
+07:53:42.334 [main] INFO  bidder-flow - Getting remaining bid count
+07:53:42.335 [main] INFO  bidder-flow - Returning bid count
+07:53:42.336 [main] INFO  bidder-flow - Bidder product detail loaded. bidderUsername=bidder1, productId=1
+07:53:42.352 [main] INFO  bidder-flow - Loading bidder auction list. keyword=Sap, catId=null, minPrice=1000, maxPrice=60000
+07:53:42.352 [main] INFO  bidder-flow - Getting open products
+07:53:42.352 [main] INFO  bidder-flow - Returning open products
+07:53:42.357 [main] INFO  bidder-flow - Getting categories
+07:53:42.358 [main] INFO  bidder-flow - Returning categories
+07:53:42.359 [main] INFO  bidder-flow - Bidder auction list loaded.
+07:53:42.375 [main] INFO  bidder-flow - Processing bid submission. bidderUsername=bidder1, productId=1
+07:53:42.375 [main] INFO  bidder-flow - Getting product detail
+07:53:42.375 [main] INFO  bidder-flow - Returning product detail
+07:53:42.378 [main] INFO  bidder-flow - Getting remaining bid count
+07:53:42.378 [main] INFO  bidder-flow - Returning bid count
+07:53:42.380 [main] WARN  bidder-flow - Bid validation failed. bidderUsername=bidder1, productId=1
+07:53:42.466 [main] INFO  bidder-flow - Loading bidder package page. bidderUsername=bidder1
+07:53:42.466 [main] INFO  bidder-flow - Getting all available packages.
+07:53:42.468 [main] INFO  bidder-flow - Returning all available packages.
+07:53:42.468 [main] INFO  bidder-flow - Getting remaining bid count for username=bidder1
+07:53:42.469 [main] INFO  bidder-flow - Returning remaining bid count for username=bidder1
+07:53:42.469 [main] INFO  bidder-flow - Bidder package page loaded. bidderUsername=bidder1
+07:53:42.954 [main] INFO  bidder-flow - Getting remaining bid count
+07:53:42.954 [main] INFO  bidder-flow - Returning bid count
+07:53:42.962 [main] INFO  bidder-flow - Getting bidder bids
+07:53:42.963 [main] INFO  bidder-flow - Returning bidder bids
+07:53:42.972 [main] INFO  bidder-flow - Getting open products
+07:53:42.972 [main] INFO  bidder-flow - Returning open products
+07:53:43.049 [main] INFO  bidder-flow - Getting all available packages.
+07:53:43.051 [main] INFO  bidder-flow - Returning all available packages.
+08:03:57.187 [main] INFO  bidder-flow - Loading modify-bid form. bidderUsername=bidder1, bidId=1
+08:03:57.188 [main] INFO  bidder-flow - Getting bidder bids
+08:03:57.188 [main] INFO  bidder-flow - Returning bidder bids
+08:03:57.192 [main] INFO  bidder-flow - Getting product detail
+08:03:57.192 [main] INFO  bidder-flow - Returning product detail
+08:03:57.196 [main] INFO  bidder-flow - Getting remaining bid count
+08:03:57.197 [main] INFO  bidder-flow - Returning bid count
+08:03:57.204 [main] INFO  bidder-flow - Modify-bid form loaded. bidderUsername=bidder1, bidId=1
+08:03:57.220 [main] INFO  bidder-flow - Loading bidder my-bids page. bidderUsername=bidder1
+08:03:57.227 [main] INFO  bidder-flow - Bidder my-bids page loaded. bidderUsername=bidder1
+08:03:57.244 [main] INFO  bidder-flow - Loading bidder product detail. bidderUsername=bidder1, productId=1
+08:03:57.245 [main] INFO  bidder-flow - Getting product detail
+08:03:57.245 [main] INFO  bidder-flow - Returning product detail
+08:03:57.249 [main] INFO  bidder-flow - Getting remaining bid count
+08:03:57.249 [main] INFO  bidder-flow - Returning bid count
+08:03:57.251 [main] INFO  bidder-flow - Bidder product detail loaded. bidderUsername=bidder1, productId=1
+08:03:57.276 [main] INFO  bidder-flow - Loading bidder auction list. keyword=Sap, catId=null, minPrice=1000, maxPrice=60000
+08:03:57.277 [main] INFO  bidder-flow - Getting open products
+08:03:57.277 [main] INFO  bidder-flow - Returning open products
+08:03:57.290 [main] INFO  bidder-flow - Getting categories
+08:03:57.290 [main] INFO  bidder-flow - Returning categories
+08:03:57.294 [main] INFO  bidder-flow - Bidder auction list loaded.
+08:03:57.318 [main] INFO  bidder-flow - Processing bid submission. bidderUsername=bidder1, productId=1
+08:03:57.318 [main] INFO  bidder-flow - Getting product detail
+08:03:57.318 [main] INFO  bidder-flow - Returning product detail
+08:03:57.322 [main] INFO  bidder-flow - Getting remaining bid count
+08:03:57.322 [main] INFO  bidder-flow - Returning bid count
+08:03:57.324 [main] WARN  bidder-flow - Bid validation failed. bidderUsername=bidder1, productId=1
+08:03:57.462 [main] INFO  bidder-flow - Loading bidder package page. bidderUsername=bidder1
+08:03:57.462 [main] INFO  bidder-flow - Getting all available packages.
+08:03:57.466 [main] INFO  bidder-flow - Returning all available packages.
+08:03:57.466 [main] INFO  bidder-flow - Getting remaining bid count for username=bidder1
+08:03:57.468 [main] INFO  bidder-flow - Returning remaining bid count for username=bidder1
+08:03:57.469 [main] INFO  bidder-flow - Bidder package page loaded. bidderUsername=bidder1
+08:03:58.398 [main] INFO  bidder-flow - Getting remaining bid count
+08:03:58.399 [main] INFO  bidder-flow - Returning bid count
+08:03:58.412 [main] INFO  bidder-flow - Getting bidder bids
+08:03:58.412 [main] INFO  bidder-flow - Returning bidder bids
+08:03:58.429 [main] INFO  bidder-flow - Getting open products
+08:03:58.429 [main] INFO  bidder-flow - Returning open products
+08:03:58.554 [main] INFO  bidder-flow - Getting all available packages.
+08:03:58.557 [main] INFO  bidder-flow - Returning all available packages.
+08:06:23.611 [main] INFO  bidder-flow - Loading modify-bid form. bidderUsername=bidder1, bidId=1
+08:06:23.611 [main] INFO  bidder-flow - Getting bidder bids
+08:06:23.611 [main] INFO  bidder-flow - Returning bidder bids
+08:06:23.614 [main] INFO  bidder-flow - Getting product detail
+08:06:23.615 [main] INFO  bidder-flow - Returning product detail
+08:06:23.617 [main] INFO  bidder-flow - Getting remaining bid count
+08:06:23.617 [main] INFO  bidder-flow - Returning bid count
+08:06:23.622 [main] INFO  bidder-flow - Modify-bid form loaded. bidderUsername=bidder1, bidId=1
+08:06:23.632 [main] INFO  bidder-flow - Loading bidder my-bids page. bidderUsername=bidder1
+08:06:23.635 [main] INFO  bidder-flow - Bidder my-bids page loaded. bidderUsername=bidder1
+08:06:23.644 [main] INFO  bidder-flow - Loading bidder product detail. bidderUsername=bidder1, productId=1
+08:06:23.644 [main] INFO  bidder-flow - Getting product detail
+08:06:23.644 [main] INFO  bidder-flow - Returning product detail
+08:06:23.647 [main] INFO  bidder-flow - Getting remaining bid count
+08:06:23.647 [main] INFO  bidder-flow - Returning bid count
+08:06:23.649 [main] INFO  bidder-flow - Bidder product detail loaded. bidderUsername=bidder1, productId=1
+08:06:23.667 [main] INFO  bidder-flow - Loading bidder auction list. keyword=Sap, catId=null, minPrice=1000, maxPrice=60000
+08:06:23.667 [main] INFO  bidder-flow - Getting open products
+08:06:23.667 [main] INFO  bidder-flow - Returning open products
+08:06:23.672 [main] INFO  bidder-flow - Getting categories
+08:06:23.672 [main] INFO  bidder-flow - Returning categories
+08:06:23.673 [main] INFO  bidder-flow - Bidder auction list loaded.
+08:06:23.684 [main] INFO  bidder-flow - Processing bid submission. bidderUsername=bidder1, productId=1
+08:06:23.684 [main] INFO  bidder-flow - Getting product detail
+08:06:23.684 [main] INFO  bidder-flow - Returning product detail
+08:06:23.686 [main] INFO  bidder-flow - Getting remaining bid count
+08:06:23.686 [main] INFO  bidder-flow - Returning bid count
+08:06:23.687 [main] WARN  bidder-flow - Bid validation failed. bidderUsername=bidder1, productId=1
+08:06:23.758 [main] INFO  bidder-flow - Loading bidder package page. bidderUsername=bidder1
+08:06:23.758 [main] INFO  bidder-flow - Getting all available packages.
+08:06:23.760 [main] INFO  bidder-flow - Returning all available packages.
+08:06:23.760 [main] INFO  bidder-flow - Getting remaining bid count for username=bidder1
+08:06:23.762 [main] INFO  bidder-flow - Returning remaining bid count for username=bidder1
+08:06:23.762 [main] INFO  bidder-flow - Bidder package page loaded. bidderUsername=bidder1
+08:06:24.197 [main] INFO  bidder-flow - Getting remaining bid count
+08:06:24.197 [main] INFO  bidder-flow - Returning bid count
+08:06:24.203 [main] INFO  bidder-flow - Getting bidder bids
+08:06:24.203 [main] INFO  bidder-flow - Returning bidder bids
+08:06:24.208 [main] INFO  bidder-flow - Getting open products
+08:06:24.208 [main] INFO  bidder-flow - Returning open products
+08:06:24.294 [main] INFO  bidder-flow - Getting all available packages.
+08:06:24.295 [main] INFO  bidder-flow - Returning all available packages.

@@ -1,5 +1,6 @@
 package org.fujitsu.training.codes.dao;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
@@ -188,7 +189,7 @@ public interface ProductDao {
 			@Result(property = "currentHighestBid", column = "current_highest_bid"),
 			@Result(property = "auctionPhase", column = "auction_phase") })
 	List<Product> selectOpenProducts(@Param("keyword") String keyword, @Param("catId") Integer catId,
-			@Param("minPrice") java.math.BigDecimal minPrice, @Param("maxPrice") java.math.BigDecimal maxPrice);
+			@Param("minPrice") BigDecimal minPrice, @Param("maxPrice") BigDecimal maxPrice);
 
 	@Select("""
 			    select

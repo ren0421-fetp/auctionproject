@@ -42,7 +42,9 @@
                             </a>
                         </div>
                     </div>
-
+					<c:if test="${not empty deleteError}">
+					    <div class="alert-soft-error"><c:out value="${deleteError}" /></div>
+					</c:if>
                     <div class="data-card">
                         <c:choose>
                             <c:when test="${empty sellerProducts}">

@@ -410,3 +410,159 @@
 10:12:59.639 [main] INFO  common-flow - Returning all feedback
 10:12:59.647 [main] INFO  common-flow - Starting feedback save. subject=happy
 10:12:59.648 [main] INFO  common-flow - Feedback save completed. subject=happy
+10:22:15.794 [main] INFO  common-flow - Processing feedback submission.
+10:22:15.794 [main] INFO  common-flow - Starting feedback save. subject=happy
+10:22:15.796 [main] INFO  common-flow - Feedback save completed. subject=happy
+10:22:15.796 [main] INFO  common-flow - Feedback submission completed.
+10:22:15.801 [main] INFO  common-flow - Loading feedback page.
+10:22:15.801 [main] INFO  common-flow - Getting all news
+10:22:15.801 [main] INFO  common-flow - Returning all news
+10:22:15.803 [main] INFO  common-flow - Feedback page loaded.
+10:22:16.217 [main] INFO  common-flow - Getting all feedback
+10:22:16.217 [main] INFO  common-flow - Returning all feedback
+10:22:16.225 [main] INFO  common-flow - Starting feedback save. subject=happy
+10:22:16.226 [main] INFO  common-flow - Feedback save completed. subject=happy
+10:36:39.965 [main] INFO  common-flow - Processing feedback submission.
+10:36:39.966 [main] INFO  common-flow - Starting feedback save. subject=happy
+10:36:39.968 [main] INFO  common-flow - Feedback save completed. subject=happy
+10:36:39.968 [main] INFO  common-flow - Feedback submission completed.
+10:36:39.976 [main] INFO  common-flow - Loading feedback page.
+10:36:39.976 [main] INFO  common-flow - Getting all news
+10:36:39.976 [main] INFO  common-flow - Returning all news
+10:36:39.977 [main] INFO  common-flow - Feedback page loaded.
+10:36:40.399 [main] INFO  common-flow - Getting all feedback
+10:36:40.400 [main] INFO  common-flow - Returning all feedback
+10:36:40.407 [main] INFO  common-flow - Starting feedback save. subject=happy
+10:36:40.408 [main] INFO  common-flow - Feedback save completed. subject=happy
+11:52:33.382 [main] INFO  common-flow - Processing feedback submission.
+11:52:33.383 [main] INFO  common-flow - Starting feedback save. subject=happy
+11:52:33.385 [main] INFO  common-flow - Feedback save completed. subject=happy
+11:52:33.385 [main] INFO  common-flow - Feedback submission completed.
+11:52:33.394 [main] INFO  common-flow - Loading feedback page.
+11:52:33.394 [main] INFO  common-flow - Getting all news
+11:52:33.394 [main] INFO  common-flow - Returning all news
+11:52:33.396 [main] INFO  common-flow - Feedback page loaded.
+11:52:33.911 [main] INFO  common-flow - Getting all feedback
+11:52:33.911 [main] INFO  common-flow - Returning all feedback
+11:52:33.924 [main] INFO  common-flow - Starting feedback save. subject=happy
+11:52:33.925 [main] INFO  common-flow - Feedback save completed. subject=happy
+12:07:39.581 [main] INFO  common-flow - Processing feedback submission.
+12:07:39.582 [main] INFO  common-flow - Starting feedback save. subject=happy
+12:07:39.585 [main] INFO  common-flow - Feedback save completed. subject=happy
+12:07:39.585 [main] INFO  common-flow - Feedback submission completed.
+12:07:39.595 [main] INFO  common-flow - Loading feedback page.
+12:07:39.595 [main] INFO  common-flow - Getting all news
+12:07:39.595 [main] INFO  common-flow - Returning all news
+12:07:39.596 [main] INFO  common-flow - Feedback page loaded.
+12:07:40.084 [main] INFO  common-flow - Getting all feedback
+12:07:40.084 [main] INFO  common-flow - Returning all feedback
+12:07:40.092 [main] INFO  common-flow - Starting feedback save. subject=happy
+12:07:40.094 [main] INFO  common-flow - Feedback save completed. subject=happy
+18:37:33.683 [main] INFO  common-flow - Processing feedback submission.
+18:37:33.683 [main] INFO  common-flow - Starting feedback save. subject=happy
+18:37:33.685 [main] INFO  common-flow - Feedback save completed. subject=happy
+18:37:33.686 [main] INFO  common-flow - Feedback submission completed.
+18:37:33.693 [main] INFO  common-flow - Loading feedback page.
+18:37:33.693 [main] INFO  common-flow - Getting all news
+18:37:33.693 [main] INFO  common-flow - Returning all news
+18:37:33.694 [main] INFO  common-flow - Feedback page loaded.
+18:37:34.086 [main] INFO  common-flow - Getting all feedback
+18:37:34.087 [main] INFO  common-flow - Returning all feedback
+18:37:34.094 [main] INFO  common-flow - Starting feedback save. subject=happy
+18:37:34.095 [main] INFO  common-flow - Feedback save completed. subject=happy
+07:40:45.241 [main] INFO  common-flow - Processing feedback submission.
+07:40:45.242 [main] INFO  common-flow - Starting feedback save. subject=happy
+07:40:45.245 [main] INFO  common-flow - Feedback save completed. subject=happy
+07:40:45.245 [main] INFO  common-flow - Feedback submission completed.
+07:40:45.254 [main] INFO  common-flow - Loading feedback page.
+07:40:45.254 [main] INFO  common-flow - Getting all news
+07:40:45.254 [main] INFO  common-flow - Returning all news
+07:40:45.256 [main] INFO  common-flow - Feedback page loaded.
+07:40:45.787 [main] INFO  common-flow - Getting all feedback
+07:40:45.787 [main] INFO  common-flow - Returning all feedback
+07:40:45.798 [main] INFO  common-flow - Starting feedback save. subject=happy
+07:40:45.799 [main] INFO  common-flow - Feedback save completed. subject=happy
+07:44:47.243 [main] INFO  common-flow - Processing feedback submission.
+07:44:47.243 [main] INFO  common-flow - Starting feedback save. subject=happy
+07:44:47.245 [main] INFO  common-flow - Feedback save completed. subject=happy
+07:44:47.246 [main] INFO  common-flow - Feedback submission completed.
+07:44:47.253 [main] INFO  common-flow - Loading feedback page.
+07:44:47.253 [main] INFO  common-flow - Getting all news
+07:44:47.253 [main] INFO  common-flow - Returning all news
+07:44:47.254 [main] INFO  common-flow - Feedback page loaded.
+07:44:47.732 [main] INFO  common-flow - Getting all feedback
+07:44:47.732 [main] INFO  common-flow - Returning all feedback
+07:44:47.738 [main] INFO  common-flow - Starting feedback save. subject=happy
+07:44:47.740 [main] INFO  common-flow - Feedback save completed. subject=happy
+07:48:36.271 [main] INFO  common-flow - Processing feedback submission.
+07:48:36.271 [main] INFO  common-flow - Starting feedback save. subject=happy
+07:48:36.274 [main] INFO  common-flow - Feedback save completed. subject=happy
+07:48:36.274 [main] INFO  common-flow - Feedback submission completed.
+07:48:36.281 [main] INFO  common-flow - Loading feedback page.
+07:48:36.281 [main] INFO  common-flow - Getting all news
+07:48:36.281 [main] INFO  common-flow - Returning all news
+07:48:36.283 [main] INFO  common-flow - Feedback page loaded.
+07:48:36.789 [main] INFO  common-flow - Getting all feedback
+07:48:36.789 [main] INFO  common-flow - Returning all feedback
+07:48:36.802 [main] INFO  common-flow - Starting feedback save. subject=happy
+07:48:36.803 [main] INFO  common-flow - Feedback save completed. subject=happy
+07:51:03.723 [main] INFO  common-flow - Processing feedback submission.
+07:51:03.724 [main] INFO  common-flow - Starting feedback save. subject=happy
+07:51:03.727 [main] INFO  common-flow - Feedback save completed. subject=happy
+07:51:03.728 [main] INFO  common-flow - Feedback submission completed.
+07:51:03.737 [main] INFO  common-flow - Loading feedback page.
+07:51:03.738 [main] INFO  common-flow - Getting all news
+07:51:03.738 [main] INFO  common-flow - Returning all news
+07:51:03.741 [main] INFO  common-flow - Feedback page loaded.
+07:51:04.254 [main] INFO  common-flow - Getting all feedback
+07:51:04.254 [main] INFO  common-flow - Returning all feedback
+07:51:04.263 [main] INFO  common-flow - Starting feedback save. subject=happy
+07:51:04.265 [main] INFO  common-flow - Feedback save completed. subject=happy
+07:52:50.173 [main] INFO  common-flow - Processing feedback submission.
+07:52:50.173 [main] INFO  common-flow - Starting feedback save. subject=happy
+07:52:50.175 [main] INFO  common-flow - Feedback save completed. subject=happy
+07:52:50.175 [main] INFO  common-flow - Feedback submission completed.
+07:52:50.182 [main] INFO  common-flow - Loading feedback page.
+07:52:50.182 [main] INFO  common-flow - Getting all news
+07:52:50.182 [main] INFO  common-flow - Returning all news
+07:52:50.183 [main] INFO  common-flow - Feedback page loaded.
+07:52:50.692 [main] INFO  common-flow - Getting all feedback
+07:52:50.692 [main] INFO  common-flow - Returning all feedback
+07:52:50.706 [main] INFO  common-flow - Starting feedback save. subject=happy
+07:52:50.708 [main] INFO  common-flow - Feedback save completed. subject=happy
+07:53:42.401 [main] INFO  common-flow - Processing feedback submission.
+07:53:42.402 [main] INFO  common-flow - Starting feedback save. subject=happy
+07:53:42.405 [main] INFO  common-flow - Feedback save completed. subject=happy
+07:53:42.405 [main] INFO  common-flow - Feedback submission completed.
+07:53:42.416 [main] INFO  common-flow - Loading feedback page.
+07:53:42.417 [main] INFO  common-flow - Getting all news
+07:53:42.417 [main] INFO  common-flow - Returning all news
+07:53:42.419 [main] INFO  common-flow - Feedback page loaded.
+07:53:42.988 [main] INFO  common-flow - Getting all feedback
+07:53:42.988 [main] INFO  common-flow - Returning all feedback
+07:53:42.998 [main] INFO  common-flow - Starting feedback save. subject=happy
+07:53:43.000 [main] INFO  common-flow - Feedback save completed. subject=happy
+08:03:57.353 [main] INFO  common-flow - Processing feedback submission.
+08:03:57.354 [main] INFO  common-flow - Starting feedback save. subject=happy
+08:03:57.360 [main] INFO  common-flow - Feedback save completed. subject=happy
+08:03:57.360 [main] INFO  common-flow - Feedback submission completed.
+08:03:57.376 [main] INFO  common-flow - Loading feedback page.
+08:03:57.376 [main] INFO  common-flow - Getting all news
+08:03:57.377 [main] INFO  common-flow - Returning all news
+08:03:57.380 [main] INFO  common-flow - Feedback page loaded.
+08:03:58.454 [main] INFO  common-flow - Getting all feedback
+08:03:58.455 [main] INFO  common-flow - Returning all feedback
+08:03:58.475 [main] INFO  common-flow - Starting feedback save. subject=happy
+08:03:58.479 [main] INFO  common-flow - Feedback save completed. subject=happy
+08:06:23.699 [main] INFO  common-flow - Processing feedback submission.
+08:06:23.700 [main] INFO  common-flow - Starting feedback save. subject=happy
+08:06:23.702 [main] INFO  common-flow - Feedback save completed. subject=happy
+08:06:23.702 [main] INFO  common-flow - Feedback submission completed.
+08:06:23.709 [main] INFO  common-flow - Loading feedback page.
+08:06:23.709 [main] INFO  common-flow - Getting all news
+08:06:23.709 [main] INFO  common-flow - Returning all news
+08:06:23.711 [main] INFO  common-flow - Feedback page loaded.
+08:06:24.219 [main] INFO  common-flow - Getting all feedback
+08:06:24.219 [main] INFO  common-flow - Returning all feedback
+08:06:24.225 [main] INFO  common-flow - Starting feedback save. subject=happy
+08:06:24.226 [main] INFO  common-flow - Feedback save completed. subject=happy

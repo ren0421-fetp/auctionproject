@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg bg-transparent pt-4">
         <div class="container">
             <a class="navbar-brand brand-mark" href="${pageContext.request.contextPath}/app/home">
-                Online Auction
+                Online Auction System
             </a>
 
             <div class="d-flex gap-2">
@@ -38,7 +38,7 @@
                 <div class="row align-items-center g-4">
                     <div class="col-lg-7">
                         <span class="badge rounded-pill hero-badge px-4 py-2 mb-4">
-                            Premium Auction Workspace
+                            Premium Auction Space
                         </span>
 
                         <h1 class="display-1 fw-semibold hero-title mb-4">

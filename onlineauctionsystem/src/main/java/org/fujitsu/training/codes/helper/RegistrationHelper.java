@@ -64,7 +64,7 @@ public class RegistrationHelper {
 
 	private void handleProfilePhoto(RegistrationForm form) throws Exception {
 		if (form.getPhotoFile() == null || form.getPhotoFile().isEmpty()) {
-			return;
+			//
 		}
 
 		String photoPath = fileService.saveFile(form.getPhotoFile(), "profile", form.getUsername());

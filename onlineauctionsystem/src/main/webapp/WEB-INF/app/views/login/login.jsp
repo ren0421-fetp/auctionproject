@@ -45,7 +45,7 @@
 
                             <h1 class="auth-title mb-4">
                                 Step back into your
-                                <span class="headline-accent">auction workspace</span>
+                                <span class="headline-accent">auction space</span>
                             </h1>
 
                             <p class="auth-lead mb-4">
@@ -91,8 +91,6 @@
                                     <form:password path="password" cssClass="form-control form-control-lg auth-input" />
                                     <form:errors path="password" cssClass="auth-error" element="div" />
                                 </div>
-
-                                <form:errors path="*" cssClass="auth-error auth-error-block mb-3" element="div" />
 
                                 <div class="d-grid gap-3 mt-4">
                                     <button type="submit" class="btn btn-dark btn-lg rounded-pill auth-submit">

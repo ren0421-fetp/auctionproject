@@ -4,7 +4,7 @@
     <div class="container-fluid px-0">
         <div class="app-topbar-inner">
             <a class="app-topbar-brand" href="${pageContext.request.contextPath}${homePath}">
-                Online Auction Workspace
+                Online Auction System
             </a>
 
             <div class="app-topbar-tools">
